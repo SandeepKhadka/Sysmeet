@@ -1,0 +1,153 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?a380d8a5bcded706f69720bdfeaf316a") format("truetype"),
+url("./flaticon.woff?a380d8a5bcded706f69720bdfeaf316a") format("woff"),
+url("./flaticon.woff2?a380d8a5bcded706f69720bdfeaf316a") format("woff2"),
+url("./flaticon.eot?a380d8a5bcded706f69720bdfeaf316a#iefix") format("embedded-opentype"),
+url("./flaticon.svg?a380d8a5bcded706f69720bdfeaf316a#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "support": "\f101",
+    "cloud": "\f102",
+    "cyber-security": "\f103",
+    "server": "\f104",
+    "happy": "\f105",
+    "award": "\f106",
+    "mission": "\f107",
+    "suitcase": "\f108",
+    "envelope": "\f109",
+    "pin": "\f10a",
+    "left-quote": "\f10b",
+    "project": "\f10c",
+    "phone-call": "\f10d",
+    "world": "\f10e",
+    "clock": "\f10f",
+    "email-marketing": "\f110",
+    "header": "\f111",
+    "layout": "\f112",
+    "cyber-security-1": "\f113",
+    "gear": "\f114",
+    "communities": "\f115",
+    "data-management": "\f116",
+    "leader": "\f117",
+    "briefing": "\f118",
+    "cloud-server": "\f119",
+    "secure-shield": "\f11a",
+    "medal": "\f11b",
+    "world-1": "\f11c",
+    "route": "\f11d",
+    "phone-call-1": "\f11e",
+    "chatting": "\f11f",
+    "diamond": "\f120",
+);
+
+.flaticon-support:before {
+    content: map-get($flaticon-map, "support");
+}
+.flaticon-cloud:before {
+    content: map-get($flaticon-map, "cloud");
+}
+.flaticon-cyber-security:before {
+    content: map-get($flaticon-map, "cyber-security");
+}
+.flaticon-server:before {
+    content: map-get($flaticon-map, "server");
+}
+.flaticon-happy:before {
+    content: map-get($flaticon-map, "happy");
+}
+.flaticon-award:before {
+    content: map-get($flaticon-map, "award");
+}
+.flaticon-mission:before {
+    content: map-get($flaticon-map, "mission");
+}
+.flaticon-suitcase:before {
+    content: map-get($flaticon-map, "suitcase");
+}
+.flaticon-envelope:before {
+    content: map-get($flaticon-map, "envelope");
+}
+.flaticon-pin:before {
+    content: map-get($flaticon-map, "pin");
+}
+.flaticon-left-quote:before {
+    content: map-get($flaticon-map, "left-quote");
+}
+.flaticon-project:before {
+    content: map-get($flaticon-map, "project");
+}
+.flaticon-phone-call:before {
+    content: map-get($flaticon-map, "phone-call");
+}
+.flaticon-world:before {
+    content: map-get($flaticon-map, "world");
+}
+.flaticon-clock:before {
+    content: map-get($flaticon-map, "clock");
+}
+.flaticon-email-marketing:before {
+    content: map-get($flaticon-map, "email-marketing");
+}
+.flaticon-header:before {
+    content: map-get($flaticon-map, "header");
+}
+.flaticon-layout:before {
+    content: map-get($flaticon-map, "layout");
+}
+.flaticon-cyber-security-1:before {
+    content: map-get($flaticon-map, "cyber-security-1");
+}
+.flaticon-gear:before {
+    content: map-get($flaticon-map, "gear");
+}
+.flaticon-communities:before {
+    content: map-get($flaticon-map, "communities");
+}
+.flaticon-data-management:before {
+    content: map-get($flaticon-map, "data-management");
+}
+.flaticon-leader:before {
+    content: map-get($flaticon-map, "leader");
+}
+.flaticon-briefing:before {
+    content: map-get($flaticon-map, "briefing");
+}
+.flaticon-cloud-server:before {
+    content: map-get($flaticon-map, "cloud-server");
+}
+.flaticon-secure-shield:before {
+    content: map-get($flaticon-map, "secure-shield");
+}
+.flaticon-medal:before {
+    content: map-get($flaticon-map, "medal");
+}
+.flaticon-world-1:before {
+    content: map-get($flaticon-map, "world-1");
+}
+.flaticon-route:before {
+    content: map-get($flaticon-map, "route");
+}
+.flaticon-phone-call-1:before {
+    content: map-get($flaticon-map, "phone-call-1");
+}
+.flaticon-chatting:before {
+    content: map-get($flaticon-map, "chatting");
+}
+.flaticon-diamond:before {
+    content: map-get($flaticon-map, "diamond");
+}
