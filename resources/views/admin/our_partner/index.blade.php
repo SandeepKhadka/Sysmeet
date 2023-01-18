@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Sysmeet | Banner List')
+@section('title', 'Sysmeet | Our Partner')
 @section('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -7,7 +7,7 @@
             var mode = $(this).prop("checked");
             var id = $(this).val();
             $.ajax({
-                url: "{{ route('mainbanner.status') }}",
+                url: "{{ route('our_partner.status') }}",
                 type: "POST",
                 data: {
                     _token: "{{ csrf_token() }}",
@@ -37,18 +37,18 @@
                 {{-- <nav aria-label="breadcrumb"> --}}
                 <ul class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="reply">Main Banner</a></li>
+                    <li class="breadcrumb-item active" aria-current="reply">Our Partner</a></li>
                 </ul>
-                <p class="float-right" style="margin: 10px">Total Banners : {{ \App\Models\MainBanner::count() }}</p>
+                <p class="float-right" style="margin: 10px">Total Partners : {{ \App\Models\OurPartner::count() }}</p>
                 {{-- </nav> --}}
             </div>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Main Banners</h3>
-                        <a href="{{ route('main_banner.create') }}" class="btn btn-success float-right"
+                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Our Partner</h3>
+                        <a href="{{ route('our_partner.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
-                                Add Banner
+                                Add Partner
                             </i>
                         </a>
                     </div>
@@ -63,38 +63,38 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (isset($banner_data))
-                                    @foreach ($banner_data as $banners => $banner)
+                                @if (isset($partner_data))
+                                    @foreach ($partner_data as $partners => $partner)
                                         <tr>
-                                            <td>{{ $banners + 1 }}</td>
+                                            <td>{{ $partners + 1 }}</td>
                                             <td>
-                                                <img src="{{ asset('/uploads/main_banner/Thumb-' . $banner->image) }}"
-                                                    alt="banner_image">
+                                                <img src="{{ asset('/uploads/our_partner/Thumb-' . $partner->image) }}"
+                                                    alt="partner_image">
                                             </td>
                                             <td>
-                                                <input type="checkbox" name="toggle" value="{{ @$banner->id }}"
+                                                <input type="checkbox" name="toggle" value="{{ @$partner->id }}"
                                                     data-toggle="switchbutton"
-                                                    {{ @$banner->status == 'active' ? 'checked' : '' }}
+                                                    {{ @$partner->status == 'active' ? 'checked' : '' }}
                                                     data-onlabel="Active" data-offlabel="Inactive" data-size="sm"
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td>
                                             <td>
-                                                <a href="{{ route('main_banner.show', $banner->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('our_partner.show', $partner->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('main_banner.edit', $banner->id) }}" class="btn btn-success">
+                                                <a href="{{ route('our_partner.edit', $partner->id) }}" class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('main_banner.destroy', $banner->id) }}" method="post"
+                                                <form action="{{ route('our_partner.destroy', $partner->id) }}" method="post"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"
-                                                        onclick="return confirm('Do you want to delete this banner?');"><i
+                                                        onclick="return confirm('Do you want to delete this partner?');"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

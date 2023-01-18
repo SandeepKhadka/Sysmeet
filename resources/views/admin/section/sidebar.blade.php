@@ -26,7 +26,8 @@
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
                  <li class="nav-item">
-                     <a href="{{ route(auth()->user()->role) }}" class="nav-link {{ (request()->is('admin')) ? 'active' : '' }}">
+                     <a href="{{ route(auth()->user()->role) }}"
+                         class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p>
                              Dashboard
@@ -42,7 +43,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link {{ (request()->is('admin/*_banner')) ? 'active' : '' }}">
+                     <a href="#" class="nav-link {{ request()->is('admin/*_banner') ? 'active' : '' }}">
                          <i class="nav-icon fa fa-image"></i>
                          <p>
                              Banner
@@ -51,13 +52,15 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{ route('main_banner.index') }}" class="nav-link {{ (request()->is('admin/main_banner')) ? 'active' : '' }}">
+                             <a href="{{ route('main_banner.index') }}"
+                                 class="nav-link {{ request()->is('admin/main_banner') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Main Banner</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{ route('outer_banner.index') }}" class="nav-link {{ (request()->is('admin/outer_banner')) ? 'active' : '' }}">
+                             <a href="{{ route('outer_banner.index') }}"
+                                 class="nav-link {{ request()->is('admin/outer_banner') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Outer Banner</p>
                              </a>
@@ -65,24 +68,13 @@
                      </ul>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <i class="nav-icon far fa-question-circle"></i>
-                         <p>
-                             How It Works
-                             <i class="fas fa-angle-left right"></i>
-                         </p>
+                     <a href="{{route('how_it_works.index')}}" class="nav-link {{ request()->is('admin/how_it_works') ? 'active' : '' }}">
+                         <i class="far fa-question-circle nav-icon"></i>
+                         <p>How It Works</p>
                      </a>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item">
-                             <a href="" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>Work Process</p>
-                             </a>
-                         </li>
-                     </ul>
                  </li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="{{ route('our_partner.index') }}" class="nav-link {{ request()->is('admin/our_partner') ? 'active' : '' }}">
                          <i class="fas fa-handshake-alt nav-icon"></i>
                          <p>Our Partner</p>
                      </a>
@@ -90,7 +82,7 @@
 
                  <li class="nav-header">Services</li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="#" class="nav-link {{ request()->is('admin/service*') ? 'active' : '' }}">
                          <i class="nav-icon fab fa-servicestack"></i>
                          <p>
                              Our Services
@@ -99,13 +91,13 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{route('service.index')}}" class="nav-link {{ request()->is('admin/service') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Service</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{route('service_list.index')}}" class="nav-link {{ request()->is('admin/service_list') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Service List</p>
                              </a>

@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\HowItWorksController;
 use App\Http\Controllers\MainBannerController;
+use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OuterBannerController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,11 +40,28 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
      //Main Banner Section
      Route::resource('main_banner', MainBannerController::class);
-     Route::post('mainbanner_status', [App\Http\Controllers\MainBannerController::class, 'bannerStatus'])->name('banner.status');
+     Route::post('mainbanner_status', [App\Http\Controllers\MainBannerController::class, 'bannerStatus'])->name('mainbanner.status');
     
      //Outer Banner Section
      Route::resource('outer_banner', OuterBannerController::class);
-     Route::post('outerbanner_status', [App\Http\Controllers\OuterBannerController::class, 'bannerStatus'])->name('banner.status');
+     Route::post('outerbanner_status', [App\Http\Controllers\OuterBannerController::class, 'bannerStatus'])->name('outerbanner.status');
+
+     // How it works Section
+     Route::resource('how_it_works', HowItWorksController::class);
+     Route::post('how_it_works_status', [App\Http\Controllers\HowItWorksController::class, 'howItWorksStatus'])->name('how_it_works.status');
+
+     //Our Partner Section
+     Route::resource('our_partner', OurPartnerController::class);
+     Route::post('our_partner_status', [App\Http\Controllers\OurPartnerController::class, 'ourPartnerStatus'])->name('our_partner.status');
+
+     //Our Service Section
+     Route::resource('service', ServiceController::class);
+     Route::post('service_status', [App\Http\Controllers\ServiceController::class, 'serviceStatus'])->name('service.status');
+
+     //Our Service List Section
+     Route::resource('service_list', ServiceListController::class);
+     Route::post('service_list_status', [App\Http\Controllers\ServiceListController::class, 'serviceListStatus'])->name('service_list.status');
+
 
      //Category Section
     Route::resource('category', CategoryController::class);

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Sysmeet | Banner List')
+@section('title', 'Sysmeet | Our Services')
 @section('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -7,7 +7,7 @@
             var mode = $(this).prop("checked");
             var id = $(this).val();
             $.ajax({
-                url: "{{ route('mainbanner.status') }}",
+                url: "{{ route('service.status') }}",
                 type: "POST",
                 data: {
                     _token: "{{ csrf_token() }}",
@@ -37,18 +37,18 @@
                 {{-- <nav aria-label="breadcrumb"> --}}
                 <ul class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="reply">Main Banner</a></li>
+                    <li class="breadcrumb-item active" aria-current="reply">Service</a></li>
                 </ul>
-                <p class="float-right" style="margin: 10px">Total Banners : {{ \App\Models\MainBanner::count() }}</p>
+                <p class="float-right" style="margin: 10px">Total Services: {{ \App\Models\Service::count() }}</p>
                 {{-- </nav> --}}
             </div>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Main Banners</h3>
-                        <a href="{{ route('main_banner.create') }}" class="btn btn-success float-right"
+                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Service</h3>
+                        <a href="{{ route('service.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
-                                Add Banner
+                                Add Service
                             </i>
                         </a>
                     </div>
@@ -57,44 +57,43 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">S.N.</th>
-                                    <th>Image</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Title</th>
+                                    <th>Summary</th>
+                                    <th style="width: 100px">Status</th>
+                                    <th style="width: 200px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (isset($banner_data))
-                                    @foreach ($banner_data as $banners => $banner)
+                                @if (isset($services_data))
+                                    @foreach ($services_data as $services => $service)
                                         <tr>
-                                            <td>{{ $banners + 1 }}</td>
+                                            <td>{{ $services + 1 }}</td>
+                                            <td>{{ $service->title }}</td>
+                                            <td>{!! html_entity_decode($service->summary) !!}</td>
                                             <td>
-                                                <img src="{{ asset('/uploads/main_banner/Thumb-' . $banner->image) }}"
-                                                    alt="banner_image">
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" name="toggle" value="{{ @$banner->id }}"
+                                                <input type="checkbox" name="toggle" value="{{ @$service->id }}"
                                                     data-toggle="switchbutton"
-                                                    {{ @$banner->status == 'active' ? 'checked' : '' }}
+                                                    {{ @$service->status == 'active' ? 'checked' : '' }}
                                                     data-onlabel="Active" data-offlabel="Inactive" data-size="sm"
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td>
                                             <td>
-                                                <a href="{{ route('main_banner.show', $banner->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('service.show', $service->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('main_banner.edit', $banner->id) }}" class="btn btn-success">
+                                                <a href="{{ route('service.edit', $service->id) }}" class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('main_banner.destroy', $banner->id) }}" method="post"
+                                                <form action="{{ route('service.destroy', $service->id) }}" method="post"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"
-                                                        onclick="return confirm('Do you want to delete this banner?');"><i
+                                                        onclick="return confirm('Do you want to delete this service?');"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

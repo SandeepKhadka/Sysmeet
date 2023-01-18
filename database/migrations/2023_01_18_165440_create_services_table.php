@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('outer_banners', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('sub_title');
             $table->text('summary');
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outer_banners');
+        Schema::dropIfExists('services');
     }
 };
