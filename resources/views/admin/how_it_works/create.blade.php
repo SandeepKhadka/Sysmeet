@@ -21,9 +21,19 @@
                         {{ isset($work_data) ? 'Update' : 'Add' }}</h4>
                     <div class="card">
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>Oh sorry!</strong>There were some issues with your input.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @if (isset($work_data))
-                                <form action="{{ route('how_it_works.update', @$work_data->id) }}" method="post" class="form"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('how_it_works.update', @$work_data->id) }}" method="post"
+                                    class="form" enctype="multipart/form-data">
                                     @method('put')
                                     @csrf
                                 @else

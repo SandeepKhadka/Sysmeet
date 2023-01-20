@@ -1,12 +1,16 @@
 <?php
 
+use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\HowItWorksController;
 use App\Http\Controllers\MainBannerController;
+use App\Http\Controllers\OurHelpController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OuterBannerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceListController;
+use App\Http\Controllers\ServicesToChooseUsController;
+use App\Http\Controllers\WhyChooseUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +66,21 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
      Route::resource('service_list', ServiceListController::class);
      Route::post('service_list_status', [App\Http\Controllers\ServiceListController::class, 'serviceListStatus'])->name('service_list.status');
 
+     //Our Help Section
+     Route::resource('service_our_help', OurHelpController::class);
+     Route::post('our_help_status', [App\Http\Controllers\OurHelpController::class, 'ourHelpStatus'])->name('our_help.status');
+
+     //About us Section
+     Route::resource('about/about_us', AboutUsController::class, ['names' => 'about_us']);
+     Route::post('about_us_status', [App\Http\Controllers\AboutUsController::class, 'aboutUsStatus'])->name('about_us.status');
+
+     //Why choose us Section
+     Route::resource('about/why_choose_us', WhyChooseUsController::class, ['names' => 'why_choose_us']);
+     Route::post('why_choose_us_status', [App\Http\Controllers\WhyChooseUsController::class, 'whyChooseUsStatus'])->name('why_choose_us.status');
+
+     //Services to choose us Section
+     Route::resource('about/services_choose_us', ServicesToChooseUsController::class, ['names' => 'services_choose']);
+     Route::post('services_choose_us_status', [App\Http\Controllers\ServicesToChooseUsController::class, 'servicesChooseUsStatus'])->name('services_choose_us.status');
 
      //Category Section
     Route::resource('category', CategoryController::class);

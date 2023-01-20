@@ -23,6 +23,10 @@
     });
 
     $(document).ready(function() {
+        $("#desc").summernote();
+    });
+
+    $(document).ready(function() {
         $("#summary").summernote();
     });
 

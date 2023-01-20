@@ -103,7 +103,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{route('service_our_help.index')}}" class="nav-link {{ request()->is('admin/service_our_help') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Our Help</p>
                              </a>
@@ -113,7 +113,7 @@
 
                  <li class="nav-header">About</li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}" >
                          <i class="nav-icon fas fa-address-card"></i>
                          <p>
                              About
@@ -122,17 +122,23 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{route('about_us.index')}}" class="nav-link {{ request()->is('admin/about/about_us') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>About us</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{route('why_choose_us.index')}}" class="nav-link {{ request()->is('admin/about/why_choose_us') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Why choose us</p>
                              </a>
                          </li>
+                         <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Services to choose us</p>
+                            </a>
+                        </li>
                      </ul>
                  </li>
 

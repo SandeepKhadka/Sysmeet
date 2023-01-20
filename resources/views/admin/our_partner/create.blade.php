@@ -18,13 +18,23 @@
         <div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="m-0 text-left font-weight-bold" style="padding: 10px">Our Partner 
+                    <h4 class="m-0 text-left font-weight-bold" style="padding: 10px">Our Partner
                         {{ isset($partner_data) ? 'Update' : 'Add' }}</h4>
                     <div class="card">
                         <div class="card-body">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <strong>Oh sorry!</strong>There were some issues with your input.<br><br>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             @if (isset($partner_data))
-                                <form action="{{ route('our_partner.update', @$partner_data->id) }}" method="post" class="form"
-                                    enctype="multipart/form-data">
+                                <form action="{{ route('our_partner.update', @$partner_data->id) }}" method="post"
+                                    class="form" enctype="multipart/form-data">
                                     @method('put')
                                     @csrf
                                 @else
@@ -47,7 +57,7 @@
                                             <img id="holder" src="#" style="margin-top:15px;max-height:100px;"
                                                 alt="No preview image" />
                                         @endif
-                                    </div>  
+                                    </div>
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
@@ -66,4 +76,3 @@
     </div>
     </div>
 @endsection
-
