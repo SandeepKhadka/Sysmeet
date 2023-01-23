@@ -56,7 +56,6 @@ class ServicesToChooseUsController extends Controller
     {
         $this->validate($request, [
             'title' => 'string|required',
-            'sub_title' => 'string|required',
             'description' => 'string|required',
         ]);
 
@@ -122,8 +121,7 @@ class ServicesToChooseUsController extends Controller
 
         $this->validate($request, [
             'title' => 'string|required',
-            'sub_title' => 'string|required',
-            'summary' => 'string|required',
+            'description' => 'string|required',
         ]);
 
         $data = $request->except(['_token']);

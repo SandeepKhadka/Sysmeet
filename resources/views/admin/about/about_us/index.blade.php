@@ -59,7 +59,6 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Image</th>
-                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -74,7 +73,7 @@
                                                 <img src="{{ asset('/uploads/about_us/Thumb-' . $about->image) }}"
                                                     alt="about_image">
                                             </td>
-                                            <td>{!! html_entity_decode($about->description) !!}</td>
+                                            {{-- <td>{!! html_entity_decode(Str::limit($about->description,20)) !!}</td> --}}
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$about->id }}"
                                                     data-toggle="switchbutton"

@@ -69,7 +69,7 @@
                                         <tr>
                                             <td>{{ $works + 1 }}</td>
                                             <td>{{ $work->title }}</td>
-                                            <td>{!! html_entity_decode($work->summary) !!}</td>
+                                            <td>{!! html_entity_decode(Str::limit($work->summary,1000)) !!}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$work->id }}"
                                                     data-toggle="switchbutton"

@@ -71,7 +71,7 @@
                                             <td>{{ $banners + 1 }}</td>
                                             <td>{{ $banner->title }}</td>
                                             <td>{{ $banner->sub_title }}</td>
-                                            <td>{!! html_entity_decode($banner->summary) !!}</td>
+                                            <td>{!! html_entity_decode(Str::limit($banner->summary,20)) !!}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$banner->id }}"
                                                     data-toggle="switchbutton"

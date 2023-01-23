@@ -2,14 +2,23 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactMessagesController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HowItWorksController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\MainBannerController;
+use App\Http\Controllers\MemberDetailsController;
+use App\Http\Controllers\MemberSkillController;
 use App\Http\Controllers\OurHelpController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OuterBannerController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceListController;
 use App\Http\Controllers\ServicesToChooseUsController;
+use App\Http\Controllers\SocialInfoController;
+use App\Http\Controllers\TeamMottoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WhyChooseUsController;
 use Illuminate\Support\Facades\Route;
 
@@ -82,22 +91,36 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
      Route::resource('about/services_choose_us', ServicesToChooseUsController::class, ['names' => 'services_choose']);
      Route::post('services_choose_us_status', [App\Http\Controllers\ServicesToChooseUsController::class, 'servicesChooseUsStatus'])->name('services_choose_us.status');
 
-     //Category Section
-    Route::resource('category', CategoryController::class);
-    Route::post('category_status', [App\Http\Controllers\CategoryController::class, 'categoryStatus'])->name('category.status');
-    
-    Route::post('category/{id}/child', [\App\Http\Controllers\CategoryController::class, 'getChildByParentID']);
+     //Member Details Section
+     Route::resource('our_team/member_details', MemberDetailsController::class, ['names' => 'member_details']);
+     Route::post('member_details_status', [App\Http\Controllers\MemberDetailsController::class, 'memberDetailsStatus'])->name('member_details.status');
 
-    //Brand Section
-    Route::resource('brand', BrandController::class);
-    Route::post('brand_status', [App\Http\Controllers\BrandController::class, 'brandStatus'])->name('brand.status');
+     //Team Motto Section
+     Route::resource('our_team/team_motto', TeamMottoController::class, ['names' => 'team_motto']);
+     Route::post('team_motto_status', [App\Http\Controllers\TeamMottoController::class, 'teamMottoStatus'])->name('team_motto.status');
 
-    //Product Section
-    Route::resource('product', ProductController::class);
-    Route::post('product_status', [App\Http\Controllers\ProductController::class, 'productStatus'])->name('product.status');
+     //Contact us Section
+     Route::resource('contact_us', ContactController::class);
+     Route::post('contact_us_status', [App\Http\Controllers\ContactController::class, 'contactUsStatus'])->name('contact_us.status');
+
+     //Contact Messages Section
+     Route::resource('contact/messages', ContactMessagesController::class, ['names' => 'messages']);
+     Route::post('messages_status', [App\Http\Controllers\ContactMessagesController::class, 'messagesStatus'])->name('messages.status');
+
+     //Social Info Section
+     Route::resource('social_info', SocialInfoController::class, ['names' => 'social_info']);
+     Route::post('social_info_status', [App\Http\Controllers\SocialInfoController::class, 'socialInfoStatus'])->name('social_info.status');
+
+     //Footer Section
+     Route::resource('footer', FooterController::class, ['names' => 'footer']);
+     Route::post('footer_status', [App\Http\Controllers\FooterController::class, 'footerStatus'])->name('footer.status');
 
      //User Section
      Route::resource('user', UserController::class);
      Route::post('user_status', [App\Http\Controllers\UserController::class, 'userStatus'])->name('user.status');
+
+     //Logo Section
+     Route::resource('logo', LogoController::class);
+     Route::post('logo_status', [App\Http\Controllers\LogoController::class, 'logoStatus'])->name('logo.status');
 });
 

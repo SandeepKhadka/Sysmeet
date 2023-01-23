@@ -27,8 +27,20 @@
     });
 
     $(document).ready(function() {
-        $("#summary").summernote();
+        $("#biography").summernote();
     });
+
+    $(document).ready(function() {
+        $("#prof_skill").summernote();
+    });
+
+    // $(document).ready(function() {
+    //     $("#team_motto").summernote();
+    // });
+
+    // $(document).ready(function() {
+    //     $("#summary").summernote();
+    // });
 
     $(function() {
         $("#image").change(function() {

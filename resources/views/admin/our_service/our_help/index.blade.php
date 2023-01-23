@@ -60,7 +60,6 @@
                                     <th>Title</th>
                                     <th>Sub-title</th>
                                     <th>Image</th>
-                                    <th>Description</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -76,7 +75,6 @@
                                                 <img src="{{ asset('/uploads/our_help/Thumb-' . $help->image) }}"
                                                     alt="help_image">
                                             </td>
-                                            <td>{!! html_entity_decode($help->desc) !!}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$help->id }}"
                                                     data-toggle="switchbutton"

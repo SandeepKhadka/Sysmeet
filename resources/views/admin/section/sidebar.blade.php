@@ -29,23 +29,21 @@
                      <a href="{{ route(auth()->user()->role) }}"
                          class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
-                         <p>
-                             Dashboard
-                         </p>
+                         <span class="nav-label px-2 text-dark">Dashboard</span>
                      </a>
                  </li>
 
                  <li class="nav-header">Home</li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="{{ route('logo.index') }}" class="nav-link {{ request()->is('admin/logo') ? 'active' : '' }}">
                          <i class="fas fa-globe nav-icon"></i>
-                         <p>Logo</p>
+                         <span class="nav-label px-2 text-dark">Logo</span>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="#" class="nav-link {{ request()->is('admin/*_banner') ? 'active' : '' }}">
                          <i class="nav-icon fa fa-image"></i>
-                         <p>
+                         <p class="nav-label px-2 text-dark">
                              Banner
                              <i class="fas fa-angle-left right"></i>
                          </p>
@@ -55,28 +53,30 @@
                              <a href="{{ route('main_banner.index') }}"
                                  class="nav-link {{ request()->is('admin/main_banner') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Main Banner</p>
+                                 <p class="nav-label px-2 text-dark">Main Banner</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="{{ route('outer_banner.index') }}"
                                  class="nav-link {{ request()->is('admin/outer_banner') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Outer Banner</p>
+                                 <p class="nav-label px-2 text-dark">Outer Banner</p>
                              </a>
                          </li>
                      </ul>
                  </li>
                  <li class="nav-item">
-                     <a href="{{route('how_it_works.index')}}" class="nav-link {{ request()->is('admin/how_it_works') ? 'active' : '' }}">
+                     <a href="{{ route('how_it_works.index') }}"
+                         class="nav-link {{ request()->is('admin/how_it_works') ? 'active' : '' }}">
                          <i class="far fa-question-circle nav-icon"></i>
-                         <p>How It Works</p>
+                         <p class="nav-label px-2 text-dark">How It Works</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('our_partner.index') }}" class="nav-link {{ request()->is('admin/our_partner') ? 'active' : '' }}">
+                     <a href="{{ route('our_partner.index') }}"
+                         class="nav-link {{ request()->is('admin/our_partner') ? 'active' : '' }}">
                          <i class="fas fa-handshake-alt nav-icon"></i>
-                         <p>Our Partner</p>
+                         <p class="nav-label px-2 text-dark">Our Partner</p>
                      </a>
                  </li>
 
@@ -84,28 +84,31 @@
                  <li class="nav-item">
                      <a href="#" class="nav-link {{ request()->is('admin/service*') ? 'active' : '' }}">
                          <i class="nav-icon fab fa-servicestack"></i>
-                         <p>
+                         <p class="nav-label px-2 text-dark">
                              Our Services
                              <i class="fas fa-angle-left right"></i>
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{route('service.index')}}" class="nav-link {{ request()->is('admin/service') ? 'active' : '' }}">
+                             <a href="{{ route('service.index') }}"
+                                 class="nav-link {{ request()->is('admin/service') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Service</p>
+                                 <p class="nav-label px-2 text-dark">Service</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{route('service_list.index')}}" class="nav-link {{ request()->is('admin/service_list') ? 'active' : '' }}">
+                             <a href="{{ route('service_list.index') }}"
+                                 class="nav-link {{ request()->is('admin/service_list') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Service List</p>
+                                 <p class="nav-label px-2 text-dark">Service List</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{route('service_our_help.index')}}" class="nav-link {{ request()->is('admin/service_our_help') ? 'active' : '' }}">
+                             <a href="{{ route('service_our_help.index') }}"
+                                 class="nav-link {{ request()->is('admin/service_our_help') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Our Help</p>
+                                 <p class="nav-label px-2 text-dark">Our Help</p>
                              </a>
                          </li>
                      </ul>
@@ -113,61 +116,60 @@
 
                  <li class="nav-header">About</li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}" >
+                     <a href="#" class="nav-link {{ request()->is('admin/about*') ? 'active' : '' }}">
                          <i class="nav-icon fas fa-address-card"></i>
-                         <p>
+                         <p class="nav-label px-2 text-dark">
                              About
                              <i class="fas fa-angle-left right"></i>
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="{{route('about_us.index')}}" class="nav-link {{ request()->is('admin/about/about_us') ? 'active' : '' }}">
+                             <a href="{{ route('about_us.index') }}"
+                                 class="nav-link {{ request()->is('admin/about/about_us') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>About us</p>
+                                 <p class="nav-label px-2 text-dark">About us</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="{{route('why_choose_us.index')}}" class="nav-link {{ request()->is('admin/about/why_choose_us') ? 'active' : '' }}">
+                             <a href="{{ route('why_choose_us.index') }}"
+                                 class="nav-link {{ request()->is('admin/about/why_choose_us') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Why choose us</p>
+                                 <p class="nav-label px-2 text-dark">Why choose us</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Services to choose us</p>
-                            </a>
-                        </li>
+                             <a href="{{ route('services_choose.index') }}"
+                                 class="nav-link {{ request()->is('admin/about/services_choose_us') ? 'active' : '' }}">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p class="nav-label px-2 text-dark">Services to choose us</p>
+                             </a>
+                         </li>
                      </ul>
                  </li>
 
                  <li class="nav-header">Team</li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="#" class="nav-link {{ request()->is('admin/our_team*') ? 'active' : '' }}">
                          <i class="nav-icon fas fa-users-cog"></i>
-                         <p>
+                         <p class="nav-label px-2 text-dark">
                              Our Team
                              <i class="fas fa-angle-left right"></i>
                          </p>
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{ route('member_details.index') }}"
+                                 class="nav-link {{ request()->is('admin/our_team/member_details') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Member Details</p>
+                                 <p class="nav-label px-2 text-dark">Member Details</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="" class="nav-link">
+                             <a href="{{ route('team_motto.index') }}"
+                                 class="nav-link {{ request()->is('admin/our_team/team_motto') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Member Skills</p>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a href="" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>Overall Team</p>
+                                 <p class="nav-label px-2 text-dark">Team Motto</p>
                              </a>
                          </li>
                      </ul>
@@ -175,31 +177,50 @@
 
                  <li class="nav-header">Contact</li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
-                         <i class="fas fa-phone nav-icon"></i>
-                         <p>Contact us</p>
-                     </a>
-                 </li>
+                    <a href="#" class="nav-link {{ request()->is('admin/contact*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-phone"></i>
+                        <p class="nav-label px-2 text-dark">
+                            Contact
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('contact_us.index') }}"
+                                class="nav-link {{ request()->is('admin/contact_us') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p class="nav-label px-2 text-dark">Contact us</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('messages.index') }}"
+                                class="nav-link {{ request()->is('admin/contact/messages') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p class="nav-label px-2 text-dark">Messages</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                  <li class="nav-header">Footer</li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="{{ route('social_info.index') }}" class="nav-link {{ request()->is('admin/social_info') ? 'active' : '' }}">
                          <i class="fas fa-people-arrows nav-icon"></i>
-                         <p>Social Info</p>
+                         <p class="nav-label px-2 text-dark">Social Info</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="{{ route('footer.index') }}" class="nav-link {{ request()->is('admin/footer') ? 'active' : '' }}">
                          <i class="fas fa-grip-lines nav-icon"></i>
-                         <p>Footer</p>
+                         <p class="nav-label px-2 text-dark">Footer</p>
                      </a>
                  </li>
 
                  <li class="nav-header">System</li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="{{ route('user.index') }}" class="nav-link {{ request()->is('admin/user') ? 'active' : '' }}">
                          <i class="nav-icon fas fa-users"></i>
-                         <p>
+                         <p class="nav-label px-2 text-dark">
                              Users
                          </p>
                      </a>

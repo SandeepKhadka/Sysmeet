@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'GoodGoods | Product List')
+@section('title', 'Sysmeet | Team Motto List')
 @section('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -7,7 +7,7 @@
             var mode = $(this).prop("checked");
             var id = $(this).val();
             $.ajax({
-                url: "{{ route('product.status') }}",
+                url: "{{ route('team_motto.status') }}",
                 type: "POST",
                 data: {
                     _token: "{{ csrf_token() }}",
@@ -37,18 +37,18 @@
                 {{-- <nav aria-label="breadcrumb"> --}}
                 <ul class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="reply">Product</a></li>
+                    <li class="breadcrumb-item active" aria-current="reply">Team Motto</a></li>
                 </ul>
-                <p class="float-right" style="margin: 10px">Total Products : {{ \App\Models\Product::count() }}</p>
+                <p class="float-right" style="margin: 10px">Total Data : {{ \App\Models\OuterBanner::count() }}</p>
                 {{-- </nav> --}}
             </div>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Products</h3>
-                        <a href="{{ route('product.create') }}" class="btn btn-success float-right"
+                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Team Motto</h3>
+                        <a href="{{ route('team_motto.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
-                                Add Product
+                                Add Detail
                             </i>
                         </a>
                     </div>
@@ -57,69 +57,41 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">S.N.</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th>Price</th>
-                                    <th>Discount</th>
-                                    <th>Size</th>
-                                    <th style="width: 90px">Condition</th>
+                                    <th>Team Motto</th>
                                     <th style="width: 100px">Status</th>
-                                    <th style="width: 120px">Action</th>
+                                    <th style="width: 200px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (isset($product_data))
-                                    @foreach ($product_data as $products => $product)
+                                @if (isset($team_motto_data))
+                                    @foreach ($team_motto_data as $teams => $team)
                                         <tr>
-                                            <td>{{ $products + 1 }}</td>
-                                            <td>{{ $product->title }}</td>
+                                            <td>{{ $teams + 1 }}</td>
+                                            <td>{!! html_entity_decode(Str::limit($team->team_motto,20)) !!}</td>
                                             <td>
-                                                <img src="{{ asset('/uploads/product/Thumb-' . $product->image) }}"
-                                                    alt="product_image">
-                                            </td>
-                                            <td>Rs {{ number_format($product->price,2) }}</td>
-                                            <td>{{ $product->discount }}%</td>
-                                            <td>{{ $product->size }}</td>
-                                            <td>
-                                                @if (@$product->conditions == 'new')
-                                                    <span class="badge bg-success">{{ ucfirst($product->conditions) }}
-                                                    </span>
-                                                @elseif(@$product->conditions == 'hot')
-                                                    <span class="badge bg-danger">{{ ucfirst($product->conditions) }}
-                                                    </span>
-                                                @else
-                                                    <span class="badge bg-yellow">{{ ucfirst($product->conditions) }}
-                                                    </span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" name="toggle" value="{{ @$product->id }}"
+                                                <input type="checkbox" name="toggle" value="{{ @$team->id }}"
                                                     data-toggle="switchbutton"
-                                                    {{ @$product->status == 'active' ? 'checked' : '' }}
+                                                    {{ @$team->status == 'active' ? 'checked' : '' }}
                                                     data-onlabel="Active" data-offlabel="Inactive" data-size="sm"
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
-                                                {{-- <span
-                                                    class="{{ @$product->status == 'active' ? 'badge bg-success' : 'badge bg-danger' }}">{{ ucfirst($product->status) }} --}}
                                             </td>
                                             <td>
-                                                <a href="{{ route('product.show', $product->id) }}"
-                                                    class="btn btn-primary">
+                                                <a href="{{ route('team_motto.show', $team->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('product.edit', $product->id) }}"
-                                                    class="btn btn-success">
+                                                <a href="{{ route('team_motto.edit', $team->id) }}" class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('product.destroy', $product->id) }}" method="post"
+                                                <form action="{{ route('team_motto.destroy', $team->id) }}" method="post"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"
-                                                        onclick="return confirm('Do you want to delete this product?');"><i
+                                                        onclick="return confirm('Do you want to delete this team?');"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>

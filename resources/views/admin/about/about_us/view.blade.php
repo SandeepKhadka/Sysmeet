@@ -1,7 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Sysmeet | About us Form')
 @section('scripts')
-
+    <script>
+        $(document).ready(function() {
+            $("#description").summernote('disable');
+        });
+    </script>
 @endsection
 @section('main-content')
     <div class="col-lg-12">
@@ -63,8 +67,8 @@
                                     @enderror
                                 </div>
                             </div>
-                            <a href="{{ route('about_us.index') }}" type="submit"
-                                class="btn btn-primary float-right" style="margin-right: 10px" value="Back">Back</a>
+                            <a href="{{ route('about_us.index') }}" type="submit" class="btn btn-primary float-right"
+                                style="margin-right: 10px" value="Back">Back</a>
                         </div>
                     </div>
                 </div>

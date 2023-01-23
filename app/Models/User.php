@@ -18,11 +18,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'full_name',
+        'username',
+        'phone',
+        'photo',
+        'address',
+        'status',
+        'role',
         'email',
         'password',
     ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,4 +46,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getRules($act = 'add')
+    {
+        $rules = [
+            'full_name' => 'required|string',
+            'username' => 'required|string',
+            'phone' => 'required|string',
+            'address' => 'required|string',
+            'email' => 'required|string',
+            'password' => 'required|string',
+            'photo' => 'nullable|image|max:5120'
+            // 'role' => 'required|in:admin,customer',
+            // 'status' => 'required|in:Active,Inactive'
+        ];
+
+        if ($act == 'update') {
+            $rules['photo'] = 'sometimes|image|max:5120';
+        }
+
+        return $rules;
+    }
 }

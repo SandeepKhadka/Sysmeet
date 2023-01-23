@@ -60,11 +60,9 @@
                                     <th>Full name</th>
                                     <th>Photo</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Address</th>
                                     <th>Role</th>
                                     <th style="width: 100px">Status</th>
-                                    <th style="width: 120px">Action</th>
+                                    <th style="width: 200px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,12 +72,10 @@
                                             <td>{{ $users + 1 }}</td>
                                             <td>{{ $user->full_name }}</td>
                                             <td>
-                                                <img src="{{ asset('/uploads/user/Thumb-' . $user->image) }}"
+                                                <img src="{{ asset('/uploads/user/Thumb-' . $user->photo) }}"
                                                     alt="user_image">
                                             </td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->phone }}</td>
-                                            <td>{{ $user->address }}</td>
                                             <td>{{ $user->role }}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$user->id }}"

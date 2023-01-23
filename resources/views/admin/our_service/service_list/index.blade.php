@@ -69,7 +69,7 @@
                                         <tr>
                                             <td>{{ $services + 1 }}</td>
                                             <td>{{ $service->title }}</td>
-                                            <td>{!! html_entity_decode($service->summary) !!}</td>
+                                            <td>{!! html_entity_decode(Str::limit($service->summary,20)) !!}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$service->id }}"
                                                     data-toggle="switchbutton"

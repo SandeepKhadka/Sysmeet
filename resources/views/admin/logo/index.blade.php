@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'GoodGoods | Brand List')
+@section('title', 'Sysmeet | Logo List')
 @section('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -7,7 +7,7 @@
             var mode = $(this).prop("checked");
             var id = $(this).val();
             $.ajax({
-                url: "{{ route('brand.status') }}",
+                url: "{{ route('logo.status') }}",
                 type: "POST",
                 data: {
                     _token: "{{ csrf_token() }}",
@@ -37,18 +37,18 @@
                 {{-- <nav aria-label="breadcrumb"> --}}
                 <ul class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="reply">Brand</a></li>
+                    <li class="breadcrumb-item active" aria-current="reply">Logo</a></li>
                 </ul>
-                <p class="float-right" style="margin: 10px">Total Brands : {{ \App\Models\Brand::count() }}</p>
+                <p class="float-right" style="margin: 10px">Total logo : {{ \App\Models\logo::count() }}</p>
                 {{-- </nav> --}}
             </div>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Brands</h3>
-                        <a href="{{ route('brand.create') }}" class="btn btn-success float-right"
+                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Logo</h3>
+                        <a href="{{ route('logo.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
-                                Add Brand
+                                Add Logo
                             </i>
                         </a>
                     </div>
@@ -57,50 +57,44 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">S.N.</th>
-                                    <th>Title</th>
-                                    <th>Image</th>
-                                    <th style="width: 100px">Status</th>
-                                    <th style="width: 120px">Action</th>
+                                    <th>Logo</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (isset($brand_data))
-                                    @foreach ($brand_data as $brands => $brand)
+                                @if (isset($logo_data))
+                                    @foreach ($logo_data as $logos => $logo)
                                         <tr>
-                                            <td>{{ $brands + 1 }}</td>
-                                            <td>{{ $brand->title }}</td>
+                                            <td>{{ $logos + 1 }}</td>
                                             <td>
-                                                <img src="{{ asset('/uploads/brand/Thumb-' . $brand->image) }}"
-                                                    alt="brand_image">
+                                                <img src="{{ asset('/uploads/logo/Thumb-' . $logo->image) }}"
+                                                    alt="logo_image">
                                             </td>
                                             <td>
-                                                <input type="checkbox" name="toggle" value="{{ @$brand->id }}"
+                                                <input type="checkbox" name="toggle" value="{{ @$logo->id }}"
                                                     data-toggle="switchbutton"
-                                                    {{ @$brand->status == 'active' ? 'checked' : '' }}
+                                                    {{ @$logo->status == 'active' ? 'checked' : '' }}
                                                     data-onlabel="Active" data-offlabel="Inactive" data-size="sm"
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
-                                                {{-- <span
-                                                    class="{{ @$brand->status == 'active' ? 'badge bg-success' : 'badge bg-danger' }}">{{ ucfirst($brand->status) }} --}}
                                             </td>
                                             <td>
-                                                <a href="{{ route('brand.show', $brand->id) }}"
-                                                    class="btn btn-primary">
+                                                <a href="{{ route('logo.show', $logo->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('brand.edit', $brand->id) }}"
-                                                    class="btn btn-success">
+                                                <a href="{{ route('logo.edit', $logo->id) }}" class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('brand.destroy', $brand->id) }}"
-                                                    method="post" class="d-inline">
+                                                <form action="{{ route('logo.destroy', $logo->id) }}" method="post"
+                                                    class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"
-                                                        onclick="return confirm('Do you want to delete this brand?');"><i
+                                                        onclick="return confirm('Do you want to delete this logo?');"><i
                                                             class="fa fa-trash"></i></button>
                                                 </form>
                                             </td>
