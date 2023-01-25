@@ -11,7 +11,7 @@ class OurHelp extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'sub_title', 'desc', 'image', 'slug', 'status'];
+    protected $fillable = ['title', 'sub_title', 'desc', 'image', 'slug', 'order_id', 'status'];
 
     public function getSlug($title){
         $slug = Str::slug($title);

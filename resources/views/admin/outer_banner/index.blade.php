@@ -37,7 +37,7 @@
                 {{-- <nav aria-label="breadcrumb"> --}}
                 <ul class="breadcrumb float-left">
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item active" aria-current="reply">Outer Banner</a></li>
+                    <li class="breadcrumb-item active" aria-current="reply">Statistics Banner</a></li>
                 </ul>
                 <p class="float-right" style="margin: 10px">Total Banners : {{ \App\Models\OuterBanner::count() }}</p>
                 {{-- </nav> --}}
@@ -45,7 +45,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Outer Banners</h3>
+                        <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Statistics Banner</h3>
                         <a href="{{ route('outer_banner.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
                                 Add Banner
@@ -58,8 +58,7 @@
                                 <tr>
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
-                                    <th>Sub-title</th>
-                                    <th>Summary</th>
+                                    <th>Image</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
@@ -70,8 +69,10 @@
                                         <tr>
                                             <td>{{ $banners + 1 }}</td>
                                             <td>{{ $banner->title }}</td>
-                                            <td>{{ $banner->sub_title }}</td>
-                                            <td>{!! html_entity_decode(Str::limit($banner->summary,20)) !!}</td>
+                                            <td>
+                                                <img src="{{ asset('/uploads/outer_banner/Thumb-' . $banner->image) }}"
+                                                    alt="banner_image">
+                                            </td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$banner->id }}"
                                                     data-toggle="switchbutton"
@@ -80,18 +81,20 @@
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td>
                                             <td>
-                                                <a href="{{ route('outer_banner.show', $banner->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('outer_banner.show', $banner->id) }}"
+                                                    class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('outer_banner.edit', $banner->id) }}" class="btn btn-success">
+                                                <a href="{{ route('outer_banner.edit', $banner->id) }}"
+                                                    class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('outer_banner.destroy', $banner->id) }}" method="post"
-                                                    class="d-inline">
+                                                <form action="{{ route('outer_banner.destroy', $banner->id) }}"
+                                                    method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"

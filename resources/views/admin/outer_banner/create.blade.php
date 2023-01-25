@@ -9,7 +9,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
-            <li class="breadcrumb-item"><a href="{{ route('outer_banner.index') }}">Outer Banner</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('outer_banner.index') }}">Statistics Banner</a></li>
             <li class="breadcrumb-item active" aria-current="reply">{{ isset($banner_data) ? 'Update' : 'Add' }}</li>
         </ol>
     </nav>
@@ -17,7 +17,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="m-0 text-left font-weight-bold" style="padding: 10px">Outer Banner
+                    <h4 class="m-0 text-left font-weight-bold" style="padding: 10px">Statistics Banner
                         {{ isset($banner_data) ? 'Update' : 'Add' }}</h4>
                     <div class="card">
                         <div class="card-body">
@@ -53,20 +53,21 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label for="sub_title">Sub Title <span class="text-danger">*</span></label>
-                                    <input type="text" id="sub_title" name="sub_title"
-                                        value="{{ @$banner_data->sub_title }}" required class="form-control" required>
-                                    @error('sub_title')
-                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label for="summary">Summary <span class="text-danger">*</span></label>
-                                    <textarea type="text" id="summary" name="summary" class="form-control" required style="resize: none" rows="5"
-                                        cols="10">{{ @$banner_data->summary }}</textarea>
-                                    @error('summary')
+                                    <label for="image">Image <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <input id="image" class="form-control" type="file" name="image"
+                                            {{ isset($banner_data) ? '' : 'required' }}>
+                                    </div>
+                                    <div>
+                                        @if (isset($banner_data))
+                                            <img src="{{ asset('/uploads/outer_banner/' . @$banner_data->image) }}"
+                                                style="margin-top:15px;max-height:100px;" alt="banner_image">
+                                        @else
+                                            <img id="holder" src="#" style="margin-top:15px;max-height:100px;"
+                                                alt="No preview image" />
+                                        @endif
+                                    </div>
+                                    @error('image')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
                                 </div>

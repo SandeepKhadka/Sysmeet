@@ -59,6 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Summary</th>
+                                    <th>Order ID</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
@@ -70,6 +71,7 @@
                                             <td>{{ $works + 1 }}</td>
                                             <td>{{ $work->title }}</td>
                                             <td>{!! html_entity_decode(Str::limit($work->summary,1000)) !!}</td>
+                                            <td>{{ $work->order_id }}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$work->id }}"
                                                     data-toggle="switchbutton"

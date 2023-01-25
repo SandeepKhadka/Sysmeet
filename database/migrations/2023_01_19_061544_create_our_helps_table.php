@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('desc');
             $table->string('image');
+            $table->integer('order_id');
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });

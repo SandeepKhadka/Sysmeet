@@ -9,6 +9,6 @@ class OuterBanner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'sub_title', 'summary', 'status'];
+    protected $fillable = ['title', 'image', 'status'];
 
 }

@@ -56,12 +56,23 @@ class OuterBannerController extends Controller
     {
         $this->validate($request, [
             'title' => 'string|required',
-            'sub_title' => 'string|required',
-            'summary' => 'string|required',
+            'image' => 'image|required|max:5120',
         ]);
 
-        $data = $request->except(['_token']);
+        $data = $request->except(['_token', 'image']);
+        if ($request->has('image')) {
+            $image = $request->image;
+            $file_name = uploadImage($image, 'outer_banner', '125x125');
+            if ($file_name) {
+                $data['image'] = $file_name;
+                // dd($file_name);        
+            } else {
+                return redirect()->back()->with('error', 'There was error in uploading image');
+            }
+        }
+
         $this->outer_banner->fill($data);
+
         $status = $this->outer_banner->save();
         if ($status) {
             return redirect()->route('outer_banner.index')->with('success', 'Banner added successfully');
@@ -122,12 +133,27 @@ class OuterBannerController extends Controller
 
         $this->validate($request, [
             'title' => 'string|required',
-            'sub_title' => 'string|required',
-            'summary' => 'string|required',
+            'image' => 'image|nullable|max:5120',
         ]);
 
-        $data = $request->except(['_token']);
+        $data = $request->except(['_token', 'image']);
+        if ($request->has('image')) {
+            $image = $request->image;
+            $file_name = uploadImage($image, 'outer_banner', '125x125');
+            if ($file_name) {
+                if ($this->outer_banner->image != null && file_exists(public_path() . '/uploads/outer_banner/' . $this->outer_banner->image)) {
+                    unlink(public_path() . '/uploads/outer_banner/' . $this->outer_banner->image);
+                    unlink(public_path() . '/uploads/outer_banner/Thumb-' . $this->outer_banner->image);
+                }
+                $data['image'] = $file_name;
+                // dd($file_name);        
+            } else {
+                return redirect()->back()->with('error', 'There was error in uploading image');
+            }
+        }
+
         $this->outer_banner->fill($data);
+
         $status = $this->outer_banner->save();
         if ($status) {
             return redirect()->route('outer_banner.index')->with('success', 'Banner updated successfully');
@@ -151,12 +177,16 @@ class OuterBannerController extends Controller
         }
 
         $del = $this->outer_banner->delete();
+        $image = $this->outer_banner->image;
         if ($del) {
+            if ($image != null && file_exists(public_path() . '/uploads/outer_banner/' . $image)) {
+                unlink(public_path() . '/uploads/outer_banner/' . $image);
+                unlink(public_path() . '/uploads/outer_banner/Thumb-' . $image);
+            }
             return redirect()->route('outer_banner.index')->with('success', 'Banner deleted successfully');
         } else {
             //message
             return redirect()->back()->with('error', 'Sorry! there was problem in deleting banner');
         }
-
     }
 }

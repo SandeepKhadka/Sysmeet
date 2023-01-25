@@ -23,18 +23,19 @@ class IndexController extends Controller
     public function home(){
         $logo = logo::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
         $main_banners = MainBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->get();
-        $first_banner = MainBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
-        $second_banner = MainBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->skip(1)->first();
+        $first_banner = MainBanner::where(['status'=>'active'])->orderBy('order_id', 'ASC')->first();
+        $second_banner = MainBanner::where(['status'=>'active'])->orderBy('order_id', 'ASC')->skip(1)->first();
         $outer_banners = OuterBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->get();
-        $our_help = OurHelp::where(['status'=>'active'])->orderBy('id', 'DESC')->limit('3')->get();
+        $statistics_banner = OuterBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
+        $our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->limit('3')->get();
         $about_us = AboutUs::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
-        $service_lists = ServiceList::where(['status'=>'active'])->orderBy('id', 'DESC')->limit('8')->get();
-        $how_it_works = HowItWorks::where(['status'=>'active'])->orderBy('id','DESC')->limit('4')->get();
+        $service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->limit('8')->get();
+        $how_it_works = HowItWorks::where(['status'=>'active'])->orderBy('order_id','ASC')->limit('4')->get();
         $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
         $team_motto = TeamMotto::where(['status'=>'active'])->orderBy('id','DESC')->first();
         $our_partners = OurPartner::where(['status'=>'active'])->orderBy('id','DESC')->get();
         $contact = Contact::where(['status'=>'active'])->orderBy('id','DESC')->first();
-        $social_infos = SocialInfo::where(['status'=>'active'])->orderBy('id','DESC')->get();
+        $social_infos = SocialInfo::where(['status'=>'active'])->orderBy('order_id','ASC')->get();
         $footer = Footer::where(['status'=>'active'])->orderBy('id','DESC')->first();
         return view('frontend.index')->with([
             'logo'=>$logo,
@@ -42,6 +43,7 @@ class IndexController extends Controller
             'first_banner'=>$first_banner,
             'second_banner'=>$second_banner,
             'outer_banners'=>$outer_banners,
+            'statistics_banner'=>$statistics_banner,
             'our_help'=>$our_help,
             'about_us'=>$about_us,
             'service_lists'=>$service_lists,

@@ -9,5 +9,5 @@ class SocialInfo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'link', 'status'];
+    protected $fillable = ['title', 'link', 'order_id', 'status'];
 }

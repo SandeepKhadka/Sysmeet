@@ -45,7 +45,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="title">Title <span class="text-danger">*</span></label>
                                     <input type="text" id="title" name="title" value="{{ @$service_data->title }}"
-                                        required class="form-control" required>
+                                        disabled class="form-control" required>
                                     @error('title')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
@@ -61,6 +61,18 @@
                                     @enderror
                                 </div>
                             </div>
+                            @if (isset($service_data))
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="order_id">Order ID <span class="text-danger">*</span></label>
+                                        <input type="number" id="order_id" name="order_id"
+                                            value="{{ @$service_data->order_id }}" step="any" min="0" class="form-control" required>
+                                        @error('order_id')
+                                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            @endif
                             <button type="submit" class="btn btn-success float-right"
                                 value="Sumbit">{{ isset($service_data) ? 'Update' : 'Add' }}</button>
                             <a href="{{ route('service_list.index') }}" type="submit" class="btn btn-primary float-right"

@@ -58,9 +58,9 @@
                          </li>
                          <li class="nav-item">
                              <a href="{{ route('outer_banner.index') }}"
-                                 class="nav-link {{ request()->is('admin/outer_banner') ? 'active' : '' }}">
+                                 class="nav-link {{ request()->is('admin/statistics_banner') ? 'active' : '' }}">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p class="nav-label px-2 text-dark">Outer Banner</p>
+                                 <p class="nav-label px-2 text-dark">Statistics Banner</p>
                              </a>
                          </li>
                      </ul>

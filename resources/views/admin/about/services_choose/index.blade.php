@@ -59,6 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Description</th>
+                                    <th>Order ID</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
@@ -70,6 +71,7 @@
                                             <td>{{ $services + 1 }}</td>
                                             <td>{{ $service->title }}</td>
                                             <td>{!! html_entity_decode(Str::limit($service->description,20)) !!}</td>
+                                            <td>{{ $service->order_id }}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$service->id }}"
                                                     data-toggle="switchbutton"

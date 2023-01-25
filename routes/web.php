@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
      Route::post('mainbanner_status', [App\Http\Controllers\MainBannerController::class, 'bannerStatus'])->name('mainbanner.status');
     
      //Outer Banner Section
-     Route::resource('outer_banner', OuterBannerController::class);
+     Route::resource('statistics_banner', OuterBannerController::class, ['names' => 'outer_banner']);
      Route::post('outerbanner_status', [App\Http\Controllers\OuterBannerController::class, 'bannerStatus'])->name('outerbanner.status');
 
      // How it works Section

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('sub_title');
             $table->text('summary');
             $table->string('image');
+            $table->integer('order_id');
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });

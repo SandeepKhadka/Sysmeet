@@ -60,7 +60,9 @@ class HowItWorksController extends Controller
             'summary' => 'string|required',
         ]);
 
+        $order_id = $this->works->all();
         $data = $request->except(['_token']);
+        $data['order_id'] = getOrderId($order_id);
         $this->works->fill($data);
         $status = $this->works->save();
         if ($status) {
@@ -123,6 +125,7 @@ class HowItWorksController extends Controller
         $this->validate($request, [
             'title' => 'string|required',
             'summary' => 'string|required',
+            'order_id' => 'required|integer|gt:0',
         ]);
 
         $data = $request->except(['_token']);

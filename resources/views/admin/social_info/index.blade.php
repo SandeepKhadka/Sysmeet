@@ -59,6 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Link</th>
+                                    <th>Order ID</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="">Action</th>
                                 </tr>
@@ -70,6 +71,7 @@
                                             <td>{{ $social_infos + 1 }}</td>
                                             <td>{{ $social_info->title }}</td>
                                             <td>{{ $social_info->link }}</td>
+                                            <td>{{ $social_info->order_id }}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$social_info->id }}"
                                                     data-toggle="switchbutton"
@@ -87,7 +89,7 @@
                                                     {{-- <i class="fa fa-pen">
 
                                                     </i> --}}
-                                                    {{ isset($social_info->link) ? 'Edit' : 'Add' }} link
+                                                    {{ isset($social_info->link) ? 'Edit' : 'Add link' }}
                                                 </a>
                                                 {{-- <form action="{{ route('social_info.destroy', $social_info->id) }}" method="post"
                                                     class="d-inline">

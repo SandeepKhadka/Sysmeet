@@ -59,6 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Sub-title</th>
+                                    <th>Order ID</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -71,6 +72,7 @@
                                             <td>{{ $helps + 1 }}</td>
                                             <td>{{ $help->title }}</td>
                                             <td>{{ $help->sub_title }}</td>
+                                            <td>{{ $help->order_id }}</td>
                                             <td>
                                                 <img src="{{ asset('/uploads/our_help/Thumb-' . $help->image) }}"
                                                     alt="help_image">

@@ -73,6 +73,8 @@ class MainBannerController extends Controller
             }
         }
 
+        $order_id = $this->main_banner->all();
+        $data['order_id'] = getOrderId($order_id);
         $this->main_banner->fill($data);
 
         $status = $this->main_banner->save();
@@ -138,6 +140,7 @@ class MainBannerController extends Controller
             'sub_title' => 'string|required',
             'summary' => 'string|required',
             'image' => 'image|nullable|max:5120',
+            'order_id' => 'required|integer|gt:0',
         ]);
 
         $data = $request->except(['_token', 'image']);

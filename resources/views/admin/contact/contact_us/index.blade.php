@@ -59,7 +59,8 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Email</th>
                                     <th>Phone</th>
-                                    <th>Location</th>
+                                    <th>Country</th>
+                                    <th>City</th>
                                     <th>Why to contact us</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="width: 200px">Action</th>
@@ -72,7 +73,8 @@
                                             <td>{{ $contacts + 1 }}</td>
                                             <td>{{ $contact->email }}</td>
                                             <td>{{ $contact->phone }}</td>
-                                            <td>{{ $contact->location }}</td>
+                                            <td>{{ $contact->country }}</td>
+                                            <td>{{ $contact->city }}</td>
                                             <td>{!! html_entity_decode(Str::limit($contact->why_contact_us,20)) !!}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$contact->id }}"

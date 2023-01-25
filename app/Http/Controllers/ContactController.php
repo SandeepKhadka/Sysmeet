@@ -57,7 +57,10 @@ class ContactController extends Controller
         $this->validate($request, [
             'email' => 'string|required',
             'phone' => 'string|required',
-            'location' => 'string|required',
+            'country' => 'string|required',
+            'city' => 'string|required',
+            'street' => 'string|nullable',
+            'state' => 'string|nullable',
             'why_contact_us' => 'string|required',
         ]);
 
@@ -124,7 +127,10 @@ class ContactController extends Controller
         $this->validate($request, [
             'email' => 'string|required',
             'phone' => 'string|required',
-            'location' => 'string|required',
+            'country' => 'string|required',
+            'city' => 'string|required',
+            'street' => 'string|nullable',
+            'state' => 'string|nullable',
             'why_contact_us' => 'string|required',
         ]);
 

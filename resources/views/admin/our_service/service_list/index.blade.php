@@ -46,11 +46,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Service List</h3>
-                        <a href="{{ route('service_list.create') }}" class="btn btn-success float-right"
+                        {{-- <a href="{{ route('service_list.create') }}" class="btn btn-success float-right"
                             style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
                                 Add Service List
                             </i>
-                        </a>
+                        </a> --}}
                     </div>
                     <div class="card-body">
                         <table id="table" class="table table-bordered">
@@ -59,6 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Summary</th>
+                                    <th>Order ID</th>
                                     <th style="width: 100px">Status</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
@@ -69,7 +70,8 @@
                                         <tr>
                                             <td>{{ $services + 1 }}</td>
                                             <td>{{ $service->title }}</td>
-                                            <td>{!! html_entity_decode(Str::limit($service->summary,20)) !!}</td>
+                                            <td>{!! html_entity_decode(Str::limit($service->summary, 20)) !!}</td>
+                                            <td>{{ $service->order_id }}</td>
                                             <td>
                                                 <input type="checkbox" name="toggle" value="{{ @$service->id }}"
                                                     data-toggle="switchbutton"
@@ -78,24 +80,26 @@
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td>
                                             <td>
-                                                <a href="{{ route('service_list.show', $service->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('service_list.show', $service->id) }}"
+                                                    class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('service_list.edit', $service->id) }}" class="btn btn-success">
+                                                <a href="{{ route('service_list.edit', $service->id) }}"
+                                                    class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('service_list.destroy', $service->id) }}" method="post"
-                                                    class="d-inline">
+                                                {{-- <form action="{{ route('service_list.destroy', $service->id) }}"
+                                                    method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"
                                                         onclick="return confirm('Do you want to delete this service?');"><i
                                                             class="fa fa-trash"></i></button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @endforeach

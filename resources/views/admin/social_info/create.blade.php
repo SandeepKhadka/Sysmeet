@@ -61,6 +61,18 @@
                                     @enderror
                                 </div>
                             </div>
+                            @if (isset($social_info_data))
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="order_id">Order ID <span class="text-danger">*</span></label>
+                                        <input type="number" id="order_id" name="order_id"
+                                            value="{{ @$social_info_data->order_id }}" step="any" min="0" class="form-control" required>
+                                        @error('order_id')
+                                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            @endif
                             <button type="submit" class="btn btn-success float-right"
                                 value="Sumbit">{{ isset($social_info_data->link) ? 'Update' : 'Add' }}</button>
                             <a href="{{ route('social_info.index') }}" type="submit" class="btn btn-primary float-right"

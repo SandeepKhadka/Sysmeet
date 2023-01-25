@@ -44,8 +44,8 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="email">Company Email <span class="text-danger">*</span></label>
-                                    <input type="email" id="email" name="email" value="{{ @$contact_us_data->email }}"
-                                        required class="form-control" required>
+                                    <input type="email" id="email" name="email"
+                                        value="{{ @$contact_us_data->email }}" required class="form-control" required>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="phone">Company Phone <span class="text-danger">*</span></label>
-                                    <input type="number" id="phone" name="phone"
+                                    <input type="text" id="phone" name="phone"
                                         value="{{ @$contact_us_data->phone }}" required class="form-control" required>
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
@@ -63,10 +63,40 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label for="location">Company Location <span class="text-danger">*</span></label>
-                                    <input type="text" id="location" name="location"
-                                        value="{{ @$contact_us_data->location }}" required class="form-control" required>
-                                    @error('location')
+                                    <label for="country">Country <span class="text-danger">*</span></label>
+                                    <input type="text" id="country" name="country"
+                                        value="{{ @$contact_us_data->country }}" required class="form-control" required>
+                                    @error('country')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="city">City <span class="text-danger">*</span></label>
+                                    <input type="text" id="city" name="city"
+                                        value="{{ @$contact_us_data->city }}" required class="form-control" required>
+                                    @error('city')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="street">Street address </label>
+                                    <input type="text" id="street" name="street"
+                                        value="{{ @$contact_us_data->street }}" class="form-control">
+                                    @error('street')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" name="state"
+                                        value="{{ @$contact_us_data->state }}" class="form-control">
+                                    @error('state')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -74,8 +104,8 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="why_contact_us">Why to contact us <span class="text-danger">*</span></label>
-                                    <textarea type="text" id="why_contact_us" name="why_contact_us" class="form-control" required style="resize: none" rows="5"
-                                        cols="10">{{ @$contact_us_data->why_contact_us }}</textarea>
+                                    <textarea type="text" id="why_contact_us" name="why_contact_us" class="form-control" required style="resize: none"
+                                        rows="5" cols="10">{{ @$contact_us_data->why_contact_us }}</textarea>
                                     @error('why_contact_us')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror

@@ -48,13 +48,13 @@
                                   <li><i class="flaticon-envelope"></i><a
                                           href="mailto:info@example.com.com">{{ $contact->email }}</a>24 x 7 Online
                                       Support</li>
-                                  <li><i class="flaticon-pin"></i>{{ $contact->location }}</li>
+                                  <li><i class="flaticon-pin"></i>{{ $contact->city.', '.$contact->street.', '.$contact->state.' '.$contact->country }}</li>
                               </ul>
                               <div class="g-map">
                                   <iframe
-                                      src="https://maps.google.com/maps?q=Pokhara%20Sysmeet%2C%20Pokhara%2C%20Nepal&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+                                      src="https://maps.google.com/maps?q={{ucfirst($contact->city)}}%20Sysmeet%2C%20{{ucfirst($contact->city)}}%2C%20{{ucfirst($contact->country)}}&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
                                       {{-- src="{{"https://maps.google.com/maps?q=" . $contact->location. "&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"}}" --}} title="{{ $contact->location }}"
-                                      aria-label="{{ $contact->location }}"></iframe>
+                                      aria-label="{{ $contact->city.', '.$contact->street.', '.$contact->state.' '.$contact->country }}"></iframe>
                               </div>
                           </div>
                       </div>

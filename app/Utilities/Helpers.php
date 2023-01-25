@@ -23,6 +23,7 @@ function uploadImage($file, $upload_dir, $thumb = null)
     }
 }
 
+
 function getOrderId($array)
 {
     $order_id = 0;

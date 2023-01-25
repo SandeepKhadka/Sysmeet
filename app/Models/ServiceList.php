@@ -9,6 +9,6 @@ class ServiceList extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'summary', 'status'];
+    protected $fillable = ['title', 'summary', 'order_id', 'tag', 'status'];
 
 }

@@ -74,7 +74,9 @@ class OurHelpController extends Controller
         }
 
         $data['slug'] = $this->our_help->getSlug($data['title']);
-        
+        $order_id = $this->our_help->all();
+        $data['order_id'] = getOrderId($order_id);
+
         $this->our_help->fill($data);
 
         $status = $this->our_help->save();
@@ -157,9 +159,9 @@ class OurHelpController extends Controller
                 return redirect()->back()->with('error', 'There was error in uploading image');
             }
         }
-        
+
         $data['slug'] = $this->our_help->getSlug($data['title']);
-        
+
         $this->our_help->fill($data);
 
         $status = $this->our_help->save();
@@ -168,7 +170,6 @@ class OurHelpController extends Controller
         } else {
             return redirect()->back()->with('error', 'There was problem in updating our help service');
         }
-
     }
 
     /**

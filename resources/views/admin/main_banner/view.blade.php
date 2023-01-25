@@ -54,6 +54,17 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label for="order_id">Order ID <span class="text-danger">*</span></label>
+                                    <input type="number" id="order_id" name="order_id"
+                                        value="{{ @$banner_data->order_id }}" step="any" min="0" disabled
+                                        class="form-control" required>
+                                    @error('order_id')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label for="image">Image <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <input id="image" class="form-control" type="file" name="image" disabled

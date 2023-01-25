@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('link')->nullable();
+            $table->integer('order_id');
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });

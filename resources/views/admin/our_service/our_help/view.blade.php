@@ -50,9 +50,19 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="desc">Description <span class="text-danger">*</span></label>
-                                    <textarea type="text" id="desc" name="desc" class="form-control" required style="resize: none" rows="5"
+                                    <textarea type="text" id="desc" name="desc" class="form-control" style="resize: none" rows="5"
                                         cols="10" disabled>{{ @$our_help_data->desc }}</textarea>
                                     @error('desc')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="order_id">Order ID <span class="text-danger">*</span></label>
+                                    <input type="number" id="order_id" name="order_id"
+                                        value="{{ @$our_help_data->order_id }}" step="any" min="0" class="form-control" disabled>
+                                    @error('order_id')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
                                 </div>

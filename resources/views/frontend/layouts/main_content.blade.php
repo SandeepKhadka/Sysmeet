@@ -23,7 +23,13 @@
                          @php
                              $upper_string = '';
                              $arr = explode(' ', trim($first_banner->title));
-                             $upper_string = $arr[0] . ' ' . $arr[1] . ' ' . $arr[2];
+                             if (isset($arr[2])) {
+                                 $upper_string = $arr[0] . ' ' . $arr[1] . ' ' . $arr[2];
+                             } elseif (isset($arr[1])) {
+                                 $upper_string = $arr[0] . ' ' . $arr[1];
+                             } else {
+                                 $upper_string = $arr[0];
+                             }
                              if (strlen($upper_string) > 14) {
                                  $upper_string = $arr[0] . ' ' . $arr[1];
                              }
@@ -71,81 +77,83 @@
                      </rs-layer>
              </rs-slide>
              @endif
-             <rs-slide data-key="rs-4" data-title="Slide"
-                 data-thumb="https://via.placeholder.com/1920x694/616161/818181?text=1920x694+slider-mainbg-002.jpg"
-                 data-anim="ei:d;eo:d;s:d;r:0;t:fade;sl:d;">
-                 @if (isset($second_banner) && $second_banner != null)
+             @if (isset($second_banner) && $second_banner != null)
+                 <rs-slide data-key="rs-4" data-title="Slide"
+                     data-thumb="https://via.placeholder.com/1920x694/616161/818181?text=1920x694+slider-mainbg-002.jpg"
+                     data-anim="ei:d;eo:d;s:d;r:0;t:fade;sl:d;">
                      <img src="{{ asset('/uploads/main_banner/' . $second_banner->image) }}" title="slider-img-02.jpg"
                          width="1920" height="694" class="rev-slidebg tp-rs-img" data-no-retina>
-                 @endif
-                 <rs-layer id="slider-1-slide-4-layer-0" data-type="text" data-color="#ff382f" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:71px,71px,0,0;yo:179px,179px,80px,67px;"
-                     data-text="w:normal;s:16;l:25,25,25,20;fw:700;" data-frame_0="y:-100%;" data-frame_0_mask="u:t;"
-                     data-frame_1="st:190;sp:1200;sR:190;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:7610;" style="z-index:9;font-family:'Lato', sans-serif;">
-                     {{ @$second_banner->sub_title }}
-                 </rs-layer>
-                 <rs-layer id="slider-1-slide-4-layer-1" data-type="text" data-color="#05255f" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:71px,71px,0,0;yo:217px,217px,104px,90px;"
-                     data-text="w:normal;s:66,66,58,50;l:76,76,80,60;fw:700;" data-frame_0="y:-100%;"
-                     data-frame_0_mask="u:t;" data-frame_1="st:310;sp:1200;sR:310;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:7490;" style="z-index:10;font-family:'Lato', sans-serif;">
-                     @php
-                         $second_string = '';
-                         $arr = explode(' ', trim($second_banner->title));
-                         if (isset($arr[2])) {
-                             $second_string = $arr[0] . ' ' . $arr[1] . ' ' . $arr[2];
-                         } elseif (isset($arr[1])) {
-                             $second_string = $arr[0] . ' ' . $arr[1];
-                         } else {
-                             $second_string = $arr[0];
-                         }
-                         if (strlen($second_string) > 14) {
-                             $second_string = $arr[0] . ' ' . $arr[1];
-                         }
-                         if (strlen($second_string) > 14) {
-                             $second_string = $arr[0];
-                         }
-                     @endphp
-                     {{-- {{$arr[0].' '.$arr[1].' '.$arr[2]}} --}}
-                     {{-- {{$first_banner->title}} --}}
-                     {{ $second_string }}
-                 </rs-layer>
-                 <rs-layer id="slider-1-slide-4-layer-2" data-type="text" data-color="#05255f" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:71px,71px,0,1px;yo:294px,294px,171px,148px;"
-                     data-text="w:normal;s:66,66,58,50;l:76,76,80,60;fw:700;" data-frame_0="y:-100%;"
-                     data-frame_0_mask="u:t;" data-frame_1="st:440;sp:1200;sR:440;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:7360;" style="z-index:11;font-family:'Lato', sans-serif;">
-                     @php
-                         $second_banner->title = trim(str_replace($second_string, '', $second_banner->title));
-                     @endphp
-                     {{ $second_banner->title }}
-                 </rs-layer>
-                 <rs-layer id="slider-1-slide-4-layer-3" data-type="text" data-color="#676b72" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:71px,71px,0,666px;yo:382px,382px,256px,233px;"
-                     data-text="w:normal;s:16,16,16,9;l:20,20,20,12;" data-vbility="t,t,t,f" data-frame_0="y:-100%;"
-                     data-frame_0_mask="u:t;" data-frame_1="st:680;sp:1200;sR:680;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:7120;" style="z-index:12;font-family:'Lato', sans-serif;">
-                     {{ $second_banner->summary }}
-                 </rs-layer>
-                 <a id="slider-1-slide-4-layer-5" href="contact-us.html"
-                     class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
-                     data-type="text" data-color="#05255f" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
-                     data-text="w:normal;s:16,16,16,14;l:25,25,20,20;fw:600;fs:i;" data-frame_0="y:-100%;"
-                     data-frame_0_mask="u:t;" data-frame_1="st:1140;sp:500;sR:1140;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:7360;" style="z-index:15;font-family:'Lato', sans-serif;"><i
-                         class="icon-right text-center"></i><span>see more projects</span>
-                 </a>
-                 <rs-layer id="slider-1-slide-4-layer-8" data-type="shape" data-rsp_ch="on"
-                     data-xy="x:l,l,c,c;xo:35px,35px,0,0;y:m;yo:5px,5px,0,0;"
-                     data-text="w:normal;s:20,20,12,7;l:0,0,15,9;"
-                     data-dim="w:566px,566px,475px,392px;h:455px,455px,335px,275px;"
-                     data-border="bos:solid,solid,none,none;boc:#ff382f;bow:0,0,0,4px;" data-frame_0="x:-100%;"
-                     data-frame_0_mask="u:t;" data-frame_1="sp:800;" data-frame_1_mask="u:t;"
-                     data-frame_999="o:0;st:w;sR:8200;" style="z-index:8;background-color:rgba(255,255,255,0.8);">
-                 </rs-layer>
-             </rs-slide>
+                     <rs-layer id="slider-1-slide-4-layer-0" data-type="text" data-color="#ff382f" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:71px,71px,0,0;yo:179px,179px,80px,67px;"
+                         data-text="w:normal;s:16;l:25,25,25,20;fw:700;" data-frame_0="y:-100%;"
+                         data-frame_0_mask="u:t;" data-frame_1="st:190;sp:1200;sR:190;" data-frame_1_mask="u:t;"
+                         data-frame_999="o:0;st:w;sR:7610;" style="z-index:9;font-family:'Lato', sans-serif;">
+                         {{ @$second_banner->sub_title }}
+                     </rs-layer>
+                     <rs-layer id="slider-1-slide-4-layer-1" data-type="text" data-color="#05255f" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:71px,71px,0,0;yo:217px,217px,104px,90px;"
+                         data-text="w:normal;s:66,66,58,50;l:76,76,80,60;fw:700;" data-frame_0="y:-100%;"
+                         data-frame_0_mask="u:t;" data-frame_1="st:310;sp:1200;sR:310;" data-frame_1_mask="u:t;"
+                         data-frame_999="o:0;st:w;sR:7490;" style="z-index:10;font-family:'Lato', sans-serif;">
+                         @php
+                             $second_string = '';
+                             $arr = explode(' ', trim($second_banner->title));
+                             if (isset($arr[2])) {
+                                 $second_string = $arr[0] . ' ' . $arr[1] . ' ' . $arr[2];
+                             } elseif (isset($arr[1])) {
+                                 $second_string = $arr[0] . ' ' . $arr[1];
+                             } else {
+                                 $second_string = $arr[0];
+                             }
+                             if (strlen($second_string) > 14) {
+                                 $second_string = $arr[0] . ' ' . $arr[1];
+                             }
+                             if (strlen($second_string) > 14) {
+                                 $second_string = $arr[0];
+                             }
+                         @endphp
+                         {{-- {{$arr[0].' '.$arr[1].' '.$arr[2]}} --}}
+                         {{-- {{$first_banner->title}} --}}
+                         {{ $second_string }}
+                     </rs-layer>
+                     <rs-layer id="slider-1-slide-4-layer-2" data-type="text" data-color="#05255f" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:71px,71px,0,1px;yo:294px,294px,171px,148px;"
+                         data-text="w:normal;s:66,66,58,50;l:76,76,80,60;fw:700;" data-frame_0="y:-100%;"
+                         data-frame_0_mask="u:t;" data-frame_1="st:440;sp:1200;sR:440;" data-frame_1_mask="u:t;"
+                         data-frame_999="o:0;st:w;sR:7360;" style="z-index:11;font-family:'Lato', sans-serif;">
+                         @php
+                             $second_banner->title = trim(str_replace($second_string, '', $second_banner->title));
+                         @endphp
+                         {{ $second_banner->title }}
+                     </rs-layer>
+                     <rs-layer id="slider-1-slide-4-layer-3" data-type="text" data-color="#676b72" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:71px,71px,0,666px;yo:382px,382px,256px,233px;"
+                         data-text="w:normal;s:16,16,16,9;l:20,20,20,12;" data-vbility="t,t,t,f"
+                         data-frame_0="y:-100%;" data-frame_0_mask="u:t;" data-frame_1="st:680;sp:1200;sR:680;"
+                         data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:7120;"
+                         style="z-index:12;font-family:'Lato', sans-serif;">
+                         {{ $second_banner->summary }}
+                     </rs-layer>
+                     <a id="slider-1-slide-4-layer-5" href="contact-us.html"
+                         class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
+                         data-type="text" data-color="#05255f" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
+                         data-text="w:normal;s:16,16,16,14;l:25,25,20,20;fw:600;fs:i;" data-frame_0="y:-100%;"
+                         data-frame_0_mask="u:t;" data-frame_1="st:1140;sp:500;sR:1140;" data-frame_1_mask="u:t;"
+                         data-frame_999="o:0;st:w;sR:7360;" style="z-index:15;font-family:'Lato', sans-serif;"><i
+                             class="icon-right text-center"></i><span>see more projects</span>
+                     </a>
+                     <rs-layer id="slider-1-slide-4-layer-8" data-type="shape" data-rsp_ch="on"
+                         data-xy="x:l,l,c,c;xo:35px,35px,0,0;y:m;yo:5px,5px,0,0;"
+                         data-text="w:normal;s:20,20,12,7;l:0,0,15,9;"
+                         data-dim="w:566px,566px,475px,392px;h:455px,455px,335px,275px;"
+                         data-border="bos:solid,solid,none,none;boc:#ff382f;bow:0,0,0,4px;" data-frame_0="x:-100%;"
+                         data-frame_0_mask="u:t;" data-frame_1="sp:800;" data-frame_1_mask="u:t;"
+                         data-frame_999="o:0;st:w;sR:8200;" style="z-index:8;background-color:rgba(255,255,255,0.8);">
+                     </rs-layer>
+                 </rs-slide>
+             @endif
+
          </rs-slides>
      </rs-module>
      {{-- {{dd($main_banner)}} --}}
@@ -335,58 +343,62 @@
 
 
      <!-- services-section -->
-     <section class="cmt-row services-section bg-img2 cmt-bgimage-yes cmt-bg clearfix">
-         <div class="container">
-             <!-- row -->
-             <div class="row">
-                 <div class="col-lg-12">
-                     <!-- section title -->
-                     <div class="section-title title-style-center_text res-991-mb_20">
-                         <div class="title-header">
-                             <h3>Our Statistics</h3>
-                             <h2 class="title text-base-black">A Collection of Our Work</h2>
-                         </div>
-                     </div><!-- section title end -->
+     @if (isset($statistics_banner) && $statistics_banner != null)
+         <section class="cmt-row services-section bg-img2 cmt-bgimage-yes cmt-bg clearfix"
+             style="background-image: url('{{ asset('/uploads/outer_banner/' . @$statistics_banner->image) }}')">
+             <div class="container">
+                 <!-- row -->
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <!-- section title -->
+                         <div class="section-title title-style-center_text res-991-mb_20">
+                             <div class="title-header">
+                                 <h3>Our Statistics</h3>
+                                 <h2 class="title text-base-white">{{$statistics_banner->title}}</h2>
+                             </div>
+                         </div><!-- section title end -->
+                     </div>
+                     <div class="col-lg-9">
+                     </div>
+                     <div class="col-lg-3">
+                         <a id="slider-1-slide-4-layer-5" href="contact-us.html"
+                             class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
+                             data-type="text" data-color="#05255f" data-rsp_ch="on"
+                             data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
+                             data-text="w:normal;s:16,16,16,14;l:25,25,20,20;fw:600;fs:i;" data-frame_0="y:-100%;"
+                             data-frame_0_mask="u:t;" data-frame_1="st:1140;sp:500;sR:1140;" data-frame_1_mask="u:t;"
+                             data-frame_999="o:0;st:w;sR:7360;" style="z-index:15;font-family:'Lato', sans-serif;"><i
+                                 class="icon-right text-center"></i><span>see our works</span>
+                         </a>
+                         <div class="pt-130 pb-100 res-991-p-0"></div>
+                     </div>
                  </div>
-                 <div class="col-lg-9">
-                 </div>
-                 <div class="col-lg-3">
-                     <a id="slider-1-slide-4-layer-5" href="contact-us.html"
-                         class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
-                         data-type="text" data-color="#05255f" data-rsp_ch="on"
-                         data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
-                         data-text="w:normal;s:16,16,16,14;l:25,25,20,20;fw:600;fs:i;" data-frame_0="y:-100%;"
-                         data-frame_0_mask="u:t;" data-frame_1="st:1140;sp:500;sR:1140;" data-frame_1_mask="u:t;"
-                         data-frame_999="o:0;st:w;sR:7360;" style="z-index:15;font-family:'Lato', sans-serif;"><i
-                             class="icon-right text-center"></i><span>see our works</span>
-                     </a>
-                     <div class="pt-130 pb-100 res-991-p-0"></div>
-                 </div>
+                 <!-- row end -->
              </div>
-             <!-- row end -->
-         </div>
-     </section>
+         </section>
+     @endif
      <!-- services-section end-->
 
 
      <!-- padding_zero-section -->
-     <section class="cmt-row padding_zero-section clearfix">
-         <div class="container">
-             <div class="row">
-                 <div class="col-lg-12">
-                     <div
-                         class="cmt-bg cmt-col-bgcolor-yes bg-base-white cmt-bg spacing-1 border-rad_10 overflow-visible mb_15">
-                         <div class="row">
-                             <div class="col-lg-6">
-                                 <!-- section title -->
-                                 <div class="section-title">
-                                     <div class="title-header">
-                                         <h3>our services</h3>
-                                         <h2 class="title">We provide IT & Business solutions</h2>
-                                     </div>
-                                 </div><!-- section title end -->
-                             </div>
-                             {{-- <div class="col-lg-6">
+     @if (isset($service_lists) && sizeof($service_lists) > 0)
+         <section class="cmt-row padding_zero-section clearfix">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div
+                             class="cmt-bg cmt-col-bgcolor-yes bg-base-white cmt-bg spacing-1 border-rad_10 overflow-visible mb_15">
+                             <div class="row">
+                                 <div class="col-lg-6">
+                                     <!-- section title -->
+                                     <div class="section-title">
+                                         <div class="title-header">
+                                             <h3>our services</h3>
+                                             <h2 class="title">We provide IT & Business solutions</h2>
+                                         </div>
+                                     </div><!-- section title end -->
+                                 </div>
+                                 {{-- <div class="col-lg-6">
                                  <p>We enable the world’s leading companies with cutting-edge digital & IT service as a
                                      competitive advantage ahead of schedule.</p>
                                  <ul
@@ -399,41 +411,44 @@
                                      </li>
                                  </ul>
                              </div> --}}
-                         </div>
-                         <div class="row">
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-cloud"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-cloud"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>Hosting Services</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>Hosting Services</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>One's website is placed on the same server as many other clients.</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="it-consultancy.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
                              </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
+                             <div class="row">
+                                 @foreach ($service_lists as $service)
+                                     <div class="col-lg-3 col-md-6 col-sm-6">
+                                         <!--featured-icon-box-->
+                                         <div class="featured-icon-box icon-align-top-content style1">
+                                             <div class="bg_icon"><i class="flaticon flaticon-cloud"></i></div>
+                                             <div class="featured-icon">
+                                                 <div
+                                                     class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
+                                                     <i class="{{ 'flaticon flaticon-' . $service->tag }}"></i>
+                                                 </div>
+                                             </div>
+                                             <div class="featured-title">
+                                                 <h3>{{ $service->title }}</h3>
+                                             </div>
+                                             <div class="featured-hover-content">
+                                                 <div class="featured-title">
+                                                     <h3>{{ $service->title }}</h3>
+                                                 </div>
+                                                 <div class="featured-desc">
+                                                     <p>{{ $service->summary }}</p>
+                                                 </div>
+                                                 <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
+                                                     href="it-consultancy.html">More Details<i
+                                                         class="icon-right"></i></a>
+                                             </div>
+                                         </div><!-- featured-icon-box end-->
+                                     </div>
+                                 @endforeach
+                                 {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                                  <!--featured-icon-box-->
                                  <div class="featured-icon-box icon-align-top-content style1">
                                      <div class="bg_icon"><i class="flaticon flaticon-server"></i></div>
                                      <div class="featured-icon">
                                          <div
                                              class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-server"></i>
+                                             <i class="flaticon flaticon-world-1"></i>
                                          </div>
                                      </div>
                                      <div class="featured-title">
@@ -455,15 +470,15 @@
                              <div class="col-lg-3 col-md-6 col-sm-6">
                                  <!--featured-icon-box-->
                                  <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-cyber-security"></i></div>
+                                     <div class="bg_icon"><i class="flaticon flaticon-layout"></i></div>
                                      <div class="featured-icon">
                                          <div
                                              class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-cyber-security"></i>
+                                             <i class="flaticon flaticon-layout"></i>
                                          </div>
                                      </div>
                                      <div class="featured-title">
-                                         <h3>Mobile App Dev</h3>
+                                         <h3>Mobile App Development</h3>
                                      </div>
                                      <div class="featured-hover-content">
                                          <div class="featured-title">
@@ -530,11 +545,11 @@
                              <div class="col-lg-3 col-md-6 col-sm-6">
                                  <!--featured-icon-box-->
                                  <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-cyber-security-1"></i></div>
+                                     <div class="bg_icon"><i class="flaticon flaticon-mission"></i></div>
                                      <div class="featured-icon">
                                          <div
                                              class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-cyber-security-1"></i>
+                                             <i class="flaticon flaticon-mission"></i>
                                          </div>
                                      </div>
                                      <div class="featured-title">
@@ -603,13 +618,14 @@
                                              href="experience-design.html">More Details<i class="icon-right"></i></a>
                                      </div>
                                  </div><!-- featured-icon-box end-->
+                             </div> --}}
                              </div>
                          </div>
                      </div>
                  </div>
              </div>
-         </div>
-     </section>
+         </section>
+     @endif
      <!-- padding_zero-section end-->
 
      <!--step-section-->

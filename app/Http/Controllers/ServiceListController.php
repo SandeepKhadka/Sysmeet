@@ -60,7 +60,9 @@ class ServiceListController extends Controller
             'summary' => 'string|required',
         ]);
 
+        $order_id = $this->services->all();
         $data = $request->except(['_token']);
+        $data['order_id'] = getOrderId($order_id);
         $this->services->fill($data);
         $status = $this->services->save();
         if ($status) {
@@ -121,8 +123,9 @@ class ServiceListController extends Controller
         }
 
         $this->validate($request, [
-            'title' => 'string|required',
+            // 'title' => 'string|required',
             'summary' => 'string|required',
+            'order_id' => 'required|integer|gt:0',
         ]);
 
         $data = $request->except(['_token']);

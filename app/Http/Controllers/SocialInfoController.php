@@ -58,7 +58,9 @@ class SocialInfoController extends Controller
             'link' => 'url|required',
         ]);
 
+        $order_id = $this->social_info->all();
         $data = $request->except(['_token']);
+        $data['order_id'] = getOrderId($order_id);
         $this->social_info->fill($data);
         $status = $this->social_info->save();
         if ($status) {
@@ -120,6 +122,7 @@ class SocialInfoController extends Controller
 
         $this->validate($request, [
             'link' => 'url|required',
+            'order_id' => 'required|integer|gt:0',
         ]);
 
         $data = $request->except(['_token']);

@@ -20,18 +20,23 @@ class SocialInfoSeeder extends Seeder
 
             [
                 'title' => 'Facebook',
+                'order_id' => 1,
             ],
             [
                 'title' => 'Twitter',
+                'order_id' => 2,
             ],
             [
                 'title' => 'Instagram',
+                'order_id' => 3,
             ],
             [
                 'title' => 'LinkedIn',
+                'order_id' => 4,
             ],
             [
                 'title' => 'Pinterest',
+                'order_id' => 5,
             ],
 
 

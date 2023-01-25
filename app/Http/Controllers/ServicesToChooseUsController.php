@@ -59,7 +59,9 @@ class ServicesToChooseUsController extends Controller
             'description' => 'string|required',
         ]);
 
+        $order_id = $this->services_choose->all();
         $data = $request->except(['_token']);
+        $data['order_id'] = getOrderId($order_id);
         $this->services_choose->fill($data);
         $status = $this->services_choose->save();
         if ($status) {
@@ -122,6 +124,7 @@ class ServicesToChooseUsController extends Controller
         $this->validate($request, [
             'title' => 'string|required',
             'description' => 'string|required',
+            'order_id' => 'required|integer|gt:0',
         ]);
 
         $data = $request->except(['_token']);

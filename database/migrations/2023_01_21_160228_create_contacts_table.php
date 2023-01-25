@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->text('email');
             $table->text('phone');
-            $table->text('location');
+            $table->text('country');
+            $table->text('city');
+            $table->text('street');
+            $table->text('state');
             $table->text('why_contact_us');
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();

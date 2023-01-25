@@ -72,6 +72,18 @@
                                     @enderror
                                 </div>
                             </div>
+                            @if (isset($banner_data))
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="order_id">Order ID <span class="text-danger">*</span></label>
+                                        <input type="number" id="order_id" name="order_id"
+                                            value="{{ @$banner_data->order_id }}" step="any" min="0" required class="form-control" required>
+                                        @error('order_id')
+                                            <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            @endif
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="image">Image <span class="text-danger">*</span></label>

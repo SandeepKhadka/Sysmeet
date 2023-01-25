@@ -59,7 +59,7 @@
                                     <th style="width: 10px">S.N.</th>
                                     <th>Title</th>
                                     <th>Sub-title</th>
-                                    <th>Summary</th>
+                                    <th>Order ID</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -72,7 +72,7 @@
                                             <td>{{ $banners + 1 }}</td>
                                             <td>{{ $banner->title }}</td>
                                             <td>{{ $banner->sub_title }}</td>
-                                            <td>{!! html_entity_decode(Str::limit($banner->summary, 20)) !!}</td>
+                                            <td>{{ $banner->order_id }}</td>
                                             <td>
                                                 <img src="{{ asset('/uploads/main_banner/Thumb-' . $banner->image) }}"
                                                     alt="banner_image">

@@ -132,7 +132,10 @@
     opacity: .1;
 }
 .bg-img2{
-    background-image: url(https://via.placeholder.com/1920x530?text=1920x530+row-bgimage-2.jpg);
+    /* background-image: url(https://via.placeholder.com/1920x530?text=1920x530+row-bgimage-2.jpg); */
+    /* background-image: url('{{asset("uploads/outer_banner/Outer_banner-2023012502063851.jpg")}}'); */
+    /* background-image: url(../../../../public/uploads/outer_banner/Outer_banner-2023012502063851.jpg); */
+    /* background-image: url(../../../uploads/outer_banner/ ); */
     background-repeat: no-repeat;
     background-position: top center;
 }

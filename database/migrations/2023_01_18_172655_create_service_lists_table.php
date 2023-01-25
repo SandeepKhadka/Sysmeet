@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('service_lists', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('summary');
+            $table->string('tag');
+            $table->text('summary')->nullable();
+            $table->integer('order_id')->nullable();
             $table->enum('status',['active', 'inactive'])->default('active');
             $table->timestamps();
         });
