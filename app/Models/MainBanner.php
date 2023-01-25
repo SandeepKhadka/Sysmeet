@@ -9,5 +9,5 @@ class MainBanner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image', 'status'];
+    protected $fillable = ['title', 'sub_title', 'summary', 'image', 'status'];
 }

@@ -24,6 +24,36 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-12">
+                                    <label for="title">Title <span class="text-danger">*</span></label>
+                                    <input type="text" id="title" name="title" value="{{ @$banner_data->title }}"
+                                        disabled required class="form-control" required>
+                                    @error('title')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="sub_title">Sub Title <span class="text-danger">*</span></label>
+                                    <input type="text" id="sub_title" name="sub_title" disabled
+                                        value="{{ @$banner_data->sub_title }}" required class="form-control" required>
+                                    @error('sub_title')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="summary">Summary <span class="text-danger">*</span></label>
+                                    <textarea type="text" id="summary" name="summary" disabled class="form-control" required style="resize: none"
+                                        rows="5" cols="10">{{ @$banner_data->summary }}</textarea>
+                                    @error('summary')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
                                     <label for="image">Image <span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <input id="image" class="form-control" type="file" name="image" disabled
@@ -37,7 +67,7 @@
                                             <img id="holder" src="#" style="margin-top:15px;max-height:100px;"
                                                 alt="No preview image" />
                                         @endif
-                                    </div>  
+                                    </div>
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror

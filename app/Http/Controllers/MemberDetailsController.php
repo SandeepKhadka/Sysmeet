@@ -209,7 +209,7 @@ class MemberDetailsController extends Controller
         }
 
         $del = $this->member_details->delete();
-        $image = $this->member_details->image;
+        $image = $this->member_details->photo;
         if ($del) {
             if ($image != null && file_exists(public_path() . '/uploads/member_details/' . $image)) {
                 unlink(public_path() . '/uploads/member_details/' . $image);

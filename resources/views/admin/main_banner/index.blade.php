@@ -57,6 +57,9 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">S.N.</th>
+                                    <th>Title</th>
+                                    <th>Sub-title</th>
+                                    <th>Summary</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -67,6 +70,9 @@
                                     @foreach ($banner_data as $banners => $banner)
                                         <tr>
                                             <td>{{ $banners + 1 }}</td>
+                                            <td>{{ $banner->title }}</td>
+                                            <td>{{ $banner->sub_title }}</td>
+                                            <td>{!! html_entity_decode(Str::limit($banner->summary, 20)) !!}</td>
                                             <td>
                                                 <img src="{{ asset('/uploads/main_banner/Thumb-' . $banner->image) }}"
                                                     alt="banner_image">
@@ -79,18 +85,20 @@
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td>
                                             <td>
-                                                <a href="{{ route('main_banner.show', $banner->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('main_banner.show', $banner->id) }}"
+                                                    class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                <a href="{{ route('main_banner.edit', $banner->id) }}" class="btn btn-success">
+                                                <a href="{{ route('main_banner.edit', $banner->id) }}"
+                                                    class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a>
-                                                <form action="{{ route('main_banner.destroy', $banner->id) }}" method="post"
-                                                    class="d-inline">
+                                                <form action="{{ route('main_banner.destroy', $banner->id) }}"
+                                                    method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger"

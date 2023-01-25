@@ -11,9 +11,12 @@
                         <div class="site-navigation d-flex align-items-center justify-content-between">
                             <!-- site-branding -->
                             <div class="site-branding me-auto">
-                                <a class="home-link" href="index.html" title="Devfox" rel="home">
-                                    <img id="logo-img" height="48" width="147" class="img-fluid auto_size" src="{{ asset('front/assets/images/logo-img.svg" alt="logo-img')}}">
-                                </a>
+                                @if (isset($logo) && $logo != null)
+                                    <img id="footer-logo-img" class="img-fluid auto_size" height="42" width="132"
+                                        src="{{ asset('/uploads/logo/' . $logo->image) }}" alt="image">
+                                @else
+                                    <h4>Sysmeet</h4>
+                                @endif
                             </div><!-- site-branding end -->
                             <div class="btn-show-menu-mobile menubar menubar--squeeze">
                                 <span class="menubar-box">
@@ -34,7 +37,7 @@
                                             <li><a href="team-details.html">Team Details</a></li>
                                         </ul>
                                     </li>
-                                    <li class="mega-menu-item active">
+                                    <li class="mega-menu-item">
                                         <a href="services-1.html" class="mega-menu-link">Services</a>
                                     </li>
                                     <li class="mega-menu-item">
@@ -61,8 +64,10 @@
                                         <div class="header_search_content_inner">
                                             <a href="#" class="close_btn"><i class="icon-cancel-2"></i></a>
                                             <form id="searchbox" method="get" action="#">
-                                                <input class="search_query" type="text" id="search_query_top" name="s" placeholder="Type Your Search..." value="">
-                                                <button type="submit" class="btn close-search"><i class="icon-search-1"></i></button>
+                                                <input class="search_query" type="text" id="search_query_top"
+                                                    name="s" placeholder="Type Your Search..." value="">
+                                                <button type="submit" class="btn close-search"><i
+                                                        class="icon-search-1"></i></button>
                                             </form>
                                         </div>
                                     </div>
@@ -75,4 +80,5 @@
         </div>
     </div>
     <!-- site-header-menu end-->
-</header><!--header end-->
+</header>
+<!--header end-->

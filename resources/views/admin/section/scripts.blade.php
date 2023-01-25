@@ -19,7 +19,22 @@
     $("#lfm").filemanager("image");
 
     $(document).ready(function() {
-        $("#description").summernote();
+        $("#description").summernote({
+            "lineHeight": 1,
+            "height": 300,
+            "codemirror": {
+                "theme": "ambiance"
+            },
+            "toolbar": [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["font", ["strikethrough", "superscript", "subscript"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]]
+            ]
+        });
+
     });
 
     $(document).ready(function() {

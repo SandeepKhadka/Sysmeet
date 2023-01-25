@@ -55,6 +55,9 @@ class MainBannerController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'title' => 'string|required',
+            'sub_title' => 'string|required',
+            'summary' => 'string|required',
             'image' => 'image|required|max:5120',
         ]);
 
@@ -131,6 +134,9 @@ class MainBannerController extends Controller
         }
 
         $this->validate($request, [
+            'title' => 'string|required',
+            'sub_title' => 'string|required',
+            'summary' => 'string|required',
             'image' => 'image|nullable|max:5120',
         ]);
 
