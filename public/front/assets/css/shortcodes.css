@@ -181,7 +181,7 @@
 ------------------------*/
 .cmt-equal-height-image{ display: none; }
 .col-bg-img-one.cmt-col-bgimage-yes > .cmt-col-wrapper-bg-layer {
-    background-image: url(https://via.placeholder.com/1338x761?text=1338x761+col-bgimage-1.jpg);
+    /* background-image: url(https://via.placeholder.com/1338x761?text=1338x761+col-bgimage-1.jpg); */
     background-position: -40px 0;
     background-size: cover;
 }

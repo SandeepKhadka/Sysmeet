@@ -34,6 +34,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'home'])->name('front.home');
+Route::get('/company/about_us', [App\Http\Controllers\Frontend\IndexController::class, 'about_us'])->name('front.about_us');
+Route::get('/company/our_team', [App\Http\Controllers\Frontend\IndexController::class, 'our_team'])->name('front.our_team');
+Route::get('/company/team_details/{slug}', [App\Http\Controllers\Frontend\IndexController::class, 'team_details'])->name('front.team_details');
+Route::get('/service', [App\Http\Controllers\Frontend\IndexController::class, 'service'])->name('front.service');
+Route::get('/service/{slug}/{id}', [App\Http\Controllers\Frontend\IndexController::class, 'service_lists'])->name('front.service_lists');
+Route::get('/it_solutions/{slug}/{id}', [App\Http\Controllers\Frontend\IndexController::class, 'it_solutions'])->name('front.it_solutions');
+Route::get('/contact', [App\Http\Controllers\Frontend\IndexController::class, 'contact'])->name('front.contact');
+
+
 
 // Route::get('/', function () {
 //     return view('welcome');

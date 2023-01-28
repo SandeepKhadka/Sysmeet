@@ -73,7 +73,7 @@ class OurHelpController extends Controller
             }
         }
 
-        $data['slug'] = $this->our_help->getSlug($data['title']);
+        $data['slug'] = $this->our_help->getSlug($data['sub_title']);
         $order_id = $this->our_help->all();
         $data['order_id'] = getOrderId($order_id);
 
@@ -160,7 +160,7 @@ class OurHelpController extends Controller
             }
         }
 
-        $data['slug'] = $this->our_help->getSlug($data['title']);
+        $data['slug'] = $this->our_help->getSlug($data['sub_title']);
 
         $this->our_help->fill($data);
 

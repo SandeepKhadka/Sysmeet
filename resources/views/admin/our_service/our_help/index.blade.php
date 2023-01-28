@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Sysmeet | Ou Help List')
+@section('title', 'Sysmeet | Our Help List')
 @section('scripts')
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
@@ -39,7 +39,7 @@
                     <li class="breadcrumb-item"><a href="{{ url('home') }}"><i class="fa fa-home"></i></a></li>
                     <li class="breadcrumb-item active" aria-current="reply">Our Help</a></li>
                 </ul>
-                <p class="float-right" style="margin: 10px">Total HelP Services : {{ \App\Models\OurHelp::count() }}</p>
+                <p class="float-right" style="margin: 10px">Total Help Services : {{ \App\Models\OurHelp::count() }}</p>
                 {{-- </nav> --}}
             </div>
             <div class="col-md-12">

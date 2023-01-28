@@ -208,8 +208,9 @@
                              <div class="featured-imagebox featured-imagebox-services style1">
                                  <!-- featured-thumbnail -->
                                  <div class="featured-thumbnail">
-                                     <a href="it-consultancy.html"><img width="740" height="500"
-                                             class="img-fluid auto_size"
+                                     <a
+                                         href="{{ route('front.it_solutions', ['slug' => $help->slug, 'id' => $help->id]) }}"><img
+                                             width="740" height="500" class="img-fluid auto_size"
                                              src="{{ asset('/uploads/our_help/' . $help->image) }}"
                                              alt="image"></a>
                                  </div><!-- featured-thumbnail end-->
@@ -219,7 +220,8 @@
                                          <h3>{{ $help->title }}</h3>
                                      </div>
                                      <div class="ser_num"></div>
-                                     <div class="ser_readmore"><a href="it-consultancy.html"
+                                     <div class="ser_readmore"><a
+                                             href="{{ route('front.it_solutions', ['slug' => $help->slug, 'id' => $help->id]) }}"
                                              class="cmt-btn cmt-btn-size-md cmt-icon-btn-right cmt-btn-color-skincolor btn-inline">Discover
                                              Now<i class="icon-right"></i></a></div>
                                  </div>
@@ -286,7 +288,7 @@
                      <div class="col-xl-6 col-md-12">
                          <div class="ttm_single_image-wrapper d-table border-rad_5 overflow-hidden">
                              <img width="1140" height="1300" class="img-fluid"
-                                 src="{{ asset('/uploads/about_us/' . $about_us->image) }}" alt="single-01">
+                                 src="{{ asset('/uploads/about_us/' . $about_us->image) }}" alt="about_us_image">
                          </div>
                          <!-- <div class="d-table bg-base-skin text-base-white position-relative mt_20 ml-30 pl-30 pr-30 pt-10 pb-10 border-rad_5">
                         <div class="fs-16 lh-sm"><strong>410+</strong> Total Projects Complete</div>
@@ -354,7 +356,7 @@
                          <div class="section-title title-style-center_text res-991-mb_20">
                              <div class="title-header">
                                  <h3>Our Statistics</h3>
-                                 <h2 class="title text-base-white">{{$statistics_banner->title}}</h2>
+                                 <h2 class="title text-base-white">{{ $statistics_banner->title }}</h2>
                              </div>
                          </div><!-- section title end -->
                      </div>
@@ -414,32 +416,37 @@
                              </div>
                              <div class="row">
                                  @foreach ($service_lists as $service)
-                                     <div class="col-lg-3 col-md-6 col-sm-6">
-                                         <!--featured-icon-box-->
-                                         <div class="featured-icon-box icon-align-top-content style1">
-                                             <div class="bg_icon"><i class="flaticon flaticon-cloud"></i></div>
-                                             <div class="featured-icon">
-                                                 <div
-                                                     class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                                     <i class="{{ 'flaticon flaticon-' . $service->tag }}"></i>
+                                     @if (isset($service->tag) && $service->tag != null)
+                                         <div class="col-lg-3 col-md-6 col-sm-6">
+                                             <!--featured-icon-box-->
+                                             <div class="featured-icon-box icon-align-top-content style1">
+                                                 <div class="bg_icon"><i
+                                                         class="{{ 'flaticon flaticon-' . $service->tag }}"></i></div>
+                                                 <div class="featured-icon">
+                                                     <div
+                                                         class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
+                                                         <i class="{{ 'flaticon flaticon-' . $service->tag }}"></i>
+                                                     </div>
                                                  </div>
-                                             </div>
-                                             <div class="featured-title">
-                                                 <h3>{{ $service->title }}</h3>
-                                             </div>
-                                             <div class="featured-hover-content">
                                                  <div class="featured-title">
                                                      <h3>{{ $service->title }}</h3>
                                                  </div>
-                                                 <div class="featured-desc">
-                                                     <p>{{ $service->summary }}</p>
+                                                 <div class="featured-hover-content">
+                                                     <div class="featured-title">
+                                                         <h3>{{ $service->title }}</h3>
+                                                     </div>
+                                                     <div class="featured-desc">
+                                                         <p>{{ $service->summary }}</p>
+                                                     </div>
+                                                     @if (isset($service->description) && $service->description != null)
+                                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
+                                                             href="{{ route('front.service_lists', ['slug' => $service->slug, 'id' => $service->id]) }}">More
+                                                             Details<i class="icon-right"></i></a>
+                                                     @endif
                                                  </div>
-                                                 <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                                     href="it-consultancy.html">More Details<i
-                                                         class="icon-right"></i></a>
-                                             </div>
-                                         </div><!-- featured-icon-box end-->
-                                     </div>
+                                             </div><!-- featured-icon-box end-->
+                                         </div>
+                                     @endif
                                  @endforeach
                                  {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                                  <!--featured-icon-box-->
@@ -762,7 +769,7 @@
                          </div>
                          @if (isset($team_motto) && $team_motto != null)
                              <div class="title-desc">
-                                 <p>{{ $team_motto->team_motto }}. &nbsp; <a href="our-team.html"
+                                 <p>{{ $team_motto->team_motto }}. &nbsp; <a href="{{ route('front.our_team') }}"
                                          class="cmt-btn cmt-btn-size-md cmt-btn-color-skincolor btn-inline btn-underline">
                                          More Team Members</a></p>
                              </div>
@@ -801,7 +808,7 @@
                                  </div>
                                  <div class="featured-view-more">
                                      <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                         href="team-details.html">more details</a>
+                                         href="{{ route('front.team_details', $member->slug) }}">more details</a>
                                  </div>
                                  <div class="featured-iconbox cmt-media-link">
                                      <div class="media-block">
@@ -942,7 +949,6 @@
  <!-- team-section end -->
 
  <br>
- <br>
  <!--partner-section-->
  @if (isset($our_partners) && sizeof($our_partners) > 0)
      <section class="cmt-row partner-section bg-img4 clearfix">
@@ -970,49 +976,49 @@
                              </div>
                          @endforeach
                          {{-- <div class="client-box">
-                             <div class="cmt-client-logo-tooltip">
-                                 <div class="cmt-client-logo-tooltip-inner">
-                                     <div class="client-thumbnail">
-                                         <img width="128" height="60" class="img-fluid"
-                                             src="https://via.placeholder.com/128x60?text=128x60+client-02.png"
-                                             alt="image">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="client-box">
-                             <div class="cmt-client-logo-tooltip">
-                                 <div class="cmt-client-logo-tooltip-inner">
-                                     <div class="client-thumbnail">
-                                         <img width="142" height="60" class="img-fluid"
-                                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                                             alt="image">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="client-box">
-                             <div class="cmt-client-logo-tooltip">
-                                 <div class="cmt-client-logo-tooltip-inner">
-                                     <div class="client-thumbnail">
-                                         <img width="182" height="61" class="img-fluid"
-                                             src="https://via.placeholder.com/182x61?text=182x61+client-04.png"
-                                             alt="image">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="client-box">
-                             <div class="cmt-client-logo-tooltip">
-                                 <div class="cmt-client-logo-tooltip-inner">
-                                     <div class="client-thumbnail">
-                                         <img width="142" height="60" class="img-fluid"
-                                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                                             alt="image">
-                                     </div>
-                                 </div>
-                             </div>
-                         </div> --}}
+             <div class="cmt-client-logo-tooltip">
+                 <div class="cmt-client-logo-tooltip-inner">
+                     <div class="client-thumbnail">
+                         <img width="128" height="60" class="img-fluid"
+                             src="https://via.placeholder.com/128x60?text=128x60+client-02.png"
+                             alt="image">
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="client-box">
+             <div class="cmt-client-logo-tooltip">
+                 <div class="cmt-client-logo-tooltip-inner">
+                     <div class="client-thumbnail">
+                         <img width="142" height="60" class="img-fluid"
+                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
+                             alt="image">
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="client-box">
+             <div class="cmt-client-logo-tooltip">
+                 <div class="cmt-client-logo-tooltip-inner">
+                     <div class="client-thumbnail">
+                         <img width="182" height="61" class="img-fluid"
+                             src="https://via.placeholder.com/182x61?text=182x61+client-04.png"
+                             alt="image">
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="client-box">
+             <div class="cmt-client-logo-tooltip">
+                 <div class="cmt-client-logo-tooltip-inner">
+                     <div class="client-thumbnail">
+                         <img width="142" height="60" class="img-fluid"
+                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
+                             alt="image">
+                     </div>
+                 </div>
+             </div>
+         </div> --}}
                      </div><!-- cmt-client end -->
                  </div>
              </div>

@@ -45,7 +45,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="title">Title <span class="text-danger">*</span></label>
                                     <input type="text" id="title" name="title" value="{{ @$service_data->title }}"
-                                        disabled class="form-control" required>
+                                        class="form-control" required>
                                     @error('title')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
@@ -57,6 +57,16 @@
                                     <textarea type="text" id="summary" name="summary" class="form-control" required style="resize: none" rows="5"
                                         cols="10">{{ @$service_data->summary }}</textarea>
                                     @error('summary')
+                                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="description">Description </label>
+                                    <textarea type="text" id="description" name="description" class="form-control" style="resize: none" rows="5"
+                                        cols="10">{{ @$service_data->description }}</textarea>
+                                    @error('desc')
                                         <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                     @enderror
                                 </div>

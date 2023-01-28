@@ -38,15 +38,57 @@
     });
 
     $(document).ready(function() {
-        $("#desc").summernote();
+        $("#desc").summernote({
+            "lineHeight": 1,
+            "height": 300,
+            "codemirror": {
+                "theme": "ambiance"
+            },
+            "toolbar": [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["font", ["strikethrough", "superscript", "subscript"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]]
+            ]
+        });
     });
 
     $(document).ready(function() {
-        $("#biography").summernote();
+        $("#biography").summernote({
+            "lineHeight": 1,
+            "height": 300,
+            "codemirror": {
+                "theme": "ambiance"
+            },
+            "toolbar": [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["font", ["strikethrough", "superscript", "subscript"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]]
+            ]
+        });
     });
 
     $(document).ready(function() {
-        $("#prof_skill").summernote();
+        $("#prof_skill").summernote({
+            "lineHeight": 1,
+            "height": 300,
+            "codemirror": {
+                "theme": "ambiance"
+            },
+            "toolbar": [
+                ["style", ["bold", "italic", "underline", "clear"]],
+                ["font", ["strikethrough", "superscript", "subscript"]],
+                ["fontsize", ["fontsize"]],
+                ["color", ["color"]],
+                ["para", ["ul", "ol", "paragraph"]],
+                ["height", ["height"]]
+            ]
+        });
     });
 
     // $(document).ready(function() {

@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', 'Software Company')
+@section('title', 'Sysmeet')
 {{-- @section('banner')
     @include('frontend.layouts.banner')
 @endsection --}}

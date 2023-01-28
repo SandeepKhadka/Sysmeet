@@ -26,33 +26,54 @@
                             <!-- menu -->
                             <nav class="main-menu menu-mobile" id="menu">
                                 <ul class="menu">
-                                    <li class="mega-menu-item active">
-                                        <a href="#" class="mega-menu-link">Home</a>
+                                    <li class="mega-menu-item {{ request()->is('/') ? 'active' : '' }}">
+                                        <a href="{{ route('front.home') }}" class="mega-menu-link">Home</a>
                                     </li>
-                                    <li class="mega-menu-item">
+                                    <li class="mega-menu-item {{ request()->is('company*') ? 'active' : '' }}">
                                         <a href="#" class="mega-menu-link">Company</a>
                                         <ul class="mega-submenu">
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="our-team.html">Our Team</a></li>
-                                            <li><a href="team-details.html">Team Details</a></li>
+                                            <li class="{{ request()->is('company/about_us') ? 'active' : '' }}"><a
+                                                    href="{{ route('front.about_us') }}">About Us</a></li>
+                                            <li class="{{ request()->is('company/our_team') ? 'active' : '' }}"><a
+                                                    href="{{ route('front.our_team') }}">Our Team</a></li>
+                                            {{-- <li class="{{ request()->is('company/team_details') ? 'active' : '' }}"><a href="{{route('front.team_details')}}">Team Details</a></li> --}}
                                         </ul>
                                     </li>
-                                    <li class="mega-menu-item">
-                                        <a href="services-1.html" class="mega-menu-link">Services</a>
+                                    {{-- <li class="mega-menu-item {{ request()->is('service') ? 'active' : '' }}">
+                                        <a href="{{ route('front.service') }}" class="mega-menu-link">Services</a>
+                                    </li> --}}
+                                    <li class="mega-menu-item {{ request()->is('service*') ? 'active' : '' }}">
+                                        <a href="{{ route('front.service') }}" class="mega-menu-link">Services</a>
+                                        <ul class="mega-submenu">
+                                            @if (isset($all_service_lists) && sizeof($all_service_lists) > 0)
+                                                @foreach ($all_service_lists as $service)
+                                                    @if (isset($service->description) && $service->description != null)
+                                                        <li
+                                                            class="{{ request()->is('service/' . $service->slug . '/' . $service->id) ? 'active' : '' }}">
+                                                            <a
+                                                                href="{{ route('front.service_lists', ['slug' => $service->slug, 'id' => $service->id]) }}">{{ $service->title }}</a>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            @endif
+                                        </ul>
                                     </li>
-                                    <li class="mega-menu-item">
+                                    <li class="mega-menu-item {{ request()->is('it_solutions*') ? 'active' : '' }}">
                                         <a href="#" class="mega-menu-link">IT Solutions</a>
                                         <ul class="mega-submenu">
-                                            <li><a href="it-consultancy.html">IT Consultancy</a></li>
-                                            <li><a href="experience-design.html">Experience Design</a></li>
-                                            <li><a href="digital-services.html">Digital Services</a></li>
-                                            <li><a href="data-structuring.html">Data Structuring</a></li>
-                                            <li><a href="advisory-services.html">Advisory Services</a></li>
-                                            <li><a href="content-engineering.html">Content Engineering</a></li>
+                                            @if (isset($all_our_help) && sizeof($all_our_help) > 0)
+                                                @foreach ($all_our_help as $help)
+                                                    <li
+                                                        class="{{ request()->is('it_solutions/' . $help->slug . '/' . $help->id) ? 'active' : '' }}">
+                                                        <a
+                                                            href="{{ route('front.it_solutions', ['slug' => $help->slug, 'id' => $help->id]) }}">{{ $help->sub_title }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </li>
-                                    <li class="mega-menu-item">
-                                        <a href="contact-us.html">Contact us</a>
+                                    <li class="mega-menu-item {{ request()->is('contact') ? 'active' : '' }}">
+                                        <a href="{{ route('front.contact') }}">Contact us</a>
                                     </li>
                                 </ul>
                             </nav><!-- menu end -->
