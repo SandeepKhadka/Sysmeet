@@ -130,12 +130,12 @@
         $("#table").DataTable();
     });
 
-    if (window.$('#is_parent').is(':checked')) {
-        window.$('#parent_cat_div').hide();
-    }
-    window.$('#is_parent').change(function() {
-        window.$('#parent_cat_div').slideToggle();
-    });
+    // if (window.$('#is_parent').is(':checked')) {
+    //     window.$('#parent_cat_div').hide();
+    // }
+    // window.$('#is_parent').change(function() {
+    //     window.$('#parent_cat_div').slideToggle();
+    // });
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -316,55 +316,29 @@
                         <div class="cmt-bg cmt-col-bgimage-yes col-bg-img-two pt-60 res-991-pt-0">
                             <div class="cmt-col-wrapper-bg-layer cmt-bg-layer"></div>
                             <div class="layer-content">
-                                <div class="slick_slider"
-                                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows":false, "autoplay":true, "dots":false, "infinite":true, "responsive":[{"breakpoint":992,"settings":{"slidesToShow": 1}},{"breakpoint":840,"settings":{"slidesToShow": 1}}]}'>
-                                    <!-- testimonials -->
-                                    <div class="testimonials cmt-testimonial-box-view-style1">
-                                        <div class="testimonial-content">
-                                            <div class="testimonial-quote-icon">
-                                                <i class="icon-quote-right-alt"></i>
+                                @if (isset($quotes) && sizeof($quotes) > 0)
+                                    <div class="slick_slider"
+                                        data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "arrows":false, "autoplay":true, "dots":false, "infinite":true, "responsive":[{"breakpoint":992,"settings":{"slidesToShow": 1}},{"breakpoint":840,"settings":{"slidesToShow": 1}}]}'>
+                                        <!-- testimonials -->
+                                        @foreach ($quotes as $quote)
+                                            <div class="testimonials cmt-testimonial-box-view-style1">
+                                                <div class="testimonial-content">
+                                                    <div class="testimonial-quote-icon">
+                                                        <i class="icon-quote-right-alt"></i>
+                                                    </div>
+                                                    <blockquote class="testimonial-text">{{ $quote->quote }}</blockquote>
+                                                    <div class="testimonial-caption">
+                                                        <h3>{{ $quote->quote_by }}</h3>
+                                                        <label>{{ $quote->role }}</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <blockquote class="testimonial-text">We are still not sure how we got here, but
-                                                we’re excited about where we’re going. Their innovators & engineer makes
-                                                things easy and in a timely matter.</blockquote>
-                                            <div class="testimonial-caption">
-                                                <h3>Victor Wilson</h3>
-                                                <label>Web Developer</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- testimonials end -->
-                                    <!-- testimonials -->
-                                    <div class="testimonials cmt-testimonial-box-view-style1">
-                                        <div class="testimonial-content">
-                                            <div class="testimonial-quote-icon">
-                                                <i class="icon-quote-right-alt"></i>
-                                            </div>
-                                            <blockquote class="testimonial-text">An excellent and hard working. Thanks to
-                                                them, we were able to achieve our goal on time, and we look forward to
-                                                continue working with them in the future.</blockquote>
-                                            <div class="testimonial-caption">
-                                                <h3>Aenna Bell</h3>
-                                                <label>IT Manager</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- testimonials end -->
-                                    <!-- testimonials -->
-                                    <div class="testimonials cmt-testimonial-box-view-style1">
-                                        <div class="testimonial-content">
-                                            <div class="testimonial-quote-icon">
-                                                <i class="icon-quote-right-alt"></i>
-                                            </div>
-                                            <blockquote class="testimonial-text">An excellent and hard working. Thanks to
-                                                them, we were able to achieve our goal on time, and we look forward to
-                                                continue working with them in the future.</blockquote>
-                                            <div class="testimonial-caption">
-                                                <h3>Er. john Martin</h3>
-                                                <label>WordPress Expert</label>
-                                            </div>
-                                        </div>
-                                    </div><!-- testimonials end -->
+                                        @endforeach
+                                        <!-- testimonials end -->
+                                    </div>
+                                @endif
+                                <div class="cmt-horizontal_sep width-100 mt-40 mb-70 res-991-mt-15 res-991-mb-35">
                                 </div>
-                                <div class="cmt-horizontal_sep width-100 mt-40 mb-70 res-991-mt-15 res-991-mb-35"></div>
                                 <div class="row g-0">
                                     <div class="col-lg-8">
                                         <!-- section title -->
@@ -404,7 +378,7 @@
                                             </div>
                                         </div>
                                         <a class="cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark mt-50 res-991-mt-30"
-                                            href="contact-us.html"><i class="icon-right"></i><span>see more
+                                            href="{{ route('front.contact') }}"><i class="icon-right"></i><span>see more
                                                 plans</span></a>
                                     </div>
                                     <div class="col-lg-4">

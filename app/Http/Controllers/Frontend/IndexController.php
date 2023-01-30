@@ -13,6 +13,7 @@ use App\Models\MemberDetails;
 use App\Models\OurHelp;
 use App\Models\OurPartner;
 use App\Models\OuterBanner;
+use App\Models\Quote;
 use App\Models\Service;
 use App\Models\ServiceList;
 use App\Models\ServicesToChooseUs;
@@ -20,15 +21,14 @@ use App\Models\SocialInfo;
 use App\Models\TeamMotto;
 use App\Models\WhyChooseUs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
     public function home(){
         $logo = logo::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
-        $main_banners = MainBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->get();
         $first_banner = MainBanner::where(['status'=>'active'])->orderBy('order_id', 'ASC')->first();
         $second_banner = MainBanner::where(['status'=>'active'])->orderBy('order_id', 'ASC')->skip(1)->first();
-        $outer_banners = OuterBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->get();
         $statistics_banner = OuterBanner::where(['status'=>'active'])->orderBy('id', 'DESC')->first();
         $our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->limit('3')->get();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
@@ -44,10 +44,8 @@ class IndexController extends Controller
         $footer = Footer::where(['status'=>'active'])->orderBy('id','DESC')->first();
         return view('frontend.index')->with([
             'logo'=>$logo,
-            'main_banners'=>$main_banners,
             'first_banner'=>$first_banner,
             'second_banner'=>$second_banner,
-            'outer_banners'=>$outer_banners,
             'statistics_banner'=>$statistics_banner,
             'our_help'=>$our_help,
             'all_our_help'=>$all_our_help,
@@ -75,6 +73,8 @@ class IndexController extends Controller
         $services_choose = ServicesToChooseUs::where(['status'=>'active'])->orderBy('order_id','ASC')->limit('2')->get();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
+        $quotes = Quote::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.about_us')->with([
             'logo'=>$logo,
             'about_us'=>$about_us,
@@ -86,6 +86,8 @@ class IndexController extends Controller
             'services_choose'=>$services_choose,
             'all_our_help'=>$all_our_help,
             'all_service_lists'=>$all_service_lists,
+            'member_details'=>$member_details,
+            'quotes'=>$quotes,
         ]);
     }
 
@@ -121,6 +123,7 @@ class IndexController extends Controller
         $member = MemberDetails::where(['status'=>'active', 'slug' => $request->slug])->first();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.team_details')->with([
             'logo'=>$logo,
             'member'=>$member,
@@ -130,6 +133,7 @@ class IndexController extends Controller
             'footer'=>$footer,
             'all_our_help'=>$all_our_help,
             'all_service_lists'=>$all_service_lists,
+            'member_details'=>$member_details,
         ]);
     }
 
@@ -145,6 +149,8 @@ class IndexController extends Controller
         $how_it_works = HowItWorks::where(['status'=>'active'])->orderBy('order_id','ASC')->limit('4')->get();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
+        $quotes = Quote::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.service')->with([
             'logo'=>$logo,
             'our_help'=>$our_help,
@@ -157,6 +163,8 @@ class IndexController extends Controller
             'footer'=>$footer,
             'all_our_help'=>$all_our_help,
             'all_service_lists'=>$all_service_lists,
+            'member_details'=>$member_details,
+            'quotes'=>$quotes,
         ]);
     }
 
@@ -175,6 +183,7 @@ class IndexController extends Controller
         $single_our_help = OurHelp::where(['status'=>'active', 'id' => $request->id])->first();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.it_solutions')->with([
             'logo'=>$logo,
             'single_our_help'=>$single_our_help,
@@ -183,6 +192,7 @@ class IndexController extends Controller
             'contact'=>$contact,
             'social_infos'=>$social_infos,
             'footer'=>$footer,
+            'member_details'=>$member_details,
         ]);
     }
 
@@ -201,6 +211,8 @@ class IndexController extends Controller
         $single_service_list = ServiceList::where(['status'=>'active', 'id' => $request->id])->first();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
+        $quotes = Quote::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.service_lists')->with([
             'logo'=>$logo,
             'single_service_list'=>$single_service_list,
@@ -209,6 +221,8 @@ class IndexController extends Controller
             'contact'=>$contact,
             'social_infos'=>$social_infos,
             'footer'=>$footer,
+            'member_details'=>$member_details,
+            'quotes'=>$quotes,
         ]);
     }
 
@@ -219,6 +233,7 @@ class IndexController extends Controller
         $footer = Footer::where(['status'=>'active'])->orderBy('id','DESC')->first();
         $all_our_help = OurHelp::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
         $all_service_lists = ServiceList::where(['status'=>'active'])->orderBy('order_id', 'ASC')->get();
+        $member_details = MemberDetails::where(['status'=>'active'])->orderBy('id','DESC')->get();
         return view('frontend.contact')->with([
             'logo'=>$logo,
             'contact'=>$contact,
@@ -226,7 +241,23 @@ class IndexController extends Controller
             'footer'=>$footer,
             'all_our_help'=>$all_our_help,
             'all_service_lists'=>$all_service_lists,
+            'member_details'=>$member_details,
         ]);
+    }
+
+    public function send_message(Request $request){
+        $data = ['name' => $request->first_name . ' ' . $request->last_name, 'data' => $request->message];
+        $user['from'] = $request->email;
+        $contact = Contact::where(['status'=>'active'])->orderBy('id','DESC')->first('email');
+        $user['to'] = $contact->email;
+        $user['subject'] = $request->subject;
+        Mail::send('frontend.mail',$data,function($messages) use ($user){
+            $messages ->to($user['to']);
+            $messages ->from($user['from']);
+            $messages->subject($user['subject']);
+        });
+        return redirect()->back()->with('success', 'Message sent succcessfully');
+        
     }
 
 }

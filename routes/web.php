@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactMessagesController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\MemberSkillController;
 use App\Http\Controllers\OurHelpController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OuterBannerController;
+use App\Http\Controllers\QuotesController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceListController;
 use App\Http\Controllers\ServicesToChooseUsController;
@@ -41,6 +43,7 @@ Route::get('/service', [App\Http\Controllers\Frontend\IndexController::class, 's
 Route::get('/service/{slug}/{id}', [App\Http\Controllers\Frontend\IndexController::class, 'service_lists'])->name('front.service_lists');
 Route::get('/it_solutions/{slug}/{id}', [App\Http\Controllers\Frontend\IndexController::class, 'it_solutions'])->name('front.it_solutions');
 Route::get('/contact', [App\Http\Controllers\Frontend\IndexController::class, 'contact'])->name('front.contact');
+Route::post('/contact/send_message', [App\Http\Controllers\Frontend\IndexController::class, 'send_message'])->name('front.send_message');
 
 
 
@@ -48,88 +51,94 @@ Route::get('/contact', [App\Http\Controllers\Frontend\IndexController::class, 'c
 //     return view('welcome');
 // });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Admin Dashboard
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'admin/sysmeet', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
 
-     //Banner Section
-     Route::resource('banner', BannerController::class);
-     Route::post('banner_status', [App\Http\Controllers\BannerController::class, 'bannerStatus'])->name('banner.status');
+    //Banner Section
+    Route::resource('banner', BannerController::class);
+    Route::post('banner_status', [App\Http\Controllers\BannerController::class, 'bannerStatus'])->name('banner.status');
 
-     //Main Banner Section
-     Route::resource('main_banner', MainBannerController::class);
-     Route::post('mainbanner_status', [App\Http\Controllers\MainBannerController::class, 'bannerStatus'])->name('mainbanner.status');
-    
-     //Outer Banner Section
-     Route::resource('statistics_banner', OuterBannerController::class, ['names' => 'outer_banner']);
-     Route::post('outerbanner_status', [App\Http\Controllers\OuterBannerController::class, 'bannerStatus'])->name('outerbanner.status');
+    //Main Banner Section
+    Route::resource('main_banner', MainBannerController::class);
+    Route::post('mainbanner_status', [App\Http\Controllers\MainBannerController::class, 'bannerStatus'])->name('mainbanner.status');
 
-     // How it works Section
-     Route::resource('how_it_works', HowItWorksController::class);
-     Route::post('how_it_works_status', [App\Http\Controllers\HowItWorksController::class, 'howItWorksStatus'])->name('how_it_works.status');
+    //Outer Banner Section
+    Route::resource('statistics_banner', OuterBannerController::class, ['names' => 'outer_banner']);
+    Route::post('outerbanner_status', [App\Http\Controllers\OuterBannerController::class, 'bannerStatus'])->name('outerbanner.status');
 
-     //Our Partner Section
-     Route::resource('our_partner', OurPartnerController::class);
-     Route::post('our_partner_status', [App\Http\Controllers\OurPartnerController::class, 'ourPartnerStatus'])->name('our_partner.status');
+    // How it works Section
+    Route::resource('how_it_works', HowItWorksController::class);
+    Route::post('how_it_works_status', [App\Http\Controllers\HowItWorksController::class, 'howItWorksStatus'])->name('how_it_works.status');
 
-     //Our Service Section
-     Route::resource('service', ServiceController::class);
-     Route::post('service_status', [App\Http\Controllers\ServiceController::class, 'serviceStatus'])->name('service.status');
+    //Our Partner Section
+    Route::resource('our_partner', OurPartnerController::class);
+    Route::post('our_partner_status', [App\Http\Controllers\OurPartnerController::class, 'ourPartnerStatus'])->name('our_partner.status');
 
-     //Our Service List Section
-     Route::resource('service_list', ServiceListController::class);
-     Route::post('service_list_status', [App\Http\Controllers\ServiceListController::class, 'serviceListStatus'])->name('service_list.status');
+    //Our Service Section
+    Route::resource('service', ServiceController::class);
+    Route::post('service_status', [App\Http\Controllers\ServiceController::class, 'serviceStatus'])->name('service.status');
 
-     //Our Help Section
-     Route::resource('service_our_help', OurHelpController::class);
-     Route::post('our_help_status', [App\Http\Controllers\OurHelpController::class, 'ourHelpStatus'])->name('our_help.status');
+    //Our Service List Section
+    Route::resource('service_list', ServiceListController::class);
+    Route::post('service_list_status', [App\Http\Controllers\ServiceListController::class, 'serviceListStatus'])->name('service_list.status');
 
-     //About us Section
-     Route::resource('about/about_us', AboutUsController::class, ['names' => 'about_us']);
-     Route::post('about_us_status', [App\Http\Controllers\AboutUsController::class, 'aboutUsStatus'])->name('about_us.status');
+    //Our Help Section
+    Route::resource('service_our_help', OurHelpController::class);
+    Route::post('our_help_status', [App\Http\Controllers\OurHelpController::class, 'ourHelpStatus'])->name('our_help.status');
 
-     //Why choose us Section
-     Route::resource('about/why_choose_us', WhyChooseUsController::class, ['names' => 'why_choose_us']);
-     Route::post('why_choose_us_status', [App\Http\Controllers\WhyChooseUsController::class, 'whyChooseUsStatus'])->name('why_choose_us.status');
+    //About us Section
+    Route::resource('about/about_us', AboutUsController::class, ['names' => 'about_us']);
+    Route::post('about_us_status', [App\Http\Controllers\AboutUsController::class, 'aboutUsStatus'])->name('about_us.status');
 
-     //Services to choose us Section
-     Route::resource('about/services_choose_us', ServicesToChooseUsController::class, ['names' => 'services_choose']);
-     Route::post('services_choose_us_status', [App\Http\Controllers\ServicesToChooseUsController::class, 'servicesChooseUsStatus'])->name('services_choose_us.status');
+    //Why choose us Section
+    Route::resource('about/why_choose_us', WhyChooseUsController::class, ['names' => 'why_choose_us']);
+    Route::post('why_choose_us_status', [App\Http\Controllers\WhyChooseUsController::class, 'whyChooseUsStatus'])->name('why_choose_us.status');
 
-     //Member Details Section
-     Route::resource('our_team/member_details', MemberDetailsController::class, ['names' => 'member_details']);
-     Route::post('member_details_status', [App\Http\Controllers\MemberDetailsController::class, 'memberDetailsStatus'])->name('member_details.status');
+    //Services to choose us Section
+    Route::resource('about/services_choose_us', ServicesToChooseUsController::class, ['names' => 'services_choose']);
+    Route::post('services_choose_us_status', [App\Http\Controllers\ServicesToChooseUsController::class, 'servicesChooseUsStatus'])->name('services_choose_us.status');
 
-     //Team Motto Section
-     Route::resource('our_team/team_motto', TeamMottoController::class, ['names' => 'team_motto']);
-     Route::post('team_motto_status', [App\Http\Controllers\TeamMottoController::class, 'teamMottoStatus'])->name('team_motto.status');
+    //Member Details Section
+    Route::resource('our_team/member_details', MemberDetailsController::class, ['names' => 'member_details']);
+    Route::post('member_details_status', [App\Http\Controllers\MemberDetailsController::class, 'memberDetailsStatus'])->name('member_details.status');
 
-     //Contact us Section
-     Route::resource('contact_us', ContactController::class);
-     Route::post('contact_us_status', [App\Http\Controllers\ContactController::class, 'contactUsStatus'])->name('contact_us.status');
+    //Team Motto Section
+    Route::resource('our_team/team_motto', TeamMottoController::class, ['names' => 'team_motto']);
+    Route::post('team_motto_status', [App\Http\Controllers\TeamMottoController::class, 'teamMottoStatus'])->name('team_motto.status');
 
-     //Contact Messages Section
-     Route::resource('contact/messages', ContactMessagesController::class, ['names' => 'messages']);
-     Route::post('messages_status', [App\Http\Controllers\ContactMessagesController::class, 'messagesStatus'])->name('messages.status');
+    //Contact us Section
+    Route::resource('contact_us', ContactController::class);
+    Route::post('contact_us_status', [App\Http\Controllers\ContactController::class, 'contactUsStatus'])->name('contact_us.status');
 
-     //Social Info Section
-     Route::resource('social_info', SocialInfoController::class, ['names' => 'social_info']);
-     Route::post('social_info_status', [App\Http\Controllers\SocialInfoController::class, 'socialInfoStatus'])->name('social_info.status');
+    //Contact Messages Section
+    Route::resource('contact/messages', ContactMessagesController::class, ['names' => 'messages']);
+    Route::post('messages_status', [App\Http\Controllers\ContactMessagesController::class, 'messagesStatus'])->name('messages.status');
 
-     //Footer Section
-     Route::resource('footer', FooterController::class, ['names' => 'footer']);
-     Route::post('footer_status', [App\Http\Controllers\FooterController::class, 'footerStatus'])->name('footer.status');
+    //Social Info Section
+    Route::resource('social_info', SocialInfoController::class, ['names' => 'social_info']);
+    Route::post('social_info_status', [App\Http\Controllers\SocialInfoController::class, 'socialInfoStatus'])->name('social_info.status');
 
-     //User Section
-     Route::resource('user', UserController::class);
-     Route::post('user_status', [App\Http\Controllers\UserController::class, 'userStatus'])->name('user.status');
+    //Footer Section
+    Route::resource('footer', FooterController::class, ['names' => 'footer']);
+    Route::post('footer_status', [App\Http\Controllers\FooterController::class, 'footerStatus'])->name('footer.status');
 
-     //Logo Section
-     Route::resource('logo', LogoController::class);
-     Route::post('logo_status', [App\Http\Controllers\LogoController::class, 'logoStatus'])->name('logo.status');
+    //User Section
+    Route::resource('user', UserController::class);
+    Route::post('user_status', [App\Http\Controllers\UserController::class, 'userStatus'])->name('user.status');
+
+    //Logo Section
+    Route::resource('logo', LogoController::class);
+    Route::post('logo_status', [App\Http\Controllers\LogoController::class, 'logoStatus'])->name('logo.status');
+
+    //Admin profile
+    Route::resource('adminProfile', AdminProfileController::class);
+
+    //Logo Section
+    Route::resource('our_team/quote', QuotesController::class, ['names' => 'quote']);
+    Route::post('quote_status', [App\Http\Controllers\QuotesController::class, 'quoteStatus'])->name('quote.status');
 });
-

@@ -15,8 +15,7 @@
                             @endif
                         </div>
                         <div class="textwidget widget-text">
-                            <p>An excellent service management in the area of IT providing solutions. High level
-                                efficient solution to businesses growth</p>
+                            <p>{{ @$contact->why_contact_us }}</p>
                         </div>
                         @if (isset($social_infos) && sizeof($social_infos) > 0)
                             <div class="widget_social_wrapper social-icons pt-40">
@@ -27,14 +26,6 @@
                                                 aria-label="{{ strtolower($social->title) }}" target="new"><i
                                                     class="{{ 'icon-' . strtolower($social->title) }}"></i></a></li>
                                     @endforeach
-                                    {{-- <li><a href="https://twitter.com/CymolThemes" rel="noopener"
-                                              aria-label="twitter"><i class="icon-twitter"></i></a></li>
-                                      <li><a href="https://www.behance.net/cymolthemes191219" rel="noopener"
-                                              aria-label="linkedin"><i class="icon-linkedin"></i></a></li>
-                                      <li><a href="https://in.pinterest.com/cymolthemes/" rel="noopener"
-                                              aria-label="pinterest"><i class="icon-pinterest"></i></a></li>
-                                      <li><a href="https://dribbble.com/cymol_themes" rel="noopener"
-                                              aria-label="dribbble"><i class="icon-dribbble"></i></a></li> --}}
                                 </ul>
                             </div>
                         @endif
@@ -63,35 +54,35 @@
                 @endif
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 widget-area">
                     <div class="widget multi_widget clearfix">
-                        <!-- <div class="newsletter_widget clearfix">
-                            <h3 class="widget-title">Signup for our newsletter</h3>
-                            <p>Sign up to our newsletter to get the latest news.</p>
-                            <form id="subscribe-form" class="newsletter-form" action="#" data-mailchimp="true">
-                                <div class="mailchimp-inputbox clearfix" id="subscribe-content">
-                                    <p>
-                                        <input type="email" name="email" placeholder="Enter Your Email Address..." required="">
-                                    </p>
-                                    <p><button class="submit cmt-btn cmt-btn-size-md cmt-btn-shape-rounded cmt-btn-style-border cmt-btn-color-skincolor" type="submit"><i class="icon-right"></i></button></p>
-                                </div>
-                                <div id="subscribe-msg"></div>
-                            </form>
-                        </div> -->
                         <div class="widget_nav_menu clearfix">
                             <h3 class="widget-title">Quick links</h3>
                             <ul class="menu-footer-quick-links links-1">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Meet Our Team</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{{ route('front.home') }}">Home</a></li>
+                                <li><a href="{{ route('front.about_us') }}">About us</a></li>
+                                <li><a href="{{ route('front.service') }}">Services</a></li>
+                                <li><a href="{{ route('front.contact') }}">Contact us</a></li>
                             </ul>
                         </div>
                         <div class="widget_nav_menu clearfix">
                             <h3 class="widget-title">Solutions</h3>
                             <ul class="menu-footer-quick-links links-2">
-                                <li><a href="#">IT Management</a></li>
-                                <li><a href="#">Mobile App Dev</a></li>
-                                <li><a href="#">Website Dev</a></li>
-                                <li><a href="#">SEO & Digital Marketing</a></li>
+                                @if (isset($all_our_help) && sizeof($all_our_help) > 0)
+                                    @php
+                                        $i = 0;
+                                    @endphp
+                                    @foreach ($all_our_help as $help)
+                                        @if ($i < 4)
+                                            @php
+                                                $i = $i + 1;
+                                            @endphp
+                                            <li
+                                                class="{{ request()->is('it_solutions/' . $help->slug . '/' . $help->id) ? 'active' : '' }}">
+                                                <a
+                                                    href="{{ route('front.it_solutions', ['slug' => $help->slug, 'id' => $help->id]) }}">{{ $help->sub_title }}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                     </div>

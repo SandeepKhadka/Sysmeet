@@ -34,8 +34,10 @@
                                         <ul class="mega-submenu">
                                             <li class="{{ request()->is('company/about_us') ? 'active' : '' }}"><a
                                                     href="{{ route('front.about_us') }}">About Us</a></li>
-                                            <li class="{{ request()->is('company/our_team') ? 'active' : '' }}"><a
-                                                    href="{{ route('front.our_team') }}">Our Team</a></li>
+                                            @if (isset($member_details) && sizeof($member_details) > 0)
+                                                <li class="{{ request()->is('company/our_team') ? 'active' : '' }}"><a
+                                                        href="{{ route('front.our_team') }}">Our Team</a></li>
+                                            @endif
                                             {{-- <li class="{{ request()->is('company/team_details') ? 'active' : '' }}"><a href="{{route('front.team_details')}}">Team Details</a></li> --}}
                                         </ul>
                                     </li>

@@ -1,6 +1,6 @@
 @include('frontend.layouts.header')
 
-@section('title', 'GoodGoods - Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more')
+@section('title', 'Sysmeet')
 
 <!--page start-->
 <div class="page">

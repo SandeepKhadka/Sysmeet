@@ -11,11 +11,18 @@
    <script src="{{ asset('front/assets/js/circle-progress.min.js') }}"></script>
    <script src="{{ asset('front/assets/js/main.js') }}"></script>
 
+
    <!-- Revolution Slider -->
    <script src='{{ asset('front/assets/revolution/js/revolution.tools.min.js') }}'></script>
    <script src='{{ asset('front/assets/revolution/js/rs6.min.js') }}'></script>
    <script src="{{ asset('front/assets/revolution/js/slider.js') }}"></script>
    <!-- Javascript end-->
+
+   <script>
+       setTimeout(function() {
+           $("#alert").slideUp();
+       }, 4000);
+   </script>
 
    @yield('scripts')
 

@@ -5,11 +5,14 @@
 @endsection --}}
 
 @section('main-content')
-
+    <div class="col-lg-12">
+        @include('frontend.layouts.notify')
+    </div>
     <!-- page-title -->
     <div class="cmt-page-title-row bg-base-dark cmt-bg cmt-bgimage-yes clearfix">
         <div class="cmt-titlebar-wrapper-bg-layer cmt-bg-layer"></div>
         <div class="container">
+
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="cmt-page-title-row-inner">
@@ -145,46 +148,45 @@
                                         <h2 class="title">Contact Us To Learn More.</h2>
                                     </div>
                                 </div><!-- section title end -->
-                                <form action="#" class="query_form wrap-form clearfix" method="post">
+                                <form action="{{ route('front.send_message') }}" class="query_form wrap-form clearfix"
+                                    method="post" onsubmit="return confirm('Do you want to send message?');">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="name" type="text" value=""
-                                                        placeholder="First Name" required="required"></span>
+                                                <span class="text-input"><input name="first_name" type="text" style="color: darkgrey" 
+                                                        value="" placeholder="First Name" required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="name" type="text" value=""
-                                                        placeholder="Last Name" required="required"></span>
+                                                <span class="text-input"><input name="last_name" type="text"
+                                                        value="" placeholder="Last Name" required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="email" type="text" value=""
+                                                <span class="text-input"><input name="email" type="email" value=""
                                                         placeholder="Email Address" required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
                                                 <span class="text-input"><input name="phone" type="text" value=""
-                                                        placeholder="Phone" required="required"></span>
+                                                        placeholder="Phone"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-12">
                                             <label>
-                                                <span class="text-input select-option">
-                                                    <select name="menu-232">
-                                                        <option value="Experience Design">Experience Design</option>
-                                                        <option value="IT Consultancy">IT Consultancy</option>
-                                                    </select>
+                                                <span class="text-input"><input name="subject" type="text"
+                                                        value="" placeholder="Subject"></span>
                                                 </span>
                                             </label>
                                         </div>
                                         <div class="col-md-12">
                                             <label>
                                                 <span class="text-input">
-                                                    <textarea name="message" rows="4" placeholder="Message goes here" required="required"></textarea>
+                                                    <textarea name="message" rows="4" placeholder="Message goes here" required="required" style="resize: none"></textarea>
                                                 </span>
                                             </label>
                                         </div>

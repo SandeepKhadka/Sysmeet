@@ -37,8 +37,6 @@
                                  $upper_string = $arr[0];
                              }
                          @endphp
-                         {{-- {{$arr[0].' '.$arr[1].' '.$arr[2]}} --}}
-                         {{-- {{$first_banner->title}} --}}
                          {{ $upper_string }}
                      </rs-layer>
                      <rs-layer id="slider-1-slide-1-layer-2" data-type="text" data-color="#05255f" data-rsp_ch="on"
@@ -58,7 +56,7 @@
                          data-frame_999="o:0;st:w;sR:7120;" style="z-index:12;font-family:'Lato', sans-serif;">
                          {{ @$first_banner->summary }}
                      </rs-layer>
-                     <a id="slider-1-slide-4-layer-5" href="contact-us.html"
+                     <a id="slider-1-slide-4-layer-5" href="{{ route('front.contact') }}"
                          class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
                          data-type="text" data-color="#05255f" data-rsp_ch="on"
                          data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
@@ -134,7 +132,7 @@
                          style="z-index:12;font-family:'Lato', sans-serif;">
                          {{ $second_banner->summary }}
                      </rs-layer>
-                     <a id="slider-1-slide-4-layer-5" href="contact-us.html"
+                     <a id="slider-1-slide-4-layer-5" href="{{ route('front.contact') }}"
                          class="rs-layer cmt-btn btn-default cmt-icon-btn-left cmt-btn-size-md cmt-btn-color-dark"
                          data-type="text" data-color="#05255f" data-rsp_ch="on"
                          data-xy="x:l,l,c,c;xo:71px,71px,15px,15px;y:t,t,t,m;yo:426px,426px,310px,80px;"
@@ -166,7 +164,6 @@
  <!--site-main start-->
  <div class="site-main">
 
-
      <!--bg-base-dark-->
      {{-- {{dd($our_help)}} --}}
      @if (isset($our_help) && sizeof($our_help) > 0)
@@ -182,9 +179,7 @@
                                  <h2 class="title">How can we help you?</h2>
                              </div>
                              <div class="title-desc">
-                                 <p>Devfox delivers digital transformations and technology services from ideation to
-                                     execution, enabling Global 20K clients. The collaborative approach that creates
-                                     customized solutions across the digital value chain.</p>
+                                 <p>{{@$team_motto->team_motto}}</p>
                              </div>
                          </div><!-- section title end -->
                          <div class="pb-60 res-991-p-0"></div>
@@ -229,50 +224,6 @@
                          </div>
                      @endforeach
                  @endif
-                 {{-- <div class="col-lg-4 col-md-4 col-sm-12">
-                     <!--featured-imagebox-services-->
-                     <div class="featured-imagebox featured-imagebox-services style1">
-                         <!-- featured-thumbnail -->
-                         <div class="featured-thumbnail">
-                             <a href="experience-design.html"><img width="740" height="500"
-                                     class="img-fluid auto_size"
-                                     src="https://via.placeholder.com/740x500?text=740x500+services-02.jpg"
-                                     alt="image"></a>
-                         </div><!-- featured-thumbnail end-->
-                         <div class="featured-content">
-                             <div class="ser_category">Our expertise</div>
-                             <div class="featured-title">
-                                 <h3>Why partner with us</h3>
-                             </div>
-                             <div class="ser_num"></div>
-                             <div class="ser_readmore"><a href="experience-design.html"
-                                     class="cmt-btn cmt-btn-size-md cmt-icon-btn-right cmt-btn-color-skincolor btn-inline">Discover
-                                     Now<i class="icon-right"></i></a></div>
-                         </div>
-                     </div><!-- featured-imagebox-services end-->
-                 </div>
-                 <div class="col-lg-4 col-md-4 col-sm-12">
-                     <!--featured-imagebox-services-->
-                     <div class="featured-imagebox featured-imagebox-services style1">
-                         <!-- featured-thumbnail -->
-                         <div class="featured-thumbnail">
-                             <a href="digital-services.html"><img width="740" height="500"
-                                     class="img-fluid auto_size"
-                                     src="https://via.placeholder.com/740x500?text=740x500+services-03.jpg"
-                                     alt="image"></a>
-                         </div><!-- featured-thumbnail end-->
-                         <div class="featured-content">
-                             <div class="ser_category">Our customers</div>
-                             <div class="featured-title">
-                                 <h3>Client success stories</h3>
-                             </div>
-                             <div class="ser_num"></div>
-                             <div class="ser_readmore"><a href="digital-services.html"
-                                     class="cmt-btn cmt-btn-size-md cmt-icon-btn-right cmt-btn-color-skincolor btn-inline">Discover
-                                     Now<i class="icon-right"></i></a></div>
-                         </div>
-                     </div><!-- featured-imagebox-services end-->
-                 </div> --}}
              </div>
          </div>
      </section>
@@ -290,9 +241,6 @@
                              <img width="1140" height="1300" class="img-fluid"
                                  src="{{ asset('/uploads/about_us/' . $about_us->image) }}" alt="about_us_image">
                          </div>
-                         <!-- <div class="d-table bg-base-skin text-base-white position-relative mt_20 ml-30 pl-30 pr-30 pt-10 pb-10 border-rad_5">
-                        <div class="fs-16 lh-sm"><strong>410+</strong> Total Projects Complete</div>
-                    </div> -->
                      </div>
                      <div class="col-xl-6">
                          <div class="res-1199-pt-40">
@@ -308,33 +256,6 @@
                                      </p>
                                  </div>
                              </div><!-- section title end -->
-                             {{-- <div class="row pt-15 res-991-pt-0">
-                             <div class="col-lg-6 col-md-6 col-sm-12">
-                                 <h3 class="fs-20">Custom Development</h3>
-                                 <p>Our expert designer team will deliver enriched website with capabilities that grow
-                                     business faster</p>
-                                 <div class="cmt-horizontal_sep width-100 mt-25 pb-20"></div>
-                                 <h3 class="fs-20">Software Development</h3>
-                                 <p>Custom software will help create the necessary tools to effectively complete monitor
-                                     improvement</p>
-                             </div>
-                             <div class="col-lg-6 col-md-6 col-sm-12">
-                                 <div class="d-table border-rad_5 overflow-hidden mb-15 res-991-mb-0 res-767-mt-30">
-                                     <div class="ttm_single_image-wrapper text-start">
-                                         <img width="810" height="519" class="img-fluid"
-                                             src="https://via.placeholder.com/810x519?text=810x519+single-img-02.jpg"
-                                             alt="single-02">
-                                         <div class="bg-base-dark text-left pt-15 pb-15 pl-25 pr-25">
-                                             <p class="mb-5"><img src="images/star-01.png" alt="rate-star"></p>
-                                             <p class="text-base-white lh-base mb-0">Rated 4.7 out of 5 based on
-                                                 <br>over<strong><span class="text-base-skin"> 1000+
-                                                         Reviews</span></strong>
-                                             </p>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div> --}}
                          </div>
                      </div>
                  </div><!-- row end -->
@@ -400,19 +321,6 @@
                                          </div>
                                      </div><!-- section title end -->
                                  </div>
-                                 {{-- <div class="col-lg-6">
-                                 <p>We enable the world’s leading companies with cutting-edge digital & IT service as a
-                                     competitive advantage ahead of schedule.</p>
-                                 <ul
-                                     class="cmt-list cmt-bordered-lists cmt-list-style-icon cmt-list-icon-color-skincolor text-base-dark">
-                                     <li><i class="fas fa-arrow-right"></i><span class="cmt-list-li-content">Connect
-                                             to a wide range of API’s that will innovate and increase customer</span>
-                                     </li>
-                                     <li><i class="fas fa-arrow-right"></i><span class="cmt-list-li-content">Visitors
-                                             can browse with peace of mind without exposing any personal data.</span>
-                                     </li>
-                                 </ul>
-                             </div> --}}
                              </div>
                              <div class="row">
                                  @foreach ($service_lists as $service)
@@ -448,184 +356,6 @@
                                          </div>
                                      @endif
                                  @endforeach
-                                 {{-- <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-server"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-world-1"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>Website Development</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>Website Development</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>The process of creating responsive and beautiful websites.
-                                             </p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="experience-design.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-layout"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-layout"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>Mobile App Development</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>Mobile App Dev</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>It is a Practice of creating mobile apps.</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="digital-services.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-data-management"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-data-management"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>Management services</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>Management services</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>The robust solution needs to be deliver a wide range of features.</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="data-structuring.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-gear"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-gear"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>Cloud Services</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>Cloud Services</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>Infrastructure, platforms, and software that are by third-party</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="advisory-services.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-mission"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-mission"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>SEO and Digital Marketing</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>SEO and Digital Marketing</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>Any activities designed to optimize and promote the webistes.
-                                             </p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="content-engineering.html">More Details<i
-                                                 class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-communities"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-communities"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>IT Consulting</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>IT Consulting</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>A management of Computer repairs maintenance of networks.</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="it-consultancy.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div>
-                             <div class="col-lg-3 col-md-6 col-sm-6">
-                                 <!--featured-icon-box-->
-                                 <div class="featured-icon-box icon-align-top-content style1">
-                                     <div class="bg_icon"><i class="flaticon flaticon-support"></i></div>
-                                     <div class="featured-icon">
-                                         <div
-                                             class="cmt-icon cmt-icon_element-onlytxt cmt-icon_element-color-darkgrey cmt-icon_element-size-lg">
-                                             <i class="flaticon flaticon-support"></i>
-                                         </div>
-                                     </div>
-                                     <div class="featured-title">
-                                         <h3>24/7 Support</h3>
-                                     </div>
-                                     <div class="featured-hover-content">
-                                         <div class="featured-title">
-                                             <h3>24/7 Support</h3>
-                                         </div>
-                                         <div class="featured-desc">
-                                             <p>Range of customer services to assist client in making effective</p>
-                                         </div>
-                                         <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-white"
-                                             href="experience-design.html">More Details<i class="icon-right"></i></a>
-                                     </div>
-                                 </div><!-- featured-icon-box end-->
-                             </div> --}}
                              </div>
                          </div>
                      </div>
@@ -681,352 +411,142 @@
                              </div><!-- featured-icon-box end-->
                          </div>
                      @endforeach
+                 </div>
              @endif
-             {{-- <div class="col-lg-3 col-md-6 col-sm-6">
-                     <!-- featured-icon-box -->
-                     <div class="featured-icon-box icon-align-top-content style2">
-                         <div class="bg_icon"><i class="flaticon flaticon-leader"></i></div>
-                         <div class="featured-icon">
-                             <div
-                                 class="cmt-icon cmt-icon_element-fill cmt-icon_element-style-rounded cmt-icon_element-color-white cmt-icon_element-size-lg">
-                                 <div class="cmt-num"><span class="number"></span></div>
-                             </div>
-                         </div>
-                         <div class="featured-content">
-                             <div class="featured-title">
-                                 <h3>Request Meet Up</h3>
-                             </div>
-                             <div class="featured-desc">
-                                 <p>We will set up meeting with experts for your business</p>
-                             </div>
-                             <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-skincolor"
-                                 href="contact-us.html">view more<i class="icon-right"></i></a>
-                         </div>
-                     </div><!-- featured-icon-box end-->
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                     <!-- featured-icon-box -->
-                     <div class="featured-icon-box icon-align-top-content style2">
-                         <div class="bg_icon"><i class="flaticon flaticon-web-coding"></i></div>
-                         <div class="featured-icon">
-                             <div
-                                 class="cmt-icon cmt-icon_element-fill cmt-icon_element-style-rounded cmt-icon_element-color-white cmt-icon_element-size-lg">
-                                 <div class="cmt-num"><span class="number"></span></div>
-                             </div>
-                         </div>
-                         <div class="featured-content">
-                             <div class="featured-title">
-                                 <h3>Receive Custom Plan</h3>
-                             </div>
-                             <div class="featured-desc">
-                                 <p>Get your work done according to your flexibility</p>
-                             </div>
-                             <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-skincolor"
-                                 href="contact-us.html">view more<i class="icon-right"></i></a>
-                         </div>
-                     </div><!-- featured-icon-box end-->
-                 </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                     <!-- featured-icon-box -->
-                     <div class="featured-icon-box icon-align-top-content style2">
-                         <div class="bg_icon"><i class="flaticon flaticon-briefing"></i></div>
-                         <div class="featured-icon">
-                             <div
-                                 class="cmt-icon cmt-icon_element-fill cmt-icon_element-style-rounded cmt-icon_element-color-white cmt-icon_element-size-lg">
-                                 <div class="cmt-num"><span class="number"></span></div>
-                             </div>
-                         </div>
-                         <div class="featured-content">
-                             <div class="featured-title">
-                                 <h3>Execute Submissions</h3>
-                             </div>
-                             <div class="featured-desc">
-                                 <p>Your work is under progress by our experts team</p>
-                             </div>
-                             <a class="cmt-btn btn-inline cmt-icon-btn-right cmt-btn-size-md cmt-btn-color-skincolor"
-                                 href="blog.html">view more<i class="icon-right"></i></a>
-                         </div>
-                     </div><!-- featured-icon-box end-->
-                 </div> --}}
-         </div>
- </div>
- </section>
- <!--padding_top_zero-section end-->
-
-
- <!-- bg-base-dark -->
- @if (isset($member_details) && sizeof($member_details) > 0)
-     <section class="cmt-row bg-base-dark cmt-bg cmt-bgimage-yes bg-img3 clearfix">
-         <div class="cmt-row-wrapper-bg-layer cmt-bg-layer bg-base-dark"></div>
-         <div class="container">
              <div class="row">
                  <div class="col-lg-12">
-                     <!-- section title -->
-                     <div class="section-title style2 res-991-mb_20">
-                         <div class="title-header">
-                             <h3>Meet Our Team</h3>
-                             <h2 class="title">Our powerful team members</h2>
-                         </div>
-                         @if (isset($team_motto) && $team_motto != null)
-                             <div class="title-desc">
-                                 <p>{{ $team_motto->team_motto }}. &nbsp; <a href="{{ route('front.our_team') }}"
-                                         class="cmt-btn cmt-btn-size-md cmt-btn-color-skincolor btn-inline btn-underline">
-                                         More Team Members</a></p>
-                             </div>
-                         @endif
-                     </div><!-- section title end -->
-                     <div class="pb-100 pt-60 res-991-p-0"></div>
+                     <div class="mt-25 text-center text-base-dark">Stop wasting time and money on technology. <a
+                             href="{{ route('front.about_us') }}"
+                             class="cmt-btn cmt-btn-size-md cmt-btn-color-skincolor btn-inline btn-underline">Explore
+                             our company</a></div>
                  </div>
              </div>
          </div>
+         {{-- </div> --}}
      </section>
-     <!-- bg-base-dark end-->
+     <!--padding_top_zero-section end-->
 
 
-     <!-- team-section -->
-     <section class="cmt-row team-section padding_zero-section cmt-bg clearfix">
-         <div class="cmt-row-wrapper-bg-layer cmt-bg-layer"></div>
-         <div class="container">
-             <!-- row -->
-             <div class="row slick_slider mt_240 res-991-mt-40"
-                 data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":992,"settings":{"slidesToShow": 3}}, {"breakpoint":778,"settings":{"slidesToShow": 2}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
-                 @foreach ($member_details as $member)
-                     <div class="cmt-box-col-wrapper col-lg-3">
-                         <!-- featured-imagebox-team -->
-                         <div class="featured-imagebox featured-imagebox-team style1">
-                             <div class="featured-thumbnail">
-                                 <img class="img-fluid" width="535" height="500"
-                                     src="{{ asset('/uploads/member_details/' . $member->photo) }}"
-                                     alt="member image">
+     <!-- bg-base-dark -->
+     @if (isset($member_details) && sizeof($member_details) > 0)
+         <section class="cmt-row bg-base-dark cmt-bg cmt-bgimage-yes bg-img3 clearfix">
+             <div class="cmt-row-wrapper-bg-layer cmt-bg-layer bg-base-dark"></div>
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <!-- section title -->
+                         <div class="section-title style2 res-991-mb_20">
+                             <div class="title-header">
+                                 <h3>Meet Our Team</h3>
+                                 <h2 class="title">Our powerful team members</h2>
                              </div>
-                             <div class="featured-content">
-                                 <div class="team-position">{{ $member->role }}</div>
-                                 <div class="featured-title">
-                                     <h3><a
-                                             href="team-details.html">{{ $member->first_name . ' ' . $member->last_name }}</a>
-                                     </h3>
+                             @if (isset($team_motto) && $team_motto != null)
+                                 <div class="title-desc">
+                                     <p>{{ $team_motto->team_motto }}. &nbsp; <a href="{{ route('front.our_team') }}"
+                                             class="cmt-btn cmt-btn-size-md cmt-btn-color-skincolor btn-inline btn-underline">
+                                             More Team Members</a></p>
                                  </div>
-                                 <div class="featured-view-more">
-                                     <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                         href="{{ route('front.team_details', $member->slug) }}">more details</a>
+                             @endif
+                         </div><!-- section title end -->
+                         <div class="pb-100 pt-60 res-991-p-0"></div>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         <!-- bg-base-dark end-->
+
+
+         <!-- team-section -->
+         <section class="cmt-row team-section padding_zero-section cmt-bg clearfix">
+             <div class="cmt-row-wrapper-bg-layer cmt-bg-layer"></div>
+             <div class="container">
+                 <!-- row -->
+                 <div class="row slick_slider mt_240 res-991-mt-40"
+                     data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows":false, "dots":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":992,"settings":{"slidesToShow": 3}}, {"breakpoint":778,"settings":{"slidesToShow": 2}}, {"breakpoint":575,"settings":{"slidesToShow": 1}}]}'>
+                     @foreach ($member_details as $member)
+                         <div class="cmt-box-col-wrapper col-lg-3">
+                             <!-- featured-imagebox-team -->
+                             <div class="featured-imagebox featured-imagebox-team style1">
+                                 <div class="featured-thumbnail">
+                                     <img class="img-fluid" width="535" height="500"
+                                         src="{{ asset('/uploads/member_details/' . $member->photo) }}"
+                                         alt="member image">
                                  </div>
-                                 <div class="featured-iconbox cmt-media-link">
-                                     <div class="media-block">
-                                         <div class="media-btn"><i class="icon-plus"></i></div>
-                                         <ul class="social-icons list-inline">
-                                             <li class="social-facebook"><a href="{{ $member->facebook_link }}"><i
-                                                         class="ti ti-facebook"></i></a></li>
-                                             <li class="social-twitter"><a href="{{ $member->twitter_link }}"><i
-                                                         class="ti ti-twitter-alt"></i></a></li>
-                                             {{-- <li class="social-pinterest"><a href="{{ $member->pinterest_link }}"><i
-                                                         class="ti ti-pinterest"></i></a></li> --}}
-                                             <li class="social-instagram"><a href="{{ $member->instagram_link }}"><i
-                                                         class="ti ti-instagram"></i></a></li>
-                                             <li class="social-linkedin"><a href="{{ $member->linkedin_link }}"><i
-                                                         class="ti ti-linkedin"></i></a></li>
-                                         </ul>
+                                 <div class="featured-content">
+                                     <div class="team-position">{{ $member->role }}</div>
+                                     <div class="featured-title">
+                                         <h3><a
+                                                 href="team-details.html">{{ $member->first_name . ' ' . $member->last_name }}</a>
+                                         </h3>
                                      </div>
-                                 </div>
-                             </div>
-                         </div><!-- featured-imagebox-team end-->
-                     </div>
-                 @endforeach
-                 {{-- <div class="cmt-box-col-wrapper col-lg-3">
-                     <!-- featured-imagebox-team -->
-                     <div class="featured-imagebox featured-imagebox-team style1">
-                         <div class="featured-thumbnail">
-                             <img class="img-fluid" width="535" height="500"
-                                 src="https://via.placeholder.com/535x500?text=535x500+team-img02.jpg" alt="image">
-                         </div>
-                         <div class="featured-content">
-                             <div class="team-position">Web Designer</div>
-                             <div class="featured-title">
-                                 <h3><a href="team-details.html">Ivan Hindshaw</a></h3>
-                             </div>
-                             <div class="featured-view-more">
-                                 <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                     href="team-details.html">more details</a>
-                             </div>
-                             <div class="featured-iconbox cmt-media-link">
-                                 <div class="media-block">
-                                     <div class="media-btn"><i class="icon-plus"></i></div>
-                                     <ul class="social-icons list-inline">
-                                         <li class="social-facebook"><a
-                                                 href="https://www.facebook.com/cymolthemes.191219"><i
-                                                     class="ti ti-facebook"></i></a></li>
-                                         <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                     class="ti ti-twitter-alt"></i></a></li>
-                                         <li class="social-pinterest"><a
-                                                 href="https://in.pinterest.com/cymolthemes/"><i
-                                                     class="ti ti-pinterest"></i></a></li>
-                                         <li class="social-instagram"><a
-                                                 href="https://www.instagram.com/cymol_themes/"><i
-                                                     class="ti ti-instagram"></i></a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
-                     </div><!-- featured-imagebox-team end-->
-                 </div>
-                 <div class="cmt-box-col-wrapper col-lg-3">
-                     <!-- featured-imagebox-team -->
-                     <div class="featured-imagebox featured-imagebox-team style1">
-                         <div class="featured-thumbnail">
-                             <img class="img-fluid" width="535" height="500"
-                                 src="https://via.placeholder.com/535x500?text=535x500+team-img03.jpg" alt="image">
-                         </div>
-                         <div class="featured-content">
-                             <div class="team-position">Project Manager</div>
-                             <div class="featured-title">
-                                 <h3><a href="team-details.html">Natalia Zox</a></h3>
-                             </div>
-                             <div class="featured-view-more">
-                                 <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                     href="team-details.html">more details</a>
-                             </div>
-                             <div class="featured-iconbox cmt-media-link">
-                                 <div class="media-block">
-                                     <div class="media-btn"><i class="icon-plus"></i></div>
-                                     <ul class="social-icons list-inline">
-                                         <li class="social-facebook"><a
-                                                 href="https://www.facebook.com/cymolthemes.191219"><i
-                                                     class="ti ti-facebook"></i></a></li>
-                                         <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                     class="ti ti-twitter-alt"></i></a></li>
-                                         <li class="social-pinterest"><a
-                                                 href="https://in.pinterest.com/cymolthemes/"><i
-                                                     class="ti ti-pinterest"></i></a></li>
-                                         <li class="social-instagram"><a
-                                                 href="https://www.instagram.com/cymol_themes/"><i
-                                                     class="ti ti-instagram"></i></a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
-                     </div><!-- featured-imagebox-team end-->
-                 </div>
-                 <div class="cmt-box-col-wrapper col-lg-3">
-                     <!-- featured-imagebox-team -->
-                     <div class="featured-imagebox featured-imagebox-team style1">
-                         <div class="featured-thumbnail">
-                             <img class="img-fluid" width="535" height="500"
-                                 src="https://via.placeholder.com/535x500?text=535x500+team-img04.jpg" alt="image">
-                         </div>
-                         <div class="featured-content">
-                             <div class="team-position">Consultant Officer</div>
-                             <div class="featured-title">
-                                 <h3><a href="team-details.html">Maria Gordian</a></h3>
-                             </div>
-                             <div class="featured-view-more">
-                                 <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                     href="team-details.html">more details</a>
-                             </div>
-                             <div class="featured-iconbox cmt-media-link">
-                                 <div class="media-block">
-                                     <div class="media-btn"><i class="icon-plus"></i></div>
-                                     <ul class="social-icons list-inline">
-                                         <li class="social-facebook"><a
-                                                 href="https://www.facebook.com/cymolthemes.191219"><i
-                                                     class="ti ti-facebook"></i></a></li>
-                                         <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                     class="ti ti-twitter-alt"></i></a></li>
-                                         <li class="social-pinterest"><a
-                                                 href="https://in.pinterest.com/cymolthemes/"><i
-                                                     class="ti ti-pinterest"></i></a></li>
-                                         <li class="social-instagram"><a
-                                                 href="https://www.instagram.com/cymol_themes/"><i
-                                                     class="ti ti-instagram"></i></a></li>
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
-                     </div><!-- featured-imagebox-team end-->
-                 </div> --}}
-             </div><!-- row end -->
-         </div>
-     </section>
- @endif
- <!-- team-section end -->
-
- <br>
- <!--partner-section-->
- @if (isset($our_partners) && sizeof($our_partners) > 0)
-     <section class="cmt-row partner-section bg-img4 clearfix">
-         <div class="container">
-             <div class="row align-items-center">
-
-                 <div class="col-lg-12">
-                     <div class="d-sm-flex align-items-center justify-content-between border-bottom res-991-mt-40">
-                         <h3 class="fs-26 mb-20">Our Partners</h3>
-                     </div>
-                     <!-- slick_slider -->
-                     <div class="slick_slider"
-                         data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1200,"settings":{"slidesToShow": 5}}, {"breakpoint":1024,"settings":{"slidesToShow": 4}}, {"breakpoint":777,"settings":{"slidesToShow": 3}},{"breakpoint":575,"settings":{"slidesToShow": 2}},{"breakpoint":380,"settings":{"slidesToShow": 1}}]}'>
-                         @foreach ($our_partners as $partner)
-                             <div class="client-box">
-                                 <div class="cmt-client-logo-tooltip">
-                                     <div class="cmt-client-logo-tooltip-inner">
-                                         <div class="client-thumbnail">
-                                             <img width="152" height="60" class="img-fluid"
-                                                 src="{{ asset('/uploads/our_partner/' . $partner->image) }}"
-                                                 alt="image">
+                                     <div class="featured-view-more">
+                                         <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
+                                             href="{{ route('front.team_details', $member->slug) }}">more details</a>
+                                     </div>
+                                     <div class="featured-iconbox cmt-media-link">
+                                         <div class="media-block">
+                                             <div class="media-btn"><i class="icon-plus"></i></div>
+                                             <ul class="social-icons list-inline">
+                                                 <li class="social-facebook"><a
+                                                         href="{{ $member->facebook_link }}"><i
+                                                             class="ti ti-facebook"></i></a></li>
+                                                 <li class="social-twitter"><a href="{{ $member->twitter_link }}"><i
+                                                             class="ti ti-twitter-alt"></i></a></li>
+                                                 {{-- <li class="social-pinterest"><a href="{{ $member->pinterest_link }}"><i
+                                                         class="ti ti-pinterest"></i></a></li> --}}
+                                                 <li class="social-instagram"><a
+                                                         href="{{ $member->instagram_link }}"><i
+                                                             class="ti ti-instagram"></i></a></li>
+                                                 <li class="social-linkedin"><a
+                                                         href="{{ $member->linkedin_link }}"><i
+                                                             class="ti ti-linkedin"></i></a></li>
+                                             </ul>
                                          </div>
                                      </div>
                                  </div>
-                             </div>
-                         @endforeach
-                         {{-- <div class="client-box">
-             <div class="cmt-client-logo-tooltip">
-                 <div class="cmt-client-logo-tooltip-inner">
-                     <div class="client-thumbnail">
-                         <img width="128" height="60" class="img-fluid"
-                             src="https://via.placeholder.com/128x60?text=128x60+client-02.png"
-                             alt="image">
-                     </div>
-                 </div>
+                             </div><!-- featured-imagebox-team end-->
+                         </div>
+                     @endforeach
+                 </div><!-- row end -->
              </div>
-         </div>
-         <div class="client-box">
-             <div class="cmt-client-logo-tooltip">
-                 <div class="cmt-client-logo-tooltip-inner">
-                     <div class="client-thumbnail">
-                         <img width="142" height="60" class="img-fluid"
-                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                             alt="image">
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="client-box">
-             <div class="cmt-client-logo-tooltip">
-                 <div class="cmt-client-logo-tooltip-inner">
-                     <div class="client-thumbnail">
-                         <img width="182" height="61" class="img-fluid"
-                             src="https://via.placeholder.com/182x61?text=182x61+client-04.png"
-                             alt="image">
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="client-box">
-             <div class="cmt-client-logo-tooltip">
-                 <div class="cmt-client-logo-tooltip-inner">
-                     <div class="client-thumbnail">
-                         <img width="142" height="60" class="img-fluid"
-                             src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                             alt="image">
-                     </div>
-                 </div>
-             </div>
-         </div> --}}
-                     </div><!-- cmt-client end -->
-                 </div>
-             </div>
-         </div>
-     </section>
- @endif
- <!--partner-section end-->
+         </section>
+     @endif
+     <!-- team-section end -->
 
+     <br>
+     <!--partner-section-->
+     @if (isset($our_partners) && sizeof($our_partners) > 0)
+         <section class="cmt-row partner-section bg-img4 clearfix">
+             <div class="container">
+                 <div class="row align-items-center">
+
+                     <div class="col-lg-12">
+                         <div class="d-sm-flex align-items-center justify-content-between border-bottom res-991-mt-40">
+                             <h3 class="fs-26 mb-20">Our Partners</h3>
+                         </div>
+                         <!-- slick_slider -->
+                         <div class="slick_slider"
+                             data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "arrows":false, "autoplay":true, "infinite":true, "responsive": [{"breakpoint":1200,"settings":{"slidesToShow": 5}}, {"breakpoint":1024,"settings":{"slidesToShow": 4}}, {"breakpoint":777,"settings":{"slidesToShow": 3}},{"breakpoint":575,"settings":{"slidesToShow": 2}},{"breakpoint":380,"settings":{"slidesToShow": 1}}]}'>
+                             @foreach ($our_partners as $partner)
+                                 <div class="client-box">
+                                     <div class="cmt-client-logo-tooltip">
+                                         <div class="cmt-client-logo-tooltip-inner">
+                                             <div class="client-thumbnail">
+                                                 <img width="152" height="60" class="img-fluid"
+                                                     src="{{ asset('/uploads/our_partner/' . $partner->image) }}"
+                                                     alt="image">
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             @endforeach
+                         </div><!-- cmt-client end -->
+                     </div>
+                 </div>
+             </div>
+         </section>
+     @endif
+     <!--partner-section end-->
 
  </div>
  <!--site-main end-->
