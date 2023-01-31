@@ -163,4 +163,14 @@ class ContactMessagesController extends Controller
         }
 
     }
+
+    public function deleteAll(){
+        $del = $this->messages->truncate();
+        if ($del) {
+            return redirect()->route('messages.index')->with('success', 'All Contact messages deleted successfully');
+        } else {
+            //message
+            return redirect()->back()->with('error', 'Sorry! there was problem in deleting contact messages');
+        }
+    }
 }

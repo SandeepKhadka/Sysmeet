@@ -1,6 +1,6 @@
 @include('admin.section.header')
 
-@section('title' , 'GoodGoods | Admin')
+@section('title', 'Sysmeet | Admin')
 <div class="wrapper">
 
     <!-- Preloader -->
@@ -11,17 +11,19 @@
     @include('admin.section.topnav')
 
     @include('admin.section.sidebar')
-    
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      @yield('main-content')
+        @include('admin.section.notify')
+        @yield('main-content')
+
     </div>
-    
+
     <!-- /.content-wrapper -->
 
     @include('admin.section.footer')
 
     <!-- ./wrapper -->
-    
-  </div>
-  @include('admin.section.scripts')
+
+</div>
+@include('admin.section.scripts')

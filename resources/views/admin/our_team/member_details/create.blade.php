@@ -149,7 +149,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label for="photo">Photo <span class="text-danger">*</span></label>
+                                    <label for="photo">Photo <span class="text-danger">*</span>   (Preferred Image dimension : 535 x 500)</label>
                                     <div class="input-group">
                                         <input id="image" class="form-control" type="file" name="photo"
                                             {{ isset($member_details) ? '' : 'required' }}>
@@ -160,7 +160,7 @@
                                                 style="margin-top:15px;max-height:100px;" alt="Member Image">
                                         @else
                                             <img id="holder" src="#" style="margin-top:15px;max-height:100px;"
-                                                alt="No preview photo" />
+                                                alt="" />
                                         @endif
                                     </div>
                                     @error('photo')

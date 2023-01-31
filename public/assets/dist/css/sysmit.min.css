@@ -9,6 +9,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
@@ -11014,17 +11015,29 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
 .layout-top-nav .wrapper .main-header {
     margin-left: 0;
 }
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .content-wrapper,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .content-wrapper::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .main-footer,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .main-footer::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .main-header,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+        .sidebar-mini
+    )
     .main-header::before {
     margin-left: 0;
 }
@@ -13688,7 +13701,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .sidebar nav .form-inline {
     margin-bottom: 0.2rem;
 }
-.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(.sidebar-mini-xs).sidebar-collapse
+.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(
+        .sidebar-mini-xs
+    ).sidebar-collapse
     .main-sidebar {
     margin-left: 0;
 }
@@ -25777,7 +25792,9 @@ body.text-sm .input-group-text {
 .dark-mode .custom-file-label,
 .dark-mode .custom-file-label::after,
 .dark-mode
-    .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(.is-invalid):not(:focus) {
+    .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(
+        .is-invalid
+    ):not(:focus) {
     border-color: #6c757d;
 }
 .dark-mode select {
@@ -53391,13 +53408,17 @@ a.text-muted:hover {
 .accent-primary .btn-link,
 .accent-primary .nav-tabs .nav-link,
 .accent-primary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #007bff;
 }
 .accent-primary .btn-link:hover,
 .accent-primary .nav-tabs .nav-link:hover,
 .accent-primary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #0056b3;
 }
 .accent-primary .dropdown-item.active,
@@ -53467,13 +53488,17 @@ a.text-muted:hover {
 .accent-secondary .btn-link,
 .accent-secondary .nav-tabs .nav-link,
 .accent-secondary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6c757d;
 }
 .accent-secondary .btn-link:hover,
 .accent-secondary .nav-tabs .nav-link:hover,
 .accent-secondary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #494f54;
 }
 .accent-secondary .dropdown-item.active,
@@ -53545,13 +53570,17 @@ a.text-muted:hover {
 .accent-success .btn-link,
 .accent-success .nav-tabs .nav-link,
 .accent-success
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #28a745;
 }
 .accent-success .btn-link:hover,
 .accent-success .nav-tabs .nav-link:hover,
 .accent-success
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #19692c;
 }
 .accent-success .dropdown-item.active,
@@ -53621,13 +53650,17 @@ a.text-muted:hover {
 .accent-info .btn-link,
 .accent-info .nav-tabs .nav-link,
 .accent-info
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #17a2b8;
 }
 .accent-info .btn-link:hover,
 .accent-info .nav-tabs .nav-link:hover,
 .accent-info
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #0f6674;
 }
 .accent-info .dropdown-item.active,
@@ -53697,13 +53730,17 @@ a.text-muted:hover {
 .accent-warning .btn-link,
 .accent-warning .nav-tabs .nav-link,
 .accent-warning
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #ffc107;
 }
 .accent-warning .btn-link:hover,
 .accent-warning .nav-tabs .nav-link:hover,
 .accent-warning
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #ba8b00;
 }
 .accent-warning .dropdown-item.active,
@@ -53773,13 +53810,17 @@ a.text-muted:hover {
 .accent-danger .btn-link,
 .accent-danger .nav-tabs .nav-link,
 .accent-danger
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #dc3545;
 }
 .accent-danger .btn-link:hover,
 .accent-danger .nav-tabs .nav-link:hover,
 .accent-danger
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #a71d2a;
 }
 .accent-danger .dropdown-item.active,
@@ -53849,13 +53890,17 @@ a.text-muted:hover {
 .accent-light .btn-link,
 .accent-light .nav-tabs .nav-link,
 .accent-light
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f8f9fa;
 }
 .accent-light .btn-link:hover,
 .accent-light .nav-tabs .nav-link:hover,
 .accent-light
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #cbd3da;
 }
 .accent-light .dropdown-item.active,
@@ -53925,13 +53970,17 @@ a.text-muted:hover {
 .accent-dark .btn-link,
 .accent-dark .nav-tabs .nav-link,
 .accent-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #343a40;
 }
 .accent-dark .btn-link:hover,
 .accent-dark .nav-tabs .nav-link:hover,
 .accent-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #121416;
 }
 .accent-dark .dropdown-item.active,
@@ -54001,13 +54050,17 @@ a.text-muted:hover {
 .accent-lightblue .btn-link,
 .accent-lightblue .nav-tabs .nav-link,
 .accent-lightblue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3c8dbc;
 }
 .accent-lightblue .btn-link:hover,
 .accent-lightblue .nav-tabs .nav-link:hover,
 .accent-lightblue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #296282;
 }
 .accent-lightblue .dropdown-item.active,
@@ -54079,13 +54132,17 @@ a.text-muted:hover {
 .accent-navy .btn-link,
 .accent-navy .nav-tabs .nav-link,
 .accent-navy
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #001f3f;
 }
 .accent-navy .btn-link:hover,
 .accent-navy .nav-tabs .nav-link:hover,
 .accent-navy
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #000;
 }
 .accent-navy .dropdown-item.active,
@@ -54155,13 +54212,17 @@ a.text-muted:hover {
 .accent-olive .btn-link,
 .accent-olive .nav-tabs .nav-link,
 .accent-olive
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3d9970;
 }
 .accent-olive .btn-link:hover,
 .accent-olive .nav-tabs .nav-link:hover,
 .accent-olive
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #276248;
 }
 .accent-olive .dropdown-item.active,
@@ -54231,13 +54292,17 @@ a.text-muted:hover {
 .accent-lime .btn-link,
 .accent-lime .nav-tabs .nav-link,
 .accent-lime
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #01ff70;
 }
 .accent-lime .btn-link:hover,
 .accent-lime .nav-tabs .nav-link:hover,
 .accent-lime
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #00b44e;
 }
 .accent-lime .dropdown-item.active,
@@ -54307,13 +54372,17 @@ a.text-muted:hover {
 .accent-fuchsia .btn-link,
 .accent-fuchsia .nav-tabs .nav-link,
 .accent-fuchsia
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f012be;
 }
 .accent-fuchsia .btn-link:hover,
 .accent-fuchsia .nav-tabs .nav-link:hover,
 .accent-fuchsia
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #ab0b87;
 }
 .accent-fuchsia .dropdown-item.active,
@@ -54383,13 +54452,17 @@ a.text-muted:hover {
 .accent-maroon .btn-link,
 .accent-maroon .nav-tabs .nav-link,
 .accent-maroon
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #d81b60;
 }
 .accent-maroon .btn-link:hover,
 .accent-maroon .nav-tabs .nav-link:hover,
 .accent-maroon
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #941342;
 }
 .accent-maroon .dropdown-item.active,
@@ -54459,13 +54532,17 @@ a.text-muted:hover {
 .accent-blue .btn-link,
 .accent-blue .nav-tabs .nav-link,
 .accent-blue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #007bff;
 }
 .accent-blue .btn-link:hover,
 .accent-blue .nav-tabs .nav-link:hover,
 .accent-blue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #0056b3;
 }
 .accent-blue .dropdown-item.active,
@@ -54535,13 +54612,17 @@ a.text-muted:hover {
 .accent-indigo .btn-link,
 .accent-indigo .nav-tabs .nav-link,
 .accent-indigo
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6610f2;
 }
 .accent-indigo .btn-link:hover,
 .accent-indigo .nav-tabs .nav-link:hover,
 .accent-indigo
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #4709ac;
 }
 .accent-indigo .dropdown-item.active,
@@ -54611,13 +54692,17 @@ a.text-muted:hover {
 .accent-purple .btn-link,
 .accent-purple .nav-tabs .nav-link,
 .accent-purple
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6f42c1;
 }
 .accent-purple .btn-link:hover,
 .accent-purple .nav-tabs .nav-link:hover,
 .accent-purple
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #4e2d89;
 }
 .accent-purple .dropdown-item.active,
@@ -54687,13 +54772,17 @@ a.text-muted:hover {
 .accent-pink .btn-link,
 .accent-pink .nav-tabs .nav-link,
 .accent-pink
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #e83e8c;
 }
 .accent-pink .btn-link:hover,
 .accent-pink .nav-tabs .nav-link:hover,
 .accent-pink
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #c21766;
 }
 .accent-pink .dropdown-item.active,
@@ -54763,13 +54852,17 @@ a.text-muted:hover {
 .accent-red .btn-link,
 .accent-red .nav-tabs .nav-link,
 .accent-red
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #dc3545;
 }
 .accent-red .btn-link:hover,
 .accent-red .nav-tabs .nav-link:hover,
 .accent-red
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #a71d2a;
 }
 .accent-red .dropdown-item.active,
@@ -54839,13 +54932,17 @@ a.text-muted:hover {
 .accent-orange .btn-link,
 .accent-orange .nav-tabs .nav-link,
 .accent-orange
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #fd7e14;
 }
 .accent-orange .btn-link:hover,
 .accent-orange .nav-tabs .nav-link:hover,
 .accent-orange
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #c35a02;
 }
 .accent-orange .dropdown-item.active,
@@ -54915,13 +55012,17 @@ a.text-muted:hover {
 .accent-yellow .btn-link,
 .accent-yellow .nav-tabs .nav-link,
 .accent-yellow
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #ffc107;
 }
 .accent-yellow .btn-link:hover,
 .accent-yellow .nav-tabs .nav-link:hover,
 .accent-yellow
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #ba8b00;
 }
 .accent-yellow .dropdown-item.active,
@@ -54991,13 +55092,17 @@ a.text-muted:hover {
 .accent-green .btn-link,
 .accent-green .nav-tabs .nav-link,
 .accent-green
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #28a745;
 }
 .accent-green .btn-link:hover,
 .accent-green .nav-tabs .nav-link:hover,
 .accent-green
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #19692c;
 }
 .accent-green .dropdown-item.active,
@@ -55067,13 +55172,17 @@ a.text-muted:hover {
 .accent-teal .btn-link,
 .accent-teal .nav-tabs .nav-link,
 .accent-teal
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #20c997;
 }
 .accent-teal .btn-link:hover,
 .accent-teal .nav-tabs .nav-link:hover,
 .accent-teal
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #158765;
 }
 .accent-teal .dropdown-item.active,
@@ -55143,13 +55252,17 @@ a.text-muted:hover {
 .accent-cyan .btn-link,
 .accent-cyan .nav-tabs .nav-link,
 .accent-cyan
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #17a2b8;
 }
 .accent-cyan .btn-link:hover,
 .accent-cyan .nav-tabs .nav-link:hover,
 .accent-cyan
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #0f6674;
 }
 .accent-cyan .dropdown-item.active,
@@ -55219,13 +55332,17 @@ a.text-muted:hover {
 .accent-white .btn-link,
 .accent-white .nav-tabs .nav-link,
 .accent-white
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #fff;
 }
 .accent-white .btn-link:hover,
 .accent-white .nav-tabs .nav-link:hover,
 .accent-white
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #d9d9d9;
 }
 .accent-white .dropdown-item.active,
@@ -55295,13 +55412,17 @@ a.text-muted:hover {
 .accent-gray .btn-link,
 .accent-gray .nav-tabs .nav-link,
 .accent-gray
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6c757d;
 }
 .accent-gray .btn-link:hover,
 .accent-gray .nav-tabs .nav-link:hover,
 .accent-gray
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #494f54;
 }
 .accent-gray .dropdown-item.active,
@@ -55371,13 +55492,17 @@ a.text-muted:hover {
 .accent-gray-dark .btn-link,
 .accent-gray-dark .nav-tabs .nav-link,
 .accent-gray-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #343a40;
 }
 .accent-gray-dark .btn-link:hover,
 .accent-gray-dark .nav-tabs .nav-link:hover,
 .accent-gray-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #121416;
 }
 .accent-gray-dark .dropdown-item.active,
@@ -56753,14 +56878,18 @@ a.text-muted:hover {
 .dark-mode .accent-primary .nav-tabs .nav-link,
 .dark-mode
     .accent-primary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3f6791;
 }
 .dark-mode .accent-primary .btn-link:hover,
 .dark-mode .accent-primary .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-primary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #28415c;
 }
 .dark-mode .accent-primary .dropdown-item.active,
@@ -56843,14 +56972,18 @@ a.text-muted:hover {
 .dark-mode .accent-secondary .nav-tabs .nav-link,
 .dark-mode
     .accent-secondary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6c757d;
 }
 .dark-mode .accent-secondary .btn-link:hover,
 .dark-mode .accent-secondary .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-secondary
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #494f54;
 }
 .dark-mode .accent-secondary .dropdown-item.active,
@@ -56933,14 +57066,18 @@ a.text-muted:hover {
 .dark-mode .accent-success .nav-tabs .nav-link,
 .dark-mode
     .accent-success
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #00bc8c;
 }
 .dark-mode .accent-success .btn-link:hover,
 .dark-mode .accent-success .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-success
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #007053;
 }
 .dark-mode .accent-success .dropdown-item.active,
@@ -57023,14 +57160,18 @@ a.text-muted:hover {
 .dark-mode .accent-info .nav-tabs .nav-link,
 .dark-mode
     .accent-info
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3498db;
 }
 .dark-mode .accent-info .btn-link:hover,
 .dark-mode .accent-info .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-info
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #1d6fa5;
 }
 .dark-mode .accent-info .dropdown-item.active,
@@ -57113,14 +57254,18 @@ a.text-muted:hover {
 .dark-mode .accent-warning .nav-tabs .nav-link,
 .dark-mode
     .accent-warning
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f39c12;
 }
 .dark-mode .accent-warning .btn-link:hover,
 .dark-mode .accent-warning .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-warning
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #b06f09;
 }
 .dark-mode .accent-warning .dropdown-item.active,
@@ -57203,14 +57348,18 @@ a.text-muted:hover {
 .dark-mode .accent-danger .nav-tabs .nav-link,
 .dark-mode
     .accent-danger
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #e74c3c;
 }
 .dark-mode .accent-danger .btn-link:hover,
 .dark-mode .accent-danger .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-danger
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #bf2718;
 }
 .dark-mode .accent-danger .dropdown-item.active,
@@ -57293,14 +57442,18 @@ a.text-muted:hover {
 .dark-mode .accent-light .nav-tabs .nav-link,
 .dark-mode
     .accent-light
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f8f9fa;
 }
 .dark-mode .accent-light .btn-link:hover,
 .dark-mode .accent-light .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-light
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #cbd3da;
 }
 .dark-mode .accent-light .dropdown-item.active,
@@ -57383,14 +57536,18 @@ a.text-muted:hover {
 .dark-mode .accent-dark .nav-tabs .nav-link,
 .dark-mode
     .accent-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #343a40;
 }
 .dark-mode .accent-dark .btn-link:hover,
 .dark-mode .accent-dark .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #121416;
 }
 .dark-mode .accent-dark .dropdown-item.active,
@@ -57497,14 +57654,18 @@ a.text-muted:hover {
 .dark-mode .accent-lightblue .nav-tabs .nav-link,
 .dark-mode
     .accent-lightblue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #86bad8;
 }
 .dark-mode .accent-lightblue .btn-link:hover,
 .dark-mode .accent-lightblue .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-lightblue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #4c99c6;
 }
 .dark-mode .accent-lightblue .dropdown-item.active,
@@ -57587,14 +57748,18 @@ a.text-muted:hover {
 .dark-mode .accent-navy .nav-tabs .nav-link,
 .dark-mode
     .accent-navy
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #002c59;
 }
 .dark-mode .accent-navy .btn-link:hover,
 .dark-mode .accent-navy .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-navy
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #00060c;
 }
 .dark-mode .accent-navy .dropdown-item.active,
@@ -57677,14 +57842,18 @@ a.text-muted:hover {
 .dark-mode .accent-olive .nav-tabs .nav-link,
 .dark-mode
     .accent-olive
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #74c8a3;
 }
 .dark-mode .accent-olive .btn-link:hover,
 .dark-mode .accent-olive .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-olive
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #44ab7d;
 }
 .dark-mode .accent-olive .dropdown-item.active,
@@ -57767,14 +57936,18 @@ a.text-muted:hover {
 .dark-mode .accent-lime .nav-tabs .nav-link,
 .dark-mode
     .accent-lime
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #67ffa9;
 }
 .dark-mode .accent-lime .btn-link:hover,
 .dark-mode .accent-lime .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-lime
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #1bff7e;
 }
 .dark-mode .accent-lime .dropdown-item.active,
@@ -57857,14 +58030,18 @@ a.text-muted:hover {
 .dark-mode .accent-fuchsia .nav-tabs .nav-link,
 .dark-mode
     .accent-fuchsia
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f672d8;
 }
 .dark-mode .accent-fuchsia .btn-link:hover,
 .dark-mode .accent-fuchsia .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-fuchsia
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #f22ac5;
 }
 .dark-mode .accent-fuchsia .dropdown-item.active,
@@ -57947,14 +58124,18 @@ a.text-muted:hover {
 .dark-mode .accent-maroon .nav-tabs .nav-link,
 .dark-mode
     .accent-maroon
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #ed6c9b;
 }
 .dark-mode .accent-maroon .btn-link:hover,
 .dark-mode .accent-maroon .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-maroon
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #e4286d;
 }
 .dark-mode .accent-maroon .dropdown-item.active,
@@ -58037,14 +58218,18 @@ a.text-muted:hover {
 .dark-mode .accent-blue .nav-tabs .nav-link,
 .dark-mode
     .accent-blue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3f6791;
 }
 .dark-mode .accent-blue .btn-link:hover,
 .dark-mode .accent-blue .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-blue
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #28415c;
 }
 .dark-mode .accent-blue .dropdown-item.active,
@@ -58127,14 +58312,18 @@ a.text-muted:hover {
 .dark-mode .accent-indigo .nav-tabs .nav-link,
 .dark-mode
     .accent-indigo
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6610f2;
 }
 .dark-mode .accent-indigo .btn-link:hover,
 .dark-mode .accent-indigo .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-indigo
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #4709ac;
 }
 .dark-mode .accent-indigo .dropdown-item.active,
@@ -58217,14 +58406,18 @@ a.text-muted:hover {
 .dark-mode .accent-purple .nav-tabs .nav-link,
 .dark-mode
     .accent-purple
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6f42c1;
 }
 .dark-mode .accent-purple .btn-link:hover,
 .dark-mode .accent-purple .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-purple
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #4e2d89;
 }
 .dark-mode .accent-purple .dropdown-item.active,
@@ -58307,14 +58500,18 @@ a.text-muted:hover {
 .dark-mode .accent-pink .nav-tabs .nav-link,
 .dark-mode
     .accent-pink
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #e83e8c;
 }
 .dark-mode .accent-pink .btn-link:hover,
 .dark-mode .accent-pink .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-pink
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #c21766;
 }
 .dark-mode .accent-pink .dropdown-item.active,
@@ -58397,14 +58594,18 @@ a.text-muted:hover {
 .dark-mode .accent-red .nav-tabs .nav-link,
 .dark-mode
     .accent-red
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #e74c3c;
 }
 .dark-mode .accent-red .btn-link:hover,
 .dark-mode .accent-red .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-red
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #bf2718;
 }
 .dark-mode .accent-red .dropdown-item.active,
@@ -58487,14 +58688,18 @@ a.text-muted:hover {
 .dark-mode .accent-orange .nav-tabs .nav-link,
 .dark-mode
     .accent-orange
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #fd7e14;
 }
 .dark-mode .accent-orange .btn-link:hover,
 .dark-mode .accent-orange .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-orange
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #c35a02;
 }
 .dark-mode .accent-orange .dropdown-item.active,
@@ -58577,14 +58782,18 @@ a.text-muted:hover {
 .dark-mode .accent-yellow .nav-tabs .nav-link,
 .dark-mode
     .accent-yellow
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #f39c12;
 }
 .dark-mode .accent-yellow .btn-link:hover,
 .dark-mode .accent-yellow .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-yellow
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #b06f09;
 }
 .dark-mode .accent-yellow .dropdown-item.active,
@@ -58667,14 +58876,18 @@ a.text-muted:hover {
 .dark-mode .accent-green .nav-tabs .nav-link,
 .dark-mode
     .accent-green
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #00bc8c;
 }
 .dark-mode .accent-green .btn-link:hover,
 .dark-mode .accent-green .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-green
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #007053;
 }
 .dark-mode .accent-green .dropdown-item.active,
@@ -58757,14 +58970,18 @@ a.text-muted:hover {
 .dark-mode .accent-teal .nav-tabs .nav-link,
 .dark-mode
     .accent-teal
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #20c997;
 }
 .dark-mode .accent-teal .btn-link:hover,
 .dark-mode .accent-teal .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-teal
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #158765;
 }
 .dark-mode .accent-teal .dropdown-item.active,
@@ -58847,14 +59064,18 @@ a.text-muted:hover {
 .dark-mode .accent-cyan .nav-tabs .nav-link,
 .dark-mode
     .accent-cyan
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #3498db;
 }
 .dark-mode .accent-cyan .btn-link:hover,
 .dark-mode .accent-cyan .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-cyan
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #1d6fa5;
 }
 .dark-mode .accent-cyan .dropdown-item.active,
@@ -58937,14 +59158,18 @@ a.text-muted:hover {
 .dark-mode .accent-white .nav-tabs .nav-link,
 .dark-mode
     .accent-white
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #fff;
 }
 .dark-mode .accent-white .btn-link:hover,
 .dark-mode .accent-white .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-white
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #d9d9d9;
 }
 .dark-mode .accent-white .dropdown-item.active,
@@ -59027,14 +59252,18 @@ a.text-muted:hover {
 .dark-mode .accent-gray .nav-tabs .nav-link,
 .dark-mode
     .accent-gray
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #6c757d;
 }
 .dark-mode .accent-gray .btn-link:hover,
 .dark-mode .accent-gray .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-gray
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #494f54;
 }
 .dark-mode .accent-gray .dropdown-item.active,
@@ -59117,14 +59346,18 @@ a.text-muted:hover {
 .dark-mode .accent-gray-dark .nav-tabs .nav-link,
 .dark-mode
     .accent-gray-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn) {
     color: #343a40;
 }
 .dark-mode .accent-gray-dark .btn-link:hover,
 .dark-mode .accent-gray-dark .nav-tabs .nav-link:hover,
 .dark-mode
     .accent-gray-dark
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+        .page-link
+    ):not(.badge):not(.btn):hover {
     color: #121416;
 }
 .dark-mode .accent-gray-dark .dropdown-item.active,

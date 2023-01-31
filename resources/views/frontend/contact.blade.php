@@ -154,39 +154,43 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="first_name" type="text" style="color: darkgrey" 
-                                                        value="" placeholder="First Name" required="required"></span>
+                                                <span class="text-input"><input name="first_name" type="text"
+                                                        style="color: rgb(111, 94, 94)" value="" placeholder="First Name"
+                                                        required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
                                                 <span class="text-input"><input name="last_name" type="text"
-                                                        value="" placeholder="Last Name" required="required"></span>
+                                                        style="color: rgb(111, 94, 94)" value="" placeholder="Last Name"
+                                                        required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="email" type="email" value=""
-                                                        placeholder="Email Address" required="required"></span>
+                                                <span class="text-input"><input name="email" type="email"
+                                                        style="color: rgb(111, 94, 94)" value="" placeholder="Email Address"
+                                                        required="required"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-6">
                                             <label>
-                                                <span class="text-input"><input name="phone" type="text" value=""
-                                                        placeholder="Phone"></span>
+                                                <span class="text-input"><input name="phone" type="text"
+                                                        style="color: rgb(111, 94, 94)" value="" placeholder="Phone"></span>
                                             </label>
                                         </div>
                                         <div class="col-md-12">
                                             <label>
                                                 <span class="text-input"><input name="subject" type="text"
-                                                        value="" placeholder="Subject"></span>
+                                                        style="color: rgb(111, 94, 94)" value=""
+                                                        placeholder="Subject"></span>
                                                 </span>
                                             </label>
                                         </div>
                                         <div class="col-md-12">
                                             <label>
                                                 <span class="text-input">
-                                                    <textarea name="message" rows="4" placeholder="Message goes here" required="required" style="resize: none"></textarea>
+                                                    <textarea name="message" rows="4" placeholder="Message goes here" required="required" style="resize: none; color: rgb(111, 94, 94)"></textarea>
                                                 </span>
                                             </label>
                                         </div>

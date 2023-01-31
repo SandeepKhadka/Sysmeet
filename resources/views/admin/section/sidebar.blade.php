@@ -10,10 +10,10 @@
      <a href="{{ route(auth()->user()->role) }}" class="brand-link">
          @if (isset($logo) && $logo != null)
              <img src="{{ asset('/uploads/logo/' . $logo->image) }}" alt=""
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
+                 class="brand-image img-circle elevation-3" style="opacity: .8; z-index: 0px;">
              <span class="brand-text text-dark">Sysmeet</span>
          @else
-             <span class="brand-text text-dark" style="margin-left: 20px">Sysmeet</span>
+             <span class="brand-text text-dark" style="margin-left: 20px; z-index: 0;">Sysmeet</span>
          @endif
      </a>
 
@@ -100,7 +100,7 @@
                  <li class="nav-item">
                      <a href="{{ route('our_partner.index') }}"
                          class="nav-link {{ request()->is('admin/sysmeet/our_partner') ? 'active' : '' }}">
-                         <i class="fas fa-handshake-alt nav-icon"></i>
+                         <i class="fas fa-handshake nav-icon"></i>
                          <p class="nav-label px-2 text-dark">Our Partner</p>
                      </a>
                  </li>
@@ -253,6 +253,15 @@
                  </li>
 
                  <li class="nav-header">System</li>
+                 <li class="nav-item">
+                     <a href="{{ route('mail.index') }}"
+                         class="nav-link {{ request()->is('admin/sysmeet/mail') ? 'active' : '' }}">
+                         <i class="nav-icon fas fa-envelope"></i>
+                         <p class="nav-label px-2 text-dark">
+                             Mail Setting
+                         </p>
+                     </a>
+                 </li>
                  <li class="nav-item">
                      <a href="{{ route('user.index') }}"
                          class="nav-link {{ request()->is('admin/sysmeet/user') ? 'active' : '' }}">

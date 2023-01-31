@@ -1,12 +1,17 @@
 <!-- jQuery -->
 <script src="{{ asset('assets/plugins/jquery/jquery.js') }}"></script>
+{{-- <script src="{{ asset('front/assets/js/jquery-3.6.0.min.js') }}"></script> --}}
+
 <!-- Bootstrap 4 -->
+<script src="{{ asset('assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- Sysmit App -->
-<script src="{{ asset('assets/dist/js/sysmit.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-</script>
+
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsasSv4jD4Xa" crossorigin="anonymous">
+</script> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js">
+</script> --}}
+
 <script type="text/javascript" src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}">
 </script>
@@ -15,8 +20,13 @@
 </script>
 <script type="text/javascript"
     src="{{ asset('assets/plugins/bootstrap-switch-button/dist/bootstrap-switch-button.min.js') }}"></script>
+<!-- Sysmit App -->
+<script src="{{ asset('assets/dist/js/sysmit.min.js') }}"></script>
 <script>
     $("#lfm").filemanager("image");
+    $(document).ready(function() {
+        $("#table").DataTable();
+    });
 
     $(document).ready(function() {
         $("#description").summernote({
@@ -126,9 +136,7 @@
     }, 4000);
 
 
-    $(document).ready(function() {
-        $("#table").DataTable();
-    });
+
 
     // if (window.$('#is_parent').is(':checked')) {
     //     window.$('#parent_cat_div').hide();

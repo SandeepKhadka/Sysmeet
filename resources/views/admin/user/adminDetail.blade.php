@@ -38,9 +38,9 @@
 @endsection
 @section('main-content')
     <div class="content">
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             @include('admin.section.notify')
-        </div>
+        </div> --}}
         {{-- BreadCrumb  --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

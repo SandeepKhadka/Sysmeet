@@ -1,2 +1,2 @@
 @extends('layouts.admin')
-@section('title', 'GoodGoods | Index')
+@section('title', 'Sysmeet | Index')

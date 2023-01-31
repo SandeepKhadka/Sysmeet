@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Sysmeet | Messages List')
 @section('scripts')
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
         $("input[name=toggle]").change(function() {
             var mode = $(this).prop("checked");
@@ -28,9 +27,9 @@
 @endsection
 @section('main-content')
     <div class="container-fluid">
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             @include('admin.section.notify')
-        </div>
+        </div> --}}
         {{-- BreadCrumb  --}}
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -46,11 +45,19 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Contact Messages</h3>
-                        {{-- <a href="{{ route('message_us.create') }}" class="btn btn-success float-right"
-                            style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
-                                Add Detail
+                        {{-- <a href="{{ route('messages.deleteAll') }}" class="btn btn-danger float-right"
+                            style="margin-bottom: 0px">
+                                
                             </i>
                         </a> --}}
+                        <form action="{{ route('messages.deleteAll') }}" method=""
+                            class="d-inline">
+                            @method('delete')
+                            @csrf
+                            <button class="btn btn-danger float-right"
+                                onclick="return confirm('Do you want to delete this message?');">Delete All <i
+                                    class="fa fa-trash"></i></button>
+                        </form>
                     </div>
                     <div class="card-body">
                         <table id="table" class="table table-bordered">
@@ -85,17 +92,17 @@
                                                     data-width="100" data-onstyle="success" data-offstyle="danger">
                                             </td> --}}
                                             <td>
-                                                <a href="{{ route('message_us.show', $message->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('messages.show', $message->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-eye">
 
                                                     </i>
                                                 </a>
-                                                {{-- <a href="{{ route('message_us.edit', $message->id) }}" class="btn btn-success">
+                                                {{-- <a href="{{ route('messages.edit', $message->id) }}" class="btn btn-success">
                                                     <i class="fa fa-pen">
 
                                                     </i>
                                                 </a> --}}
-                                                <form action="{{ route('message_us.destroy', $message->id) }}" method="post"
+                                                <form action="{{ route('messages.destroy', $message->id) }}" method="post"
                                                     class="d-inline">
                                                     @method('delete')
                                                     @csrf

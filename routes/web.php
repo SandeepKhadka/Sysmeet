@@ -8,9 +8,9 @@ use App\Http\Controllers\ContactMessagesController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HowItWorksController;
 use App\Http\Controllers\LogoController;
+use App\Http\Controllers\MailSettingController;
 use App\Http\Controllers\MainBannerController;
 use App\Http\Controllers\MemberDetailsController;
-use App\Http\Controllers\MemberSkillController;
 use App\Http\Controllers\OurHelpController;
 use App\Http\Controllers\OurPartnerController;
 use App\Http\Controllers\OuterBannerController;
@@ -45,12 +45,6 @@ Route::get('/it_solutions/{slug}/{id}', [App\Http\Controllers\Frontend\IndexCont
 Route::get('/contact', [App\Http\Controllers\Frontend\IndexController::class, 'contact'])->name('front.contact');
 Route::post('/contact/send_message', [App\Http\Controllers\Frontend\IndexController::class, 'send_message'])->name('front.send_message');
 
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -58,6 +52,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Admin Dashboard
 Route::group(['prefix' => 'admin/sysmeet', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.home');
 
     //Banner Section
     Route::resource('banner', BannerController::class);
@@ -141,4 +136,12 @@ Route::group(['prefix' => 'admin/sysmeet', 'middleware' => ['auth', 'admin']], f
     //Logo Section
     Route::resource('our_team/quote', QuotesController::class, ['names' => 'quote']);
     Route::post('quote_status', [App\Http\Controllers\QuotesController::class, 'quoteStatus'])->name('quote.status');
+
+     //Mail Section
+     Route::resource('mail_setting', MailSettingController::class, ['names' => 'mail']);
+     Route::post('mail_status', [App\Http\Controllers\MailSettingController::class, 'mailStatus'])->name('mail.status');
+
+     //Delete All Messages
+     Route::get('deleteAll', [App\Http\Controllers\ContactMessagesController::class, 'deleteAll'])->name('messages.deleteAll');
+
 });

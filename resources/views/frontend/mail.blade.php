@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test mail</h1>
+    <h4>Subject: - {{$subject}}</h4>
     <p>Name : {{$name}}</p>
+    <p>Email : {{$email}}</p>
     <p>Message : {{$data}}</p>
 </body>
 </html>

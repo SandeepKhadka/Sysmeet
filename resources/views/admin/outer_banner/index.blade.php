@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Sysmeet | Banner List')
 @section('scripts')
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
         $("input[name=toggle]").change(function() {
             var mode = $(this).prop("checked");
@@ -28,9 +27,9 @@
 @endsection
 @section('main-content')
     <div class="container-fluid">
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             @include('admin.section.notify')
-        </div>
+        </div> --}}
         {{-- BreadCrumb  --}}
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -47,7 +46,7 @@
                     <div class="card-header">
                         <h3 class="card-title" style="margin-top: 8px; font-weight: bold;">Statistics Banner</h3>
                         <a href="{{ route('outer_banner.create') }}" class="btn btn-success float-right"
-                            style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 12px">
+                            style="margin-bottom: 0px"><i class="fa fa-plus" style="font-size: 14px">
                                 Add Banner
                             </i>
                         </a>

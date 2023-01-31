@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('title', 'Sysmeet | Social Info List')
 @section('scripts')
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
         $("input[name=toggle]").change(function() {
             var mode = $(this).prop("checked");
@@ -28,9 +27,9 @@
 @endsection
 @section('main-content')
     <div class="container-fluid">
-        <div class="col-lg-12">
+        {{-- <div class="col-lg-12">
             @include('admin.section.notify')
-        </div>
+        </div> --}}
         {{-- BreadCrumb  --}}
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">

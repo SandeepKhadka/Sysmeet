@@ -1,9 +1,5 @@
 @extends('frontend.layouts.master')
 @section('title', 'Sysmeet | Our Team')
-{{-- @section('banner')
-    @include('frontend.layouts.banner')
-@endsection --}}
-
 @section('main-content')
     <!-- page-title -->
     <div class="cmt-page-title-row bg-base-dark cmt-bg cmt-bgimage-yes clearfix">
@@ -70,7 +66,7 @@
                                         </div>
                                         <div class="featured-view-more">
                                             <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                                href="{{route('front.team_details', $member->slug)}}">more details</a>
+                                                href="{{ route('front.team_details', $member->slug) }}">more details</a>
                                         </div>
                                         <div class="featured-iconbox cmt-media-link">
                                             <div class="media-block">
@@ -93,196 +89,6 @@
                                 </div><!-- featured-imagebox-team end-->
                             </div>
                         @endforeach
-                        {{-- <div class="col-lg-4 col-md-6 col-sm-6">
-                            <!-- featured-imagebox-team -->
-                            <div class="featured-imagebox featured-imagebox-team style1">
-                                <div class="featured-thumbnail">
-                                    <img width="535" height="500" class="img-fluid"
-                                        src="https://via.placeholder.com/535x500?text=535x500+team-img02.jpg"
-                                        alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="team-position">Web Designer</div>
-                                    <div class="featured-title">
-                                        <h3><a href="team-details.html">Ivan Hindshaw</a></h3>
-                                    </div>
-                                    <div class="featured-view-more">
-                                        <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                            href="team-details.html">more details</a>
-                                    </div>
-                                    <div class="featured-iconbox cmt-media-link">
-                                        <div class="media-block">
-                                            <div class="media-btn"><i class="icon-plus"></i></div>
-                                            <ul class="social-icons list-inline">
-                                                <li class="social-facebook"><a
-                                                        href="https://www.facebook.com/cymolthemes.191219"><i
-                                                            class="ti ti-facebook"></i></a></li>
-                                                <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                            class="ti ti-twitter-alt"></i></a></li>
-                                                <li class="social-pinterest"><a
-                                                        href="https://in.pinterest.com/cymolthemes/"><i
-                                                            class="ti ti-pinterest"></i></a></li>
-                                                <li class="social-instagram"><a
-                                                        href="https://www.instagram.com/cymol_themes/"><i
-                                                            class="ti ti-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-team end-->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <!-- featured-imagebox-team -->
-                            <div class="featured-imagebox featured-imagebox-team style1">
-                                <div class="featured-thumbnail">
-                                    <img width="535" height="500" class="img-fluid"
-                                        src="https://via.placeholder.com/535x500?text=535x500+team-img03.jpg"
-                                        alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="team-position">Project Manager</div>
-                                    <div class="featured-title">
-                                        <h3><a href="team-details.html">Natalia Zox</a></h3>
-                                    </div>
-                                    <div class="featured-view-more">
-                                        <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                            href="team-details.html">more details</a>
-                                    </div>
-                                    <div class="featured-iconbox cmt-media-link">
-                                        <div class="media-block">
-                                            <div class="media-btn"><i class="icon-plus"></i></div>
-                                            <ul class="social-icons list-inline">
-                                                <li class="social-facebook"><a
-                                                        href="https://www.facebook.com/cymolthemes.191219"><i
-                                                            class="ti ti-facebook"></i></a></li>
-                                                <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                            class="ti ti-twitter-alt"></i></a></li>
-                                                <li class="social-pinterest"><a
-                                                        href="https://in.pinterest.com/cymolthemes/"><i
-                                                            class="ti ti-pinterest"></i></a></li>
-                                                <li class="social-instagram"><a
-                                                        href="https://www.instagram.com/cymol_themes/"><i
-                                                            class="ti ti-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-team end-->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <!-- featured-imagebox-team -->
-                            <div class="featured-imagebox featured-imagebox-team style1">
-                                <div class="featured-thumbnail">
-                                    <img width="535" height="500" class="img-fluid"
-                                        src="https://via.placeholder.com/535x500?text=535x500+team-img04.jpg"
-                                        alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="team-position">Consultant Officer</div>
-                                    <div class="featured-title">
-                                        <h3><a href="team-details.html">Maria Gordian</a></h3>
-                                    </div>
-                                    <div class="featured-view-more">
-                                        <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                            href="team-details.html">more details</a>
-                                    </div>
-                                    <div class="featured-iconbox cmt-media-link">
-                                        <div class="media-block">
-                                            <div class="media-btn"><i class="icon-plus"></i></div>
-                                            <ul class="social-icons list-inline">
-                                                <li class="social-facebook"><a
-                                                        href="https://www.facebook.com/cymolthemes.191219"><i
-                                                            class="ti ti-facebook"></i></a></li>
-                                                <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                            class="ti ti-twitter-alt"></i></a></li>
-                                                <li class="social-pinterest"><a
-                                                        href="https://in.pinterest.com/cymolthemes/"><i
-                                                            class="ti ti-pinterest"></i></a></li>
-                                                <li class="social-instagram"><a
-                                                        href="https://www.instagram.com/cymol_themes/"><i
-                                                            class="ti ti-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-team end-->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <!-- featured-imagebox-team -->
-                            <div class="featured-imagebox featured-imagebox-team style1">
-                                <div class="featured-thumbnail">
-                                    <img width="535" height="500" class="img-fluid"
-                                        src="https://via.placeholder.com/535x500?text=535x500+team-img05.jpg"
-                                        alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="team-position">Product Analyst</div>
-                                    <div class="featured-title">
-                                        <h3><a href="team-details.html">Anna Konikova</a></h3>
-                                    </div>
-                                    <div class="featured-view-more">
-                                        <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                            href="team-details.html">more details</a>
-                                    </div>
-                                    <div class="featured-iconbox cmt-media-link">
-                                        <div class="media-block">
-                                            <div class="media-btn"><i class="icon-plus"></i></div>
-                                            <ul class="social-icons list-inline">
-                                                <li class="social-facebook"><a
-                                                        href="https://www.facebook.com/cymolthemes.191219"><i
-                                                            class="ti ti-facebook"></i></a></li>
-                                                <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                            class="ti ti-twitter-alt"></i></a></li>
-                                                <li class="social-pinterest"><a
-                                                        href="https://in.pinterest.com/cymolthemes/"><i
-                                                            class="ti ti-pinterest"></i></a></li>
-                                                <li class="social-instagram"><a
-                                                        href="https://www.instagram.com/cymol_themes/"><i
-                                                            class="ti ti-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-team end-->
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <!-- featured-imagebox-team -->
-                            <div class="featured-imagebox featured-imagebox-team style1">
-                                <div class="featured-thumbnail">
-                                    <img width="535" height="500" class="img-fluid"
-                                        src="https://via.placeholder.com/535x500?text=535x500+team-img06.jpg"
-                                        alt="image">
-                                </div>
-                                <div class="featured-content">
-                                    <div class="team-position">IT Associative</div>
-                                    <div class="featured-title">
-                                        <h3><a href="team-details.html">Sarah Rose</a></h3>
-                                    </div>
-                                    <div class="featured-view-more">
-                                        <a class="cmt-btn btn-inline cmt-btn-size-md cmt-btn-color-skincolor"
-                                            href="team-details.html">more details</a>
-                                    </div>
-                                    <div class="featured-iconbox cmt-media-link">
-                                        <div class="media-block">
-                                            <div class="media-btn"><i class="icon-plus"></i></div>
-                                            <ul class="social-icons list-inline">
-                                                <li class="social-facebook"><a
-                                                        href="https://www.facebook.com/cymolthemes.191219"><i
-                                                            class="ti ti-facebook"></i></a></li>
-                                                <li class="social-twitter"><a href="https://twitter.com/CymolThemes"><i
-                                                            class="ti ti-twitter-alt"></i></a></li>
-                                                <li class="social-pinterest"><a
-                                                        href="https://in.pinterest.com/cymolthemes/"><i
-                                                            class="ti ti-pinterest"></i></a></li>
-                                                <li class="social-instagram"><a
-                                                        href="https://www.instagram.com/cymol_themes/"><i
-                                                            class="ti ti-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-team end-->
-                        </div> --}}
                     </div>
                 @endif
                 <!-- row end -->
@@ -318,50 +124,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{-- <div class="client-box">
-                         <div class="cmt-client-logo-tooltip">
-                             <div class="cmt-client-logo-tooltip-inner">
-                                 <div class="client-thumbnail">
-                                     <img width="128" height="60" class="img-fluid"
-                                         src="https://via.placeholder.com/128x60?text=128x60+client-02.png"
-                                         alt="image">
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="client-box">
-                         <div class="cmt-client-logo-tooltip">
-                             <div class="cmt-client-logo-tooltip-inner">
-                                 <div class="client-thumbnail">
-                                     <img width="142" height="60" class="img-fluid"
-                                         src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                                         alt="image">
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="client-box">
-                         <div class="cmt-client-logo-tooltip">
-                             <div class="cmt-client-logo-tooltip-inner">
-                                 <div class="client-thumbnail">
-                                     <img width="182" height="61" class="img-fluid"
-                                         src="https://via.placeholder.com/182x61?text=182x61+client-04.png"
-                                         alt="image">
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="client-box">
-                         <div class="cmt-client-logo-tooltip">
-                             <div class="cmt-client-logo-tooltip-inner">
-                                 <div class="client-thumbnail">
-                                     <img width="142" height="60" class="img-fluid"
-                                         src="https://via.placeholder.com/142x60?text=142x60+client-03.png"
-                                         alt="image">
-                                 </div>
-                             </div>
-                         </div>
-                     </div> --}}
                             </div><!-- cmt-client end -->
                         </div>
                     </div>

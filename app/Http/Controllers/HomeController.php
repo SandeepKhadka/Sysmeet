@@ -23,11 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.admin');
+        return view('layouts.admin')->with('success', 'Welcome Admin!');
     }
 
     public function admin()
     {
-        return view('layouts.admin');
+        // return view('layouts.admin')->with('success', 'Welcome Admin!');
+        return redirect()->route('admin.home')->with('success', 'Welcome Admin!');
     }
 }
